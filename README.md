@@ -21,17 +21,16 @@ Para realizar este projeto, o grupo precisa dominar os seguintes conceitos utili
 - [ ] **Middlewares Essenciais:**
     - [ ] `express.json`: Para o servidor entender JSON.
     - [ ] **`cors`**: Para permitir que o Frontend acesse o Backend sem bloqueios de segurança.
-    - [ ] `express.static`: Para servir arquivos estáticos (se necessário).
+    - [ ] `express.static`: Para servir arquivos estáticos (usado para mostrar imagens).
 - [ ] **Arquitetura:** Diferenciar claramente o que roda no cliente (navegador) e o que roda no servidor.
 - [ ] **JS Moderno:** Uso de `Arrow Functions`, `Async/Await`, `Try/Catch` e manipulação de `JSON`.
 - [ ] **Estrutura MVC:** Organização rígida em Rotas (Router), Controladores (Controller) e Servidor (Server).
 - [ ] **Segurança & Configuração:**
-    - [ ] Uso de **Cookies** para manter a sessão logada.
-    - [ ] Uso de **Variáveis de Ambiente (.env)** para ocultar senhas do banco de dados.
+    - [ ] Uso de **Cookies** para manter a sessão logada.   
 
 ### 🗄️ Banco de Dados
 - [ ] **SQL Direto:** Conexão (driver do banco) e execução de querys SQL puras sem uso de ORM.
-- [ ] **Modelagem:** Criar DER (Diagrama Entidade-Relacionamento) usando **DBeaver**.
+- [ ] **Modelagem:** Criar DER (Diagrama Entidade-Relacionamento).
 
 ### 🛠️ Ferramentas
 - [ ] **Git/GitHub:** Clonar repositório, criar branches, commits, push, pull e pull requests.
