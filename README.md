@@ -16,7 +16,12 @@ Para realizar este projeto, o grupo precisa dominar os seguintes conceitos utili
 
 ### ⚙️ Backend & Lógica (Node.js)
 - [ ] **Node.js & NPM:** Saber inicializar um projeto, usar o `package.json` e instalar dependências (`npm install`).
-- [ ] **Express.js:** Configuração do servidor, uso de **Middlewares** (`express.json`, `express.static`) e gerenciamento de rotas.
+    - [ ] node_modules e .gitignore
+- [ ] **Express.js:** Configuração do servidor e gerenciamento de rotas.
+- [ ] **Middlewares Essenciais:**
+    - [ ] `express.json`: Para o servidor entender JSON.
+    - [ ] **`cors`**: Para permitir que o Frontend acesse o Backend sem bloqueios de segurança.
+    - [ ] `express.static`: Para servir arquivos estáticos (se necessário).
 - [ ] **Arquitetura:** Diferenciar claramente o que roda no cliente (navegador) e o que roda no servidor.
 - [ ] **JS Moderno:** Uso de `Arrow Functions`, `Async/Await`, `Try/Catch` e manipulação de `JSON`.
 - [ ] **Estrutura MVC:** Organização rígida em Rotas (Router), Controladores (Controller) e Servidor (Server).
@@ -34,11 +39,112 @@ Para realizar este projeto, o grupo precisa dominar os seguintes conceitos utili
 
 ---
 
-## 🚀 Parte 1: O Projeto Prático (8,0 Pontos)
+## 🚀 Parte 1: O Projeto 
 
 **Objetivo:** Desenvolver um sistema web completo simulando um E-commerce ou Sistema de Gestão. O projeto deve seguir a estrutura de pastas do modelo fornecido, implementando **acesso direto ao banco de dados**.
 
 🔗 **Modelo Base:** [https://github.com/rjhalmeman/dw1-modelo-4bim.git](https://github.com/rjhalmeman/dw1-modelo-4bim.git)
+
+### Estrutura proposta (exemplo)
+.
+├── backend
+│   ├── controllers
+│   │   ├── cargoController.js
+│   │   ├── clienteController.js
+│   │   ├── forma_pagamentoController.js
+│   │   ├── funcionarioController.js
+│   │   ├── imageController.js
+│   │   ├── loginController.js
+│   │   ├── menuController.js
+│   │   ├── pagamentoController.js
+│   │   ├── pedidoController.js
+│   │   ├── pedido_has_produtoController.js
+│   │   ├── pessoaController.js
+│   │   └── produtoController.js
+│   ├── database.js
+│   ├── routes
+│   │   ├── cargoRoutes.js
+│   │   ├── clienteRoutes.js
+│   │   ├── forma_pagamentoRoutes.js
+│   │   ├── funcionarioRoutes.js
+│   │   ├── imageRoutes.js
+│   │   ├── loginRoutes.js
+│   │   ├── menuRoutes.js
+│   │   ├── pagamentoRoutes.js
+│   │   ├── pedido_has_produtoRoutes.js
+│   │   ├── pedidoRoutes.js
+│   │   ├── pessoaRoutes.js
+│   │   └── produtoRoutes.js
+│   └── server.js
+├── documentacao
+│   ├── 4º bimestre - avaliação - dw1.md
+│   ├── CandyShopDER.png
+│   ├── dumpDBeaver-candyshop-202511180647.sql
+│   ├── estrutura.txt
+│   ├── scriptCandyShop.sql
+│   └── tutorial.md
+├── frontend
+│   ├── cargo
+│   │   ├── cargo.css
+│   │   ├── cargo.html
+│   │   └── cargo.js
+│   ├── forma_pagamento
+│   │   ├── forma_pagamento.css
+│   │   ├── forma_pagamento.html
+│   │   └── forma_pagamento.js
+│   ├── login
+│   │   ├── login.css
+│   │   ├── login.html
+│   │   └── login.js
+│   ├── menu.css
+│   ├── menu.html
+│   ├── menu.js
+│   ├── pedido
+│   │   ├── pedido.css
+│   │   ├── pedido.html
+│   │   ├── pedido.js
+│   │   ├── pesquisaDinamicaCliente.js
+│   │   └── pesquisaDinamicaStyle.css
+│   ├── pessoa
+│   │   ├── pessoa.css
+│   │   ├── pessoa.html
+│   │   └── pessoa.js
+│   ├── produto
+│   │   ├── produto.css
+│   │   ├── produto.html
+│   │   └── produto.js
+│   ├── testes
+│   │   ├── dragavel
+│   │   │   ├── index.html
+│   │   │   └── style.css
+│   │   ├── EmOrdem.html
+│   │
+│   └── visaoCliente
+│       ├── carrinho
+│       │   ├── carrinho.css
+│       │   ├── carrinho.html
+│       │   └── carrinho.js
+│       ├── finalizar
+│       │   ├── finalizar.css
+│       │   ├── finalizar.html
+│       │   └── finalizar.js
+│       └── pagamento
+│           ├── pagamento.css
+│           ├── pagamento.html
+│           └── pagamento.js
+├── imagens
+│   └── produto
+│       ├── 000.png
+│   
+├── index.html
+├── package.json
+├── package-lock.json
+├── p.sh
+├── push.sh
+├── pushTo.sh
+├── README.md
+└── ss
+
 
 ### 👥 Perfis de Acesso
 
@@ -67,7 +173,7 @@ O banco deve conter tabelas que demonstrem os seguintes relacionamentos para a c
 #### Organização de Arquivos
 - **Backend:** O servidor deve ser modularizado. Arquivos separados para `server`, `router` e `controller`.
 - **Frontend:** Cada CRUD deve ter sua própria pasta (módulo) contendo seu respectivo trio de arquivos: `HTML`, `JS` e `CSS`.
-- **Configuração:** As credenciais do banco de dados devem estar em um arquivo `.env` (não suba este arquivo para o GitHub, use o `.gitignore`).
+- **Configuração:** As credenciais do banco de dados devem estar em um arquivo `.env` (não suba este arquivo para o GitHub, use o `.gitignore`). O pacote `cors` deve estar configurado no `server.js`.
 
 ---
 
@@ -88,7 +194,7 @@ Este relatório deve ser escrito diretamente no arquivo `README.md` do repositó
 
 **O que abordar:**
 1.  **Resumo do Projeto:** O que foi construído?
-2.  **Tecnologias e Conceitos:** Como aplicaram a estrutura MVC, Fetch, Async/Await e Cookies?
+2.  **Tecnologias e Conceitos:** Como aplicaram a estrutura MVC, Fetch, CORS, Async/Await e Cookies?
 3.  **Dificuldades:** O que foi mais difícil? (Ex: Configurar o `.env`, conectar o banco, entender o assincronismo, CSS, Git). Como resolveram?
 4.  **IA:** Utilizaram IA (ChatGPT/Gemini)? Onde ela ajudou e onde ela pode ter atrapalhado o aprendizado?
 5.  **Preferências:** Qual parte o grupo gostou mais? Frontend ou Backend?
@@ -104,6 +210,7 @@ Para garantir a nota máxima, verifique se:
 - [ ] O `README.md` contém o relatório de aprendizagem.
 - [ ] A pasta `Documentacao` contém o DER e os scripts SQL.
 - [ ] O sistema faz Login e usa Cookies.
+- [ ] O **CORS** está configurado e o Frontend consegue se comunicar com o Backend.
 - [ ] Existem os 4 tipos de CRUDs solicitados.
 - [ ] O acesso ao dados é feito via SQL direto (sem ORM).
-- [ ] O projeto roda sem erros de sintaxe ao executar `npm start` (ou comando equivalente).
+- [ ] O projeto roda sem erros de sintaxe ao executar `npm start`.
