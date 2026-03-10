@@ -163,7 +163,9 @@ elementoRemover.remove();
 
 
 
-# Projetos de desenvolvimento web. Requisitos conectando Frontend, Backend e Banco de Dados.
+# Projetos 
+
+### Requisitos conectando Frontend, Backend e Banco de Dados.
 
 ---
 
