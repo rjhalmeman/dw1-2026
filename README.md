@@ -1,7 +1,177 @@
 # dw1-2026
 ## Desenvolvimento Web 1
 
+### Ementa
+Funcionamento da Internet. Linguagem de marcação. Linguagem de estilo. Linguagem de programação JavaScript. Manipulação da DOM.
+
+--- 
+
+## Detalhando os conceitos da ementa
+1. Funcionamento da Internet
+A internet é uma rede global de computadores que se comunicam através de protocolos. No contexto web, o processo básico é:
+
+Cliente-Servidor: Seu navegador (cliente) faz requisições para servidores web
+
+HTTP/HTTPS: Protocolos que permitem a transferência de dados
+
+DNS: Traduz nomes de domínio (ex: google.com) em endereços IP
+
+TCP/IP: Gerencia o envio e recebimento de pacotes de dados
+
+Quando você digita um URL, o navegador busca os arquivos do site no servidor e os exibe.
+
+2. Linguagem de Marcação (HTML)
+HTML (HyperText Markup Language) é a estrutura básica de qualquer página web:
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Página</title>
+</head>
+<body>
+    <header>
+        <h1>Título Principal</h1>
+    </header>
+    <main>
+        <p>Este é um parágrafo de texto.</p>
+        <img src="imagem.jpg" alt="Descrição">
+        <a href="pagina2.html">Link para outra página</a>
+    </main>
+</body>
+</html>
+Características:
+
+Usa tags para definir elementos
+
+Organiza o conteúdo hierarquicamente
+
+Fornece significado semântico ao conteúdo
+
+3. Linguagem de Estilo (CSS)
+CSS (Cascading Style Sheets) define a aparência visual dos elementos HTML:
+
+css
+/* Seletores, propriedades e valores */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.titulo-destaque {
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+}
+
+#elemento-unico {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+Conceitos importantes:
+
+Seletores: ID (#), classe (.), elementos
+
+Box Model: margin, border, padding, content
+
+Responsividade: Media queries para diferentes telas
+
+Flexbox/Grid: Sistemas de layout modernos
+
+4. Linguagem de Programação JavaScript
+JavaScript adiciona interatividade e comportamento dinâmico às páginas:
+
+javascript
+// Variáveis e tipos de dados
+let nome = "João";
+const idade = 25;
+var ativo = true;
+
+// Funções
+function saudacao(nome) {
+    return `Olá, ${nome}!`;
+}
+
+// Arrays e objetos
+const frutas = ["maçã", "banana", "laranja"];
+const pessoa = {
+    nome: "Maria",
+    idade: 30,
+    profissao: "desenvolvedora"
+};
+
+// Estruturas de controle
+if (idade >= 18) {
+    console.log("Maior de idade");
+}
+
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}
+
+// Eventos
+document.getElementById("botao").addEventListener("click", function() {
+    alert("Botão clicado!");
+});
+
+// ES6+ features
+const soma = (a, b) => a + b;
+const [primeira, ...resto] = frutas;
+5. Manipulação da DOM
+DOM (Document Object Model) é a representação em objetos da página HTML. JavaScript pode manipular esses objetos:
+
+javascript
+// Selecionar elementos
+const elemento = document.getElementById("meu-id");
+const elementos = document.getElementsByClassName("minha-classe");
+const paragrafo = document.querySelector("p.destaque");
+const todosParagrafos = document.querySelectorAll("p");
+
+// Modificar conteúdo
+elemento.textContent = "Novo texto";
+elemento.innerHTML = "<strong>Texto em negrito</strong>";
+
+// Modificar atributos
+elemento.setAttribute("class", "nova-classe");
+elemento.id = "novo-id";
+
+// Modificar estilos
+elemento.style.color = "red";
+elemento.style.backgroundColor = "black";
+
+// Criar e inserir elementos
+const novoDiv = document.createElement("div");
+novoDiv.textContent = "Elemento criado";
+document.body.appendChild(novoDiv);
+
+// Remover elementos
+const elementoRemover = document.getElementById("remover");
+elementoRemover.remove();
+
+// Eventos
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM carregada!");
+});
+
+// Navegação entre elementos
+const pai = elemento.parentNode;
+const filhos = elemento.children;
+const proximo = elemento.nextElementSibling;
+
+--- 
+
+
 Projeto de desenvolvimento web. Requisitos conectando Frontend, Backend e Banco de Dados.
+
+
 
 ---
 
