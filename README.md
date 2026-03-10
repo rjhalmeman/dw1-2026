@@ -16,7 +16,7 @@ A internet é uma rede global de computadores interligados. Quando você acessa 
 
 
 
-[Image of Client-Server Architecture Diagram]
+![alt text](image.png)
 
 
 * **Cliente-Servidor:** O seu navegador (Cliente) faz um pedido (requisição) e o computador onde o site está hospedado (Servidor) devolve os arquivos (resposta).
