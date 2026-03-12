@@ -1,4 +1,19 @@
-# Requisitos mínimos
+# Requisitos mínimos para usar o git e o github
+
+## Checklist
+
+No github
+- tem conta no github
+- criou o token
+- criou um repositório (pelo menos um repositório)
+
+No celular
+ - instalou o google autenticator
+
+No seu computador
+ - instalou o git
+
+--- 
 
 Para acessar o github precisa de autenticação em duas etapas.
 
