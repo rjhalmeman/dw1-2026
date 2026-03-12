@@ -17,8 +17,8 @@ O GitHub não aceita mais a senha da sua conta pelo terminal. Você precisa cria
 4. No menu esquerdo, clique em **Personal access tokens** e escolha **Tokens (classic)**.
 5. Clique no botão **Generate new token** e depois em **Generate new token (classic)**.
 6. Em **Note**, dê um nome para identificar (ex: "Acesso Terminal").
-7. Em **Expiration**, escolha o tempo de validade do seu token.
-8. Em **Select scopes**, marque a caixinha **`repo`** (isso dá permissão para enviar e modificar os arquivos do repositório).
+7. Em **Expiration**, escolha o tempo de validade do seu token. Escolha **"no expiration"**.
+8. Em **Select scopes**, marque todas as caixinhas.
 9. Desça até o final da página e clique em **Generate token**.
 10. **Atenção:** Copie o código gerado agora! Ele é a sua nova senha e não será mostrado novamente.
 
