@@ -3,7 +3,7 @@
 ## Checklist
 
 No github
-- tem conta no github
+- criou a conta no github
 - criou o token
 - criou um repositório (pelo menos um repositório)
 
