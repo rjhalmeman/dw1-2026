@@ -1,16 +1,19 @@
 # Requisitos mínimos
 
-## o Git tem que estar instalado no computador que você vai usar
+## O Git tem que estar instalado no computador que você vai usar
 
-https://youtu.be/Am46OOLgV4s (tutorial windows)
+tutorial windows
+
+https://youtu.be/Am46OOLgV4s 
 
 linux
+
 abra um terminal e digite
-``` 
-apt install git
-``` 
 
 
+``` 
+sudo apt install git
+``` 
 
 
 
@@ -41,8 +44,19 @@ Considerei que o repositório já existe no github (nuvem)
 
 Baixe o projeto do GitHub para o seu computador:
 ```bash
-git clone [https://github.com/usuario/nome-do-repositorio.git](https://github.com/usuario/nome-do-repositorio.git)
+git clone https://github.com/usuario/nome-do-repositorio.git
+
 ```
+
+por exemplo
+```bash
+ git clone https://github.com/rjhalmeman/dw1-2026
+``` 
+
+vai clonar, na pasta que estiver aberta, o repositório dw1-2026 do usuário rjhalmeman que está na nuvem (github).
+
+
+
 *(Lembre-se de usar `cd nome-do-repositorio` para entrar na pasta após clonar).*
 
 ## Fluxo Básico do Git
