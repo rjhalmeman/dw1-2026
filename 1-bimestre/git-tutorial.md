@@ -19,8 +19,6 @@ Para acessar o github precisa de autenticação em duas etapas.
 
 Instale no seu celular o Google Autenticator
 
-![alt text](image.png)
-
 
 ## 🔑 Criar Token no GitHub (Senha do Terminal)
 
