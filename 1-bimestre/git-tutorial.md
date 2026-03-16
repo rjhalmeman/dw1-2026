@@ -85,8 +85,12 @@ Considerei que o repositório já existe no github (nuvem)
 
 Baixe o projeto do GitHub para o seu computador:
 ```bash
-git clone [https://github.com/usuario/nome-do-repositorio.git](https://github.com/usuario/nome-do-repositorio.git)
+
+git clone https://github.com/usuario/nome-do-repositorio.git
+
 ```
+Exemplo: https://github.com/rjhalmeman/algoritmos.git
+
 *(Lembre-se de usar `cd nome-do-repositorio` para entrar na pasta após clonar).*
 
 ## Fluxo Básico do Git
