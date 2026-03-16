@@ -15,10 +15,8 @@ No seu computador
 
 --- 
 
-Para acessar o github precisa de autenticação em duas etapas.
-
-Instale no seu celular o Google Autenticator
-
+Como criar a conta no github
+ - acesse www.github.com
 
 ## 🔑 Criar Token no GitHub (Senha do Terminal)
 
@@ -36,8 +34,18 @@ O GitHub não aceita mais a senha da sua conta pelo terminal. Você precisa cria
 10. **Atenção:** Copie o código gerado agora! Ele é a sua nova senha e não será mostrado novamente.
 
 
-# ENVIE O TOKEN PARA SEU EMAIL, VAI PRECISAR DELE MUITAS VEZES. DEIXE SALVO EM UM LUGAR SEGURO.
+### ENVIE O TOKEN PARA SEU EMAIL, VAI PRECISAR DELE MUITAS VEZES. DEIXE SALVO EM UM LUGAR SEGURO.
+Para acessar o github precisa de autenticação em duas etapas.
 
+
+Com sua conta logada no github
+ - procure Repositories e o botão New
+   - dê um nome para o novo repositório e confirme
+  
+
+
+
+# Instale no seu celular o Google Autenticator
 
 ## o Git tem que estar instalado no computador que você vai usar
 
@@ -96,6 +104,17 @@ Salva as alterações localmente com uma mensagem descritiva.
 ```bash
 git commit -m "Sua mensagem de commit aqui"
 ```
+
+nos computadores da utfpr, se fizer commit e aparecer essas mensagens
+
+``` 
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+``` 
+
+deve-se copiar a mensagem, colar no prompt e preencher com suas credenciais. (no mínimo fazer com o email)
 
 **3. Enviar para o GitHub:**
 Envia os commits do seu computador para o repositório online.
