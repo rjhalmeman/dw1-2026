@@ -118,7 +118,7 @@ git config --global user.name "Your Name"
 
 ``` 
 
-deve-se copiar a mensagem, colar no prompt e preencher com suas credenciais. (no mínimo fazer com o email)
+deve-se copiar a mensagem, colar no prompt e preencher com suas credenciais (no mínimo fazer com o email).
 
 **3. Enviar para o GitHub:**
 Envia os commits do seu computador para o repositório online.
