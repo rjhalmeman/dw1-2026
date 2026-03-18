@@ -1,8 +1,8 @@
 ## Índice / Checklist
 
-- [ ] [10/03/2026 - Apresentação da disciplina. Posicionamento da disciplina no curso. CSS. HTML. JS Algoritmos +. Regras de negócio. Solicitar que criem contas no github.](#10032026)
+- [ ] [10/03/2026 - Apresentação da disciplina.](#10032026)
 - [ ] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
-- [ ] [17/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#17032026)
+- [ ] [17/03/2026 - Github.](#17032026)
 - [ ] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#24032026)
 - [ ] [14/05/2026 - Recuperação de conteúdos](#14052026)
 - [ ] [19/05/2026 - Recuperação paralela 1º bimestre](#19052026)
@@ -75,8 +75,7 @@
 
 # 17/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
-
-- Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.
+- Subir para github. Baixar do github.
 
 # 24/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
