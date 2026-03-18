@@ -57,8 +57,6 @@ abra um terminal e digite
 apt install git
 ``` 
 
-
-
 # Tutorial mínimo para uso do git/github.
 
 Considerei que o repositório já existe no github (nuvem)
