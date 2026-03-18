@@ -1,12 +1,12 @@
 ## Índice / Checklist
 
-- [ ] [10/03/2026 - Apresentação da disciplina.](#10032026)
-- [ ] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
-- [ ] [17/03/2026 - Github.](#17032026)
-- [ ] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#24032026)
+- [x] [10/03/2026 - Apresentação da disciplina.](#10032026)
+- [x] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
+- [x] [17/03/2026 - Github.](#17032026)
+- [ ] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#24032026)
 - [ ] [14/05/2026 - Recuperação de conteúdos](#14052026)
 - [ ] [19/05/2026 - Recuperação paralela 1º bimestre](#19052026)
-- [ ] [21/05/2026 - Cliente e Servidor. O cliente (navegador, aplicativo) faz requisições para obter ou enviar dados. O servidor processa essas requisições e retorna respostas, como páginas HTML, dados em JSON ou arquivos.](#21052026)
+- [ ] [21/05/2026 - Cliente e Servidor. ](#21052026)
 - [ ] [26/05/2026 - Exercícios com uso de cliente/servidor.](#26052026)
 - [ ] [28/05/2026 - Linguagem de Marcação HTML. DOM](#28052026)
 - [ ] [02/06/2026 - Exercícios com manipulação da DOM](#02062026)
