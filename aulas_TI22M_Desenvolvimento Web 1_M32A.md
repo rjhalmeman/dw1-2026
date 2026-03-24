@@ -6,6 +6,19 @@
 - [x] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
 - [x] [17/03/2026 - Github.](#17032026)
 - [x] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#24032026)
+- [ ] [26/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#26032026)
+- [ ] [31/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#31032026)
+- [ ] [02/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#02042026)
+- [ ] [07/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#07042026)
+- [ ] [09/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#09042026)
+- [ ] [14/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#14042026)
+- [ ] [16/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#16042026)
+- [ ] [23/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#23042026)
+- [ ] [28/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#28042026)
+- [ ] [30/04/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#30042026)
+- [ ] [05/05/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#05052026)
+- [ ] [07/05/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#07052026)
+- [ ] [12/05/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#12052026)
 - [ ] [14/05/2026 - Recuperação de conteúdos](#14052026)
 - [ ] [19/05/2026 - Recuperação paralela 1º bimestre](#19052026)
 - [ ] [21/05/2026 - Cliente e Servidor. ](#21052026)
@@ -87,6 +100,67 @@
 
 [Solução do exercício proposto](https://github.com/rjhalmeman/dw1-2026/tree/main/1-bimestre/Exercicios/2026-03-24)
 
+
+# 26/03/2026
+Quinta
+[↑ Voltar para o Índice](#índice--checklist)
+
+# 31/03/2026
+Terça
+[↑ Voltar para o Índice](#índice--checklist)
+
+# 02/04/2026
+Quinta
+
+[↑ Voltar para o Índice](#índice--checklist)
+
+# 07/04/2026
+Terça
+[↑ Voltar para o Índice](#índice--checklist)
+
+# 09/04/2026
+Quinta
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+
+# 14/04/2026
+Terça
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+# 16/04/2026
+Quinta
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+# 23/04/2026
+Quinta
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+# 28/04/2026
+Terça
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+# 30/04/2026
+Quinta
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+# 05/05/2026
+Terça
+[↑ Voltar para o Índice](#índice--checklist)
+
+
+# 07/05/2026
+Quinta
+[↑ Voltar para o Índice](#índice--checklist)
+
+# 12/05/2026 
+ter
+[↑ Voltar para o Índice](#índice--checklist)
 
 
 # 14/05/2026
