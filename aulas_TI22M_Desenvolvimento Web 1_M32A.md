@@ -5,7 +5,7 @@
 - [x] [10/03/2026 - Apresentação da disciplina.](#10032026)
 - [x] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
 - [x] [17/03/2026 - Github.](#17032026)
-- [ ] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#24032026)
+- [x] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos.](#24032026)
 - [ ] [14/05/2026 - Recuperação de conteúdos](#14052026)
 - [ ] [19/05/2026 - Recuperação paralela 1º bimestre](#19052026)
 - [ ] [21/05/2026 - Cliente e Servidor. ](#21052026)
@@ -83,6 +83,7 @@
 [↑ Voltar para o Índice](#índice--checklist)
 
 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.
+- Faça um programa com HTML e JS para calcular Bhaskara. Envie o programa que você fez para o github.
 
 # 14/05/2026
 [↑ Voltar para o Índice](#índice--checklist)
