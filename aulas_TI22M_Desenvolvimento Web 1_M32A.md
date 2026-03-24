@@ -85,6 +85,10 @@
 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.
 - Faça um programa com HTML e JS para calcular Bhaskara. Envie o programa que você fez para o github.
 
+
+
+
+
 # 14/05/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
