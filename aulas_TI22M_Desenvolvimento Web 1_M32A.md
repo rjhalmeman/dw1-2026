@@ -119,6 +119,9 @@
 - Recapitulação JS. Conteúdos vistos em algoritmos.
 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.
 
+Exercício para aula:
+Faça um programa para calcular o IMC.
+
 # Dicas para facilitar o desenvolvimento dos exercícios
 
 1) Tenha um repositório no github (na nuvem) chamado dw1-exercicios (preferencialmente sem acentos)
