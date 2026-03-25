@@ -3,7 +3,7 @@
 - [x] [10/03/2026 - Apresentação da disciplina. Posicionamento da disciplina no curso. CSS. HTML. JS Algoritmos +. Regras de negócio. Solicitar que criem contas no github.](#10032026)
 - [x] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
 - [x] [17/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#17032026)
-- [ ] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#24032026)
+- [x] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#24032026)
 - [ ] [26/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#26032026)
 - [ ] [31/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#31032026)
 - [ ] [02/04/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#02042026)
