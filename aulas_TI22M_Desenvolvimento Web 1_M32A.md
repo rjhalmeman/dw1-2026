@@ -111,11 +111,24 @@
 ## 26/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
+[Vídeo explicando o funcionamento do github](https://youtu.be/xupWoAkVq_8)
+
  - css
  - tags semânticas
 
 - Recapitulação JS. Conteúdos vistos em algoritmos.
 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.
+
+# Dicas para facilitar o desenvolvimento dos exercícios
+
+1) Tenha um repositório no github (na nuvem) chamado dw1-exercicios (preferencialmente sem acentos)
+2) Antes de iniciar vá (navegue pelo gerenciador de arquivos da sua máquina até a pasta que conterá os arquivos)
+3) DECISÃO (preste atenção para não fazer caquinha)
+ Se já existe na sua máquina local a pasta dw1-exercícios (por que você clonou antes), entre nela pelo terminal e digite: pull (isso vai buscar na nuvem e atualizar a pasta local)
+ Caso a pasta NÃO exista na sua máquina, tem que clonar. (https://github.com/SeuUsuario/dw1-exercicios). A clonagem vai criar uma pasta na sua máquina local com o mesmo nome do repositório que está no github.
+
+4) Para abrir facilmente a pasta no VSCode, com a pasta dw1-exercicios aberta no terminal digite: code . (isso vai abrir o vscode e nele já vai abrir a pasta dw1-exercícios)
+
 
 ---
 ## 31/03/2026
