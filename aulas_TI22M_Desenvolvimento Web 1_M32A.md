@@ -2,7 +2,7 @@
 
 - [x] [10/03/2026 - Apresentação da disciplina. Posicionamento da disciplina no curso. CSS. HTML. JS Algoritmos +. Regras de negócio. Solicitar que criem contas no github.](#10032026)
 - [x] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
-- [x] [17/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#17032026)
+- [x] [17/03/2026 - Github](#17032026)
 - [x] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#24032026)
 - [ ] [26/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#26032026)
 - [ ] [31/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#31032026)
@@ -96,18 +96,25 @@
 ## 17/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-- Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.
+- Exercícios com uso clonagem e envio de documentos para o github.
 
 ---
-## 24/03/2026
+# 24/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.
+- Faça um programa com HTML e JS para calcular Bhaskara. Envie o programa que você fez para o github.
+
+[Solução do exercício proposto](https://github.com/rjhalmeman/dw1-2026/tree/main/1-bimestre/Exercicios/2026-03-24)
 
 ---
 ## 26/03/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
+ - css
+ - tags semânticas
+
+- Recapitulação JS. Conteúdos vistos em algoritmos.
 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.
 
 ---
