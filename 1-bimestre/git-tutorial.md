@@ -3,15 +3,15 @@
 ## Checklist
 
 No github
-- criou a conta no github
-- criou o token
-- criou um repositório (pelo menos um repositório)
+- criou a conta no github?
+- criou o token? Sabe onde ele está salvo? Consegue copiar e colar?
+- criou um repositório (pelo menos um repositório)?
 
 No celular
- - instalou o google autenticator
+ - instalou o google autenticator? Precisa disso para fazer login na conta no github. (vai pedir usuário, senha e código no autenticator)
 
 No seu computador
- - instalou o git
+ - instalou o git?
 
 --- 
 
@@ -43,9 +43,9 @@ Com sua conta logada no github
    - dê um nome para o novo repositório e confirme
   
 
-
-
 # Instale no seu celular o Google Autenticator
+
+[Tutorial para usar o autenticator](https://www.youtube.com/watch?v=XZpHa-vxYJ0)
 
 ## o Git tem que estar instalado no computador que você vai usar
 
