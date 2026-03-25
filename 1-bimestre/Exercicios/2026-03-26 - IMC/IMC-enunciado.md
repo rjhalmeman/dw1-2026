@@ -89,8 +89,8 @@ O código deve ser separado em **três arquivos**:
 
 ---
 
-## ⭐ Desafio Extra (Opcional)
+## ⭐ Desafio Extra (Opcionalcom uso de IA)
 
 * Destacar visualmente a classificação do usuário
 * Exibir a tabela de IMC na própria página
-* Tornar o layout responsivo (funcionar bem em celular)
+
