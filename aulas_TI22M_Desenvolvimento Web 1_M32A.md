@@ -4,7 +4,7 @@
 - [x] [12/03/2026 - Subir para github. Baixar do github.](#12032026)
 - [x] [17/03/2026 - Github](#17032026)
 - [x] [24/03/2026 - Recapitulação JS. Conteúdos vistos em algoritmos. Exercícios.](#24032026)
-- [ ] [26/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#26032026)
+- [x] [26/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#26032026)
 - [ ] [31/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#31032026)
 - [ ] [02/04/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#02042026)
 - [ ] [07/04/2026 - Exercícios. Construção de prompts.](#07042026)
@@ -138,6 +138,8 @@ Faça um programa para calcular o IMC.
 [↑ Voltar para o Índice](#índice--checklist)
 
 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.
+
+Exercício do placar (com IA)
 
 ---
 ## 02/04/2026
