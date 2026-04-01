@@ -1,6 +1,5 @@
 # Tutorial Essencial: Construindo Aplicações Web com HTML, CSS, JS e IA
 
-<a id="indice"></a>
 ## 📋 Índice
 - [Tutorial Essencial: Construindo Aplicações Web com HTML, CSS, JS e IA](#tutorial-essencial-construindo-aplicações-web-com-html-css-js-e-ia)
   - [📋 Índice](#-índice)
@@ -32,8 +31,6 @@
 ## Introdução
 
 Este tutorial fornece os fundamentos práticos e diretos para estruturar páginas com HTML semântico, estilizar com CSS e interagir dinamicamente com o DOM usando JavaScript, com apoio de Inteligência Artificial.
-
-[↑ Voltar para o Índice](#indice)
 
 ---
 
@@ -77,8 +74,6 @@ Tags semânticas dão significado ao conteúdo, melhorando a acessibilidade e o 
 </html>
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ### 1.2 Formulários e Interação
@@ -101,8 +96,6 @@ A tag `<form>` é a principal maneira de capturar a entrada de dados estruturado
 </form>
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ## 2. Manipulação do DOM com JavaScript
@@ -118,8 +111,6 @@ const titulo = document.getElementById('titulo-principal');
 const primeiroBotao = document.querySelector('.btn-primario');
 const todosItens = document.querySelectorAll('li.item-lista');
 ```
-
-[↑ Voltar para o Índice](#indice)
 
 ---
 
@@ -141,8 +132,6 @@ paragrafo.classList.remove('oculto');
 paragrafo.classList.toggle('ativo');
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ### 2.3 Criando e Removendo Elementos
@@ -160,8 +149,6 @@ lista.appendChild(novoItem);
 
 // novoItem.remove();
 ```
-
-[↑ Voltar para o Índice](#indice)
 
 ---
 
@@ -184,8 +171,6 @@ form.addEventListener('submit', function(evento) {
     console.log('Formulário enviado com sucesso!');
 });
 ```
-
-[↑ Voltar para o Índice](#indice)
 
 ---
 
@@ -215,8 +200,6 @@ nav li a {
 }
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ### 3.2 Box Model e Layout Básico
@@ -238,8 +221,6 @@ Defina larguras, espaçamentos internos (padding), bordas e externos (margin).
     align-items: center;
 }
 ```
-
-[↑ Voltar para o Índice](#indice)
 
 ---
 
@@ -265,8 +246,6 @@ body {
 }
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ## 4. Projeto Prático: Lista de Tarefas
@@ -283,8 +262,6 @@ body {
     <ul id="lista-tarefas"></ul>
 </div>
 ```
-
-[↑ Voltar para o Índice](#indice)
 
 ---
 
@@ -310,8 +287,6 @@ body {
 }
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ### 4.3 Interatividade JavaScript
@@ -332,44 +307,32 @@ form.addEventListener('submit', function(e) {
 });
 ```
 
-[↑ Voltar para o Índice](#indice)
-
 ---
 
 ## 5. Como Usar IA para Acelerar o Aprendizado
 
 ### 5.1 Prompts Úteis
-
-* **Conceitos:** "Explique [tecnologia] como iniciante, usando analogias do dia a dia."
-* **Encontrar erros (Debug):** "Meu código apresenta o erro [X]. Onde está a falha? [Cole o código]"
-* **Refatoração:** "Reescreva este código de forma mais moderna e limpa."
-* **Gerar exemplos:** "Gere um array JSON com 5 objetos representando produtos fictícios."
-
-[↑ Voltar para o Índice](#indice)
+- **Conceitos:** "Explique [tecnologia] como iniciante, usando analogias do dia a dia."
+- **Encontrar erros (Debug):** "Meu código apresenta o erro [X]. Onde está a falha? [Cole o código]"
+- **Refatoração:** "Reescreva este código de forma mais moderna e limpa."
+- **Gerar exemplos:** "Gere um array JSON com 5 objetos representando produtos fictícios."
 
 ### 5.2 Boas Práticas ao Usar IA
-
-* Não copie e cole às cegas.
-* Pergunte o "porquê" de cada correção sugerida pela IA.
-* Tente replicar o código ensinado sem olhar para fixar o conhecimento.
-
-[↑ Voltar para o Índice](#indice)
+- Não copie e cole às cegas.
+- Pergunte o "porquê" de cada correção sugerida pela IA.
+- Tente replicar o código ensinado sem olhar para fixar o conhecimento.
 
 ---
 
 ## Conclusão e Próximos Passos
 
 A base do desenvolvimento web moderno é composta por:
-
-* **HTML:** Estrutura e semântica.
-* **CSS:** Visual e responsividade.
-* **JS:** Lógica e interatividade.
+- **HTML:** Estrutura e semântica.
+- **CSS:** Visual e responsividade.
+- **JS:** Lógica e interatividade.
 
 ### Próximos Passos
-
-* **Git e GitHub:** Versionamento de código e portfólio.
-* **APIs:** Consumo de dados externos com `fetch()` e Promises.
-* **Frameworks:** Introdução ao React ou Vue.js.
-* 🚀 **Prática contínua!**
-
-[↑ Voltar para o Índice](#indice)
+- **Git e GitHub:** Versionamento de código e portfólio.
+- **APIs:** Consumo de dados externos com `fetch()` e Promises.
+- **Frameworks:** Introdução ao React ou Vue.js.
+- 🚀 **Prática contínua!**
