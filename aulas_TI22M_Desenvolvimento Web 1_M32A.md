@@ -141,11 +141,16 @@ Faça um programa para calcular o IMC.
 
 Exercício do placar (com IA)
 
+[Placar com IA](https://github.com/rjhalmeman/dw1-2026/tree/main/1-bimestre/02_contadorDePontos_Placar)
+
+
 ---
 ## 02/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.
+
+
 
 ---
 ## 07/04/2026
