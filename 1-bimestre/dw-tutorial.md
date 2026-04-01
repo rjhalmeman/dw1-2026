@@ -8,7 +8,7 @@
   - [1. HTML Essencial](#1-html-essencial)
     - [1.1 Estrutura Semântica](#11-estrutura-semântica)
     - [1.2 Formulários e Interação](#12-formulários-e-interação)
-  - [2. Manipulação do DOM com JavaScript](#2-manipulação-do-dom-com-javascript)
+  - [2. Manipulação do DOM (Document Object Model) com JavaScript](#2-manipulação-do-dom-document-object-model-com-javascript)
     - [2.1 Selecionando Elementos](#21-selecionando-elementos)
     - [2.2 Modificando Conteúdo e Atributos](#22-modificando-conteúdo-e-atributos)
     - [2.3 Criando e Removendo Elementos](#23-criando-e-removendo-elementos)
@@ -41,7 +41,7 @@ Este tutorial fornece os fundamentos práticos e diretos para estruturar página
 
 ### 1.1 Estrutura Semântica
 
-Tags semânticas dão significado ao conteúdo, melhorando a acessibilidade e o SEO.
+Tags semânticas dão significado ao conteúdo, melhorando a acessibilidade e o SEO (Search Engine Optimization, ou em português, Otimização para Mecanismos de Busca).
 
 ```html
 <!DOCTYPE html>
@@ -105,9 +105,9 @@ A tag `<form>` é a principal maneira de capturar a entrada de dados estruturado
 
 ---
 
-## 2. Manipulação do DOM com JavaScript
+## 2. Manipulação do DOM (Document Object Model) com JavaScript
 
-O DOM é a representação em árvore da página. O JavaScript o utiliza para alterar o documento dinamicamente.
+O DOM (Document Object Model) é a representação em árvore da página. O JavaScript o utiliza para alterar o documento dinamicamente.
 
 ### 2.1 Selecionando Elementos
 
