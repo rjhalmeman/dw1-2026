@@ -6,7 +6,7 @@ Faça um programa usando HTML, JS e CSS que lê o número de identificação (RA
 
 <p align="center">
   <img src="./image.png" alt="" width="300" height="200">
-  ![alt text](image-1.png)
+ 
 </p>
 
 A resposta deve mostrar o número do aluno, o nome do aluno, suas notas, a média dos exercícios, a média de aproveitamento, conceito correspondente e a mensagem: APROVADO se o conceito for A,B ou C e REPROVADO se o conceito for D ou E.
