@@ -11,6 +11,11 @@ Faça um programa usando HTML, JS e CSS que lê o número de identificação (RA
 
 A resposta deve mostrar o número do aluno, o nome do aluno, suas notas, a média dos exercícios, a média de aproveitamento, conceito correspondente e a mensagem: APROVADO se o conceito for A,B ou C e REPROVADO se o conceito for D ou E.
 
-CONSIDERANDO QUE VOCÊ, ALUNO, ESTÁ AQUI PARA APRENDER OU MELHORAR O QUE JÁ SABE.
+# CONSIDERANDO QUE VOCÊ, ALUNO, ESTÁ AQUI PARA APRENDER OU MELHORAR O QUE JÁ SABE.
 
 Cada aluno deve fazer o programa com HTML e JS ***SEM USAR IA (na prova será assim, fazer na mão o básico)***. Depois de pronto, pode passar o código para uma IA estilizar (fazer o CSS). As cores devem ser com predominância de branco e os destaques com azul em vários tons. Deve-se considerar avisos no footer, mudando a cor de fundo para vermelho com fonte em branco. Depois de pronto, compare o que foi feito a por você com o feito pela IA.
+
+Primeira aula para elaborar a solução básica.
+Segunda aula para estilizar (CSS) e enviar para o github.
+
+Preencher esse formulário: https://forms.gle/orN81F6WqvW5L3rk8
