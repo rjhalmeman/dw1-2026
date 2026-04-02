@@ -1,4 +1,4 @@
-Faça um programa usando HTML, JS e CSS que lê o número de identificação (RA), o nome do aluno e as 4 notas obtidas por um aluno nas 4 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: 
+Faça um programa usando HTML, JS e CSS que lê o número de identificação (RA), o nome do aluno e as 4 notas obtidas por um aluno nas 4 avaliações e a média dos exercícios que fazem parte da média final. Calcular a média de aproveitamento, usando a fórmula: 
    ``` 
    MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4 + ME )/11
    ``` 
