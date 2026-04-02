@@ -13,4 +13,4 @@ A resposta deve mostrar o número do aluno, o nome do aluno, suas notas, a médi
 
 CONSIDERANDO QUE VOCÊ, ALUNO, ESTÁ AQUI PARA APRENDER OU MELHORAR O QUE JÁ SABE.
 
-Cada aluno deve fazer o programa com HTML e JS SEM USAR IA (na prova será assim, fazer na mão o básico). Depois de pronto, pode passar o código para uma IA estilizar (fazer o CSS). As cores devem ser com predominância de branco e os destaques com azul em vários tons. Deve-se considerar avisos no footer, mudando a cor de fundo para vermelho com fonte em branco. Depois de pronto, compare o que foi feito a por você com o feito pela IA.
+Cada aluno deve fazer o programa com HTML e JS ***SEM USAR IA (na prova será assim, fazer na mão o básico)***. Depois de pronto, pode passar o código para uma IA estilizar (fazer o CSS). As cores devem ser com predominância de branco e os destaques com azul em vários tons. Deve-se considerar avisos no footer, mudando a cor de fundo para vermelho com fonte em branco. Depois de pronto, compare o que foi feito a por você com o feito pela IA.
