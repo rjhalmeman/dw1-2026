@@ -1,5 +1,7 @@
-Exercício: Sistema de Tarifação de Estacionamento
+## Sistema de Tarifação de Estacionamento
+
 Contexto:
+
 Você foi contratado para desenvolver o módulo de cálculo de um sistema de gestão de estacionamentos. O objetivo é criar uma interface simples onde o operador possa inserir os dados do veículo e obter o valor final a ser cobrado do cliente.
 
 Requisitos do Sistema:
