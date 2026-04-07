@@ -29,17 +29,12 @@ Um botão "Calcular Tarifa".
 
 Um local para exibir o resultado final formatado (ex: "O valor total é R$ 0,00").
 
-4. Lógica (JavaScript)
-Desenvolva uma função que:
-
-Capture os valores inseridos pelo usuário.
-
-Processe a lógica de dias completos e horas remanescentes.
-
-Verifique as strings de entrada para aplicar os bônus e ônus.
-
 Exiba o valor final com duas casas decimais.
 
+=== 
+
 Primeira aula para elaborar a solução básica. Segunda aula para estilizar (CSS) e enviar para o github.
+
+Enviar para o github e preencher o formulário
 
 Preencher esse formulário: https://forms.gle/orN81F6WqvW5L3rk8
