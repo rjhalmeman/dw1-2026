@@ -39,3 +39,7 @@ Processe a lógica de dias completos e horas remanescentes.
 Verifique as strings de entrada para aplicar os bônus e ônus.
 
 Exiba o valor final com duas casas decimais.
+
+Primeira aula para elaborar a solução básica. Segunda aula para estilizar (CSS) e enviar para o github.
+
+Preencher esse formulário: https://forms.gle/orN81F6WqvW5L3rk8
