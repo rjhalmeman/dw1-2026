@@ -7,7 +7,7 @@
 - [x] [26/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#26032026)
 - [x] [31/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#31032026)
 - [x] [02/04/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#02042026)
-- [ ] [07/04/2026 - Exercícios. Construção de prompts.](#07042026)
+- [x] [07/04/2026 - Exercícios. Construção de prompts.](#07042026)
 - [ ] [09/04/2026 - Seletores CSS](#09042026)
 - [ ] [14/04/2026 - Exercícios com seletores css](#14042026)
 - [ ] [16/04/2026 - Seletor de elementos](#16042026)
@@ -174,7 +174,7 @@ Dê nomes significativos para elementos de tela.
 ## 09/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-
+[Procedimentos de organização (git)](https://github.com/rjhalmeman/dw1-2026/blob/main/procedimentoParaFazerExercicios.md)
 
 
 - Seletores CSS
