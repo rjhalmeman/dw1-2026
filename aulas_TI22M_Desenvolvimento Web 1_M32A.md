@@ -174,27 +174,7 @@ Dê nomes significativos para elementos de tela.
 ## 09/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-Organizar os repositórios no github
 
-// procedimento antes de começar a fazer exercícios no computador
-1) abra no terminal a pasta raiz de onde está seu repositório (Documentos, por exemplo).
-2) Duas situações possíveis. 
-   - 2.1) Já existe a pasta com o nome SeuRepositorio. Neste caso, abra a pasta SeuRepositorio no terminal e digite-> git pull (vai buscar no github se tem algo novo lá). Depois, digite -> ***code .*** (vai abrir essa pasta no vscode)
-   - 2.2) Não existe a pasta com nome SeuRepositorio. Neste caso, clone o seu repositório. git clone https://github.com/SeuUsuario/SeuRepositorio. Abra a pasta SeuRepositorio no terminal. Digite ***code .***
-
-1) no github (site), faça login com seu usuário.
-2) renomeie o repositório (se necessário). Por exemplo, dw1-exercicios.
-3) No computador que você estiver usando, abra uma pasta no terminal.
-4) Clone o repositório nela. git clone https://github.com/SeuUsuario/SeuRepositorio. 
-    (Vai criar no computador, na pasta aberta no terminal uma pasta com o nome SeuRepositorio)
-5) feche a janela do terminal. 
-6)  Abra o Gerenciador de Arquivos, procure a pasta SeuRepositorio.
-7) Organize os exercícios que estão nela, crie subpastas para cada exercício. Cada exercício deve ter 3 arquivos (html, css e o js)
-8) Quando terminar de arrumar, tem que subir para o github.
-   8.1) git add .
-   8.2) git commit -m "mensagem de commit"
-   8.3) git push (vai pedir o nome de usuário no github e token)
-9) volte na sua página do github, atualize e confira se ficou organizado.
 
 
 - Seletores CSS
