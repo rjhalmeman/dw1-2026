@@ -23,7 +23,7 @@ Siga este procedimento toda vez que for iniciar seus estudos no computador:
 ### Cenário B: A pasta do repositório NÃO existe no seu computador
 1. Clone o repositório do GitHub digitando o comando:
    ```bash
-   git clone [https://github.com/SeuUsuario/SeuRepositorio](https://github.com/SeuUsuario/SeuRepositorio)
+   git clone https://github.com/SeuUsuario/SeuRepositorio
    ```
 2. No terminal, acesse a nova pasta que foi criada.
 3. Abra a pasta no VS Code digitando:
@@ -42,7 +42,7 @@ Se você precisa arrumar os arquivos e pastas que já existem, siga este passo a
 3. No seu computador, abra o **terminal** na pasta onde deseja baixar os arquivos.
 4. Clone o repositório usando o comando:
    ```bash
-   git clone [https://github.com/SeuUsuario/SeuRepositorio](https://github.com/SeuUsuario/SeuRepositorio)
+   git clone https://github.com/SeuUsuario/SeuRepositorio
    ```
    *(Isso criará uma pasta no seu computador com o mesmo nome do repositório).*
 5. Feche o terminal.
