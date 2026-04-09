@@ -8,3 +8,6 @@ Pesquise os recursos necessários para fazer os cálculos com datas e ajuste seu
 
 Suba sua solução no github numa pasta chamada 2026-04-09 - estacionamento2
 
+Enviar para o github e preencher o formulário
+
+# [Preencher esse formulário:](https://forms.gle/orN81F6WqvW5L3rk8)
