@@ -176,13 +176,15 @@ Dê nomes significativos para elementos de tela.
 
 [Procedimentos de organização (git)](https://github.com/rjhalmeman/dw1-2026/blob/main/procedimentoParaFazerExercicios.md)
 
+[Exercício - Estacionamento 2](https://github.com/rjhalmeman/dw1-2026/blob/main/1-bimestre/Exercicios/2026-04-09%20-%20estacionamento2/enunciado.md)
 
-- Seletores CSS
+
 
 ---
 ## 14/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
+- Seletores CSS
 - Exercícios com seletores css
 
 ---
