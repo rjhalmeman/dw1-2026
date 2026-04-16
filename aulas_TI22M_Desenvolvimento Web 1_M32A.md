@@ -8,8 +8,8 @@
 - [x] [31/03/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#31032026)
 - [x] [02/04/2026 - Terminologia. Uso de IA generativa de forma produtiva. CSS e JS.](#02042026)
 - [x] [07/04/2026 - Exercícios. Construção de prompts.](#07042026)
-- [ ] [09/04/2026 - Seletores CSS](#09042026)
-- [ ] [14/04/2026 - Exercícios com seletores css](#14042026)
+- [x] [09/04/2026 - Seletores CSS](#09042026)
+- [x] [14/04/2026 - Exercícios com seletores css](#14042026)
 - [ ] [16/04/2026 - Seletor de elementos](#16042026)
 - [ ] [23/04/2026 - Exercícios com seletores de elementos.](#23042026)
 - [ ] [28/04/2026 - seletores de classe](#28042026)
@@ -186,6 +186,11 @@ Dê nomes significativos para elementos de tela.
 
 - Seletores CSS
 - Exercícios com seletores css
+
+Discussão sobre estacionamento sem enunciado pré-definido.
+Exercício exploratório (sem que o professor mostre os comandos a serem usados). Fazer um programa com 2 páginas html. A primeira página é uma página de login, se o usuário acertar o usuário e a senha, vai para a página de menu. É preciso que o programa verifique a senha no JS.
+
+
 
 ---
 ## 16/04/2026
