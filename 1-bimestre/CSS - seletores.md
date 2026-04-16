@@ -4,6 +4,8 @@
 
 - Seletor de ID (#id)
 
+- Seletor universal (*)
+
 - Seletor de elemento (h1, p, div, etc.)
 
 - Seletor de classe (.classe)
@@ -18,7 +20,6 @@
 
 - Seletor de atributo (input[type="text"])
 
-- Seletor universal (*)
 
 - Seletor de grupo (h1, h2, h3)
 
