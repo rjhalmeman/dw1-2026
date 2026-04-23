@@ -20,7 +20,6 @@
 
 - Seletor de atributo (input[type="text"])
 
-
 - Seletor de grupo (h1, h2, h3)
 
 # Exemplo
@@ -57,6 +56,14 @@
         div > p {
             font-size: 18px;
         }
+
+        <div class="container">
+            <p>✅ Este é filho DIRETO - será afetado</p>
+                <div>
+                    <p>❌ Este é NETO (não filho direto) - NÃO será afetado</p>
+                </div>
+            <p>✅ Este também é filho DIRETO - será afetado</p>
+        </div>
 
         /* Seletor de irmão adjacente */
         h1 + p {

@@ -188,6 +188,7 @@ Dê nomes significativos para elementos de tela.
 - Exercícios com seletores css
 
 Discussão sobre estacionamento sem enunciado pré-definido.
+
 Exercício exploratório (sem que o professor mostre os comandos a serem usados). Fazer um programa com 2 páginas html. A primeira página é uma página de login, se o usuário acertar o usuário e a senha, vai para a página de menu. É preciso que o programa verifique a senha no JS.
 
 

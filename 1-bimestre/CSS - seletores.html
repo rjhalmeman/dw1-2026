@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Seletores CSS - Com Sumário</title>
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Estilos para os blocos de exemplo */
+        .exemplo-bloco {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            scroll-margin-top: 20px;
+        }
+
+        .exemplo-bloco h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .exemplo-bloco p {
+            margin: 10px 0;
+        }
+
+        .codigo {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .link-voltar {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .link-voltar:hover {
+            text-decoration: underline;
+        }
+
+        /* Sumário */
+        .sumario {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            scroll-margin-top: 20px;
+        }
+
+        .sumario h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .sumario ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            list-style: none;
+        }
+
+        .sumario li {
+            margin: 0;
+        }
+
+        .sumario a {
+            display: block;
+            padding: 10px 15px;
+            background-color: white;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .sumario a:hover {
+            background-color: #007bff;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 2px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- SUMÁRIO -->
+    <div class="sumario" id="sumario">
+        <h1>📋 Sumário dos Seletores CSS</h1>
+        <ul>
+            <li><a href="#seletor-id">🎯 Seletor de ID (#id)</a></li>
+            <li><a href="#seletor-universal">🌐 Seletor universal (*)</a></li>
+            <li><a href="#seletor-elemento">📝 Seletor de elemento (h1, p, div...)</a></li>
+            <li><a href="#seletor-classe">🏷️ Seletor de classe (.classe)</a></li>
+            <li><a href="#seletor-descendente">📂 Seletor descendente (div p)</a></li>
+            <li><a href="#seletor-filho">➡️ Seletor filho direto (div > p)</a></li>
+            <li><a href="#seletor-irmao-adjacente">➕ Seletor de irmão adjacente (h1 + p)</a></li>
+            <li><a href="#seletor-irmaos-gerais">🔄 Seletor de irmãos gerais (h1 ~ p)</a></li>
+            <li><a href="#seletor-atributo">🔍 Seletor de atributo (input[type="text"])</a></li>
+            <li><a href="#seletor-grupo">👥 Seletor de grupo (h1, h2, h3)</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <!-- ==================== EXEMPLOS DOS SELETORES ==================== -->
+
+    <!-- 1. Seletor de ID -->
+    <div class="exemplo-bloco" id="seletor-id">
+        <h2>🎯 Seletor de ID (#id)</h2>
+        <p>Seleciona um elemento único pelo seu atributo <code>id</code>. É o seletor mais específico.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            #importante {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #d9534f;<br>
+            }
+        </div>
+        <p id="importante" style="font-weight: bold; color: #d9534f;">✅ Exemplo: Este parágrafo tem ID="importante" e está em negrito e vermelho.</p>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 2. Seletor universal -->
+    <div class="exemplo-bloco" id="seletor-universal">
+        <h2>🌐 Seletor universal (*)</h2>
+        <p>Seleciona <strong>TODOS</strong> os elementos da página. Geralmente usado para resetar estilos padrão.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            * {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin: 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br>
+            }
+        </div>
+        <p>✅ Exemplo: Todos os elementos deste documento herdaram <code>font-family: Arial</code> por causa do seletor universal.</p>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 3. Seletor de elemento -->
+    <div class="exemplo-bloco" id="seletor-elemento">
+        <h2>📝 Seletor de elemento (h1, p, div...)</h2>
+        <p>Seleciona todos os elementos de um tipo específico (tag HTML).</p>
+        <div class="codigo">
+            /* CSS */<br>
+            h1 {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+            }
+        </div>
+        <h1 style="color: blue; text-align: center;">✅ Exemplo: Este H1 está azul e centralizado</h1>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 4. Seletor de classe -->
+    <div class="exemplo-bloco" id="seletor-classe">
+        <h2>🏷️ Seletor de classe (.classe)</h2>
+        <p>Seleciona elementos pelo atributo <code>class</code>. Pode ser reutilizado várias vezes.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            .destaque {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br>
+            }
+        </div>
+        <p class="destaque" style="background-color: yellow; padding: 10px;">✅ Exemplo: Este parágrafo tem classe="destaque" e fundo amarelo.</p>
+        <p class="destaque" style="background-color: yellow; padding: 10px;">✅ Outro exemplo: Também com classe="destaque".</p>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 5. Seletor descendente -->
+    <div class="exemplo-bloco" id="seletor-descendente">
+        <h2>📂 Seletor descendente (div p)</h2>
+        <p>Seleciona elementos que são descendentes (em qualquer nível) de outro elemento.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            div p {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: green;<br>
+            }
+        </div>
+        <div style="border: 1px solid #ccc; padding: 10px;">
+            <p style="color: green;">✅ Exemplo: Este parágrafo é descendente direto de div (verde).</p>
+            <div>
+                <p style="color: green;">✅ Exemplo: Este também é descendente (neto) e fica verde.</p>
+            </div>
+        </div>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 6. Seletor filho direto -->
+    <div class="exemplo-bloco" id="seletor-filho">
+        <h2>➡️ Seletor filho direto (div > p)</h2>
+        <p>Seleciona <strong>apenas</strong> os elementos que são filhos imediatos (primeiro nível).</p>
+        <div class="codigo">
+            /* CSS */<br>
+            div > p {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 18px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: #e0f7fa;<br>
+            }
+        </div>
+        <div style="border: 1px solid #ccc; padding: 10px;">
+            <p style="font-size: 18px; background-color: #e0f7fa;">✅ Exemplo: Este é filho DIRETO - será afetado (fonte 18px, fundo azul claro).</p>
+            <div>
+                <p style="background-color: transparent;">❌ Exemplo: Este é NETO (não filho direto) - NÃO será afetado.</p>
+            </div>
+            <p style="font-size: 18px; background-color: #e0f7fa;">✅ Exemplo: Este também é filho DIRETO - será afetado.</p>
+        </div>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 7. Seletor de irmão adjacente -->
+    <div class="exemplo-bloco" id="seletor-irmao-adjacente">
+        <h2>➕ Seletor de irmão adjacente (h1 + p)</h2>
+        <p>Seleciona o elemento que é imediatamente após outro elemento (irmão direto).</p>
+        <div class="codigo">
+            /* CSS */<br>
+            h1 + p {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: underline;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #5bc0de;<br>
+            }
+        </div>
+        <h1 style="margin-top: 10px;">Título H1</h1>
+        <p style="text-decoration: underline; color: #5bc0de;">✅ Exemplo: Este parágrafo é o IRMÃO ADJACENTE do H1 (sublinhado e azul).</p>
+        <p>❌ Exemplo: Este é o segundo parágrafo, não é irmão adjacente.</p>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 8. Seletor de irmãos gerais -->
+    <div class="exemplo-bloco" id="seletor-irmaos-gerais">
+        <h2>🔄 Seletor de irmãos gerais (h1 ~ p)</h2>
+        <p>Seleciona TODOS os elementos irmãos que vêm depois de um determinado elemento.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            h1 ~ p {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-style: italic;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #f0ad4e;<br>
+            }
+        </div>
+        <h1 style="margin-top: 10px;">Título H1</h1>
+        <p style="font-style: italic; color: #f0ad4e;">✅ Exemplo: Primeiro parágrafo depois do H1 (itálico e laranja).</p>
+        <p style="font-style: italic; color: #f0ad4e;">✅ Exemplo: Segundo parágrafo também é irmão geral (itálico e laranja).</p>
+        <div>Div não é parágrafo, então não afeta.</div>
+        <p style="font-style: italic; color: #f0ad4e;">✅ Exemplo: Terceiro parágrafo também é afetado.</p>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 9. Seletor de atributo -->
+    <div class="exemplo-bloco" id="seletor-atributo">
+        <h2>🔍 Seletor de atributo (input[type="text"])</h2>
+        <p>Seleciona elementos baseado na presença ou valor de um atributo.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            input[type="text"] {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid red;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 8px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 4px;<br>
+            }<br><br>
+            input[type="submit"] {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: green;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br>
+            }
+        </div>
+        <input type="text" placeholder="Seletor de Atributo" style="border: 2px solid red; padding: 8px; border-radius: 4px;">
+        <br><br>
+        <input type="submit" value="Enviar" style="background-color: green; color: white; border: none; padding: 8px 16px; border-radius: 4px;">
+        <p><small>✅ O campo de texto tem borda vermelha. O botão submit tem fundo verde.</small></p>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+    <!-- 10. Seletor de grupo -->
+    <div class="exemplo-bloco" id="seletor-grupo">
+        <h2>👥 Seletor de grupo (h1, h2, h3)</h2>
+        <p>Aplica o mesmo estilo a vários seletores diferentes, separados por vírgula.</p>
+        <div class="codigo">
+            /* CSS */<br>
+            h1, h2, h3 {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #5cb85c;<br>
+            }
+        </div>
+        <h1 style="text-align: center; color: #5cb85c;">✅ H1 centralizado e verde</h1>
+        <h2 style="text-align: center; color: #5cb85c;">✅ H2 centralizado e verde</h2>
+        <h3 style="text-align: center; color: #5cb85c;">✅ H3 centralizado e verde</h3>
+        <a href="#sumario" class="link-voltar">⬅️ Voltar para o sumário</a>
+    </div>
+
+</div>
+</body>
+</html>
