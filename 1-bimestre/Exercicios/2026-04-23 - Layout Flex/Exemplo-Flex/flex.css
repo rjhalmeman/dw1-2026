@@ -44,6 +44,7 @@ body {
 /* Cores para visualização */
 .linha1 .coluna:nth-child(1) {
     background: crimson;
+    flex-direction: column;
 }
 
 .linha1 .coluna:nth-child(2) {
