@@ -13,11 +13,11 @@
 
     <script>
         // 1. Pegamos tudo que vem depois do "?" na URL da página
-        var parametrosDaUrl = new URLSearchParams(window.location.search);
+        let parametrosDaUrl = new URLSearchParams(window.location.search);
 
         // 2. Extraímos os valores usando os mesmos nomes ('name') que colocamos no formulário
-        var nomeRecebido = parametrosDaUrl.get('nome');
-        var cpfRecebido = parametrosDaUrl.get('cpf');
+        let nomeRecebido = parametrosDaUrl.get('nome');
+        let cpfRecebido = parametrosDaUrl.get('cpf');
 
         // 3. Colocamos esses valores nos espaços (<span>) que criamos no HTML acima
         document.getElementById('resultadoNome').textContent = nomeRecebido;
