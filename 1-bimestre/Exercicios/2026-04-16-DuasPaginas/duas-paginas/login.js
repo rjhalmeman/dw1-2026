@@ -1,3 +1,4 @@
+// login.js
 function Verifica() {
     let user = document.getElementById("InputUser").value;
     let pass = document.getElementById("InputSenha").value;

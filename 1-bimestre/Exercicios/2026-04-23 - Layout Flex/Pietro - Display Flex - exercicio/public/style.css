@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    /* border-box = mantem o tamanho real, não extrapola */
     box-sizing: border-box;
 }
 

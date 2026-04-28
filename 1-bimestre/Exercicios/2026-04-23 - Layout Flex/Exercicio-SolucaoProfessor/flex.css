@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: sans-serif;
+    color: white;
+}
+
+.linha1 {
+    display: flex;
+    flex: 1;
+}
+
+.linha1 .coluna {
+    flex-direction: row;
+    flex: 1;
+}
+
+.linha2 {
+    display: flex;
+    flex: 1;
+}
+
+.linha2 .coluna {
+    flex-direction: row;
+    flex: 1;
+}
+
+.linha3 {
+    display: flex;
+    flex: 1;
+}
+
+.linha3 .coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha3 .coluna:not(:last-child) {
+    display: block;
+}
+
+.linha3 .coluna .subcoluna {
+    flex: 1;
+    width: 100%;
+}
+
+.linha4 {
+    display: flex;
+    flex: 1;
+
+    width: 100%;
+    background-color: blueviolet;
+
+}
+
+.linha4 .coluna {
+    flex-direction: row;
+    flex: 1;
+}
+
+/* Cores para visualização */
+
+.coluna32 {
+    background-color: aquamarine;
+    display: flex;
+    flex: 1;
+}
+
+.coluna32 .subcoluna32a {
+    background-color: rgb(237, 22, 205);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna32 .subcoluna32b {
+    background-color: #888;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna32 .subcoluna32c {
+    background-color: rgb(12, 18, 0);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna42 {
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna42a {
+    background-color: blue;    
+    flex: 1;
+}
+
+.coluna42b {
+    background-color: rgb(0, 242, 255);
+    flex: 1;    
+}
+
+
+.linha3 .coluna {
+    display: flex;
+    flex: 1;
+}
+
+
+
+
+.linha1 .coluna:nth-child(1) {
+    background: crimson;
+    flex-direction: column;
+}
+
+.linha1 .coluna:nth-child(2) {
+    background: darkorange;
+}
+
+.linha1 .coluna:nth-child(3) {
+    background: gold;
+}
+
+.linha1 .coluna:nth-child(4) {
+    background: limegreen;
+}
+
+.linha1 .coluna:nth-child(5) {
+    background: turquoise;
+}
+
+.linha2 .coluna:nth-child(1) {
+    background: navy;
+}
+
+.linha2 .coluna:nth-child(2) {
+    background: mediumslateblue;
+}
+
+.linha3 .coluna:nth-child(1) {
+    background: palevioletred;
+}
+
+.linha3 .coluna:nth-child(2) {
+    background: darkseagreen;
+}
+
+.linha3 .coluna:nth-child(3) {
+    background: chocolate;
+}
+
+.linha3 .coluna:nth-child(4) {
+    background: lightsalmon;
+}
+
+.linha3 .coluna:nth-child(5) .subcoluna:nth-child(1) {
+    background: #444;
+}
+
+.linha3 .coluna:nth-child(5) .subcoluna:nth-child(2) {
+    background: #666;
+}
+
+.linha3 .coluna:nth-child(5) .subcoluna:nth-child(3) {
+    background: #888;
+}
+
+.linha3 .coluna:nth-child(5) .subcoluna:nth-child(4) {
+    background: #aaa;
+}
+
+/* Para mostrar o nome das divisões */
+.coluna,
+.subcoluna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid white;
+}

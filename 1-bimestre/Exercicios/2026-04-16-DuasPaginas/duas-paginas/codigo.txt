@@ -1,0 +1,138 @@
+════════════════════════════════════════════════════════════════════
+       RELATÓRIO DE CÓDIGOS - GERADO EM 28/04/2026 07:06:27
+════════════════════════════════════════════════════════════════════
+
+Extensões consideradas: html css js
+
+
+
+
+╔══════════════════════════════════════════════════════════════╗
+║  ARQUIVO: login                                                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+▶▶▶ Arquivo: login.html ◀◀◀
+────────────────────────────────────────────────────────────────
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <!--
+       Código desenvolvido pela Yanara
+    -->
+    <header>
+        <h3>Login</h3>
+    </header>
+    <main>
+        <label for="InputUser" id="LabelUsuario">Usuario</label>
+        <br>
+        <input type="text" id="InputUser">
+        <br>
+        <label for="InputSenha">Senha</label>
+        <br>
+        <input type="password" id="InputSenha">
+        <br>
+        <input type="button" value="Entrar" onclick="Verifica()">
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>
+
+────────────────────────────────────────────────────────────────
+✓ Fim do arquivo: login.html
+
+
+
+▶▶▶ Arquivo: login.js ◀◀◀
+────────────────────────────────────────────────────────────────
+// login.js
+function Verifica() {
+    let user = document.getElementById("InputUser").value;
+    let pass = document.getElementById("InputSenha").value;
+
+    if(user === "admin" && pass === "123") {
+        localStorage.setItem("logado", "true");
+
+        // muda de página
+        window.location.href = "menu.html";
+    } else {
+        alert("Login inválido!");
+    }
+}
+
+────────────────────────────────────────────────────────────────
+✓ Fim do arquivo: login.js
+
+
+
+✓ Grupo login processado (2 arquivos)
+
+
+
+════════════════════════════════════════════════════════════════════
+
+
+
+╔══════════════════════════════════════════════════════════════╗
+║  ARQUIVO: menu                                                     ║
+╚══════════════════════════════════════════════════════════════╝
+
+▶▶▶ Arquivo: menu.html ◀◀◀
+────────────────────────────────────────────────────────────────
+//menu.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Você esta logado</p>
+    <script src="menu.js"></script>
+</body>
+</html>
+
+────────────────────────────────────────────────────────────────
+✓ Fim do arquivo: menu.html
+
+
+
+▶▶▶ Arquivo: menu.js ◀◀◀
+────────────────────────────────────────────────────────────────
+//menu.js
+
+if(localStorage.getItem("logado") !== "true") {
+    window.location.href = "login.html";
+}
+
+function sair() {
+    localStorage.removeItem("logado");
+    window.location.href = "login.html";
+}
+
+────────────────────────────────────────────────────────────────
+✓ Fim do arquivo: menu.js
+
+
+
+✓ Grupo menu processado (2 arquivos)
+
+
+
+════════════════════════════════════════════════════════════════════
+
+
+
+
+════════════════════════════════════════════════════════════════════
+✓ PROCESSO CONCLUÍDO - Total de grupos: 2
+════════════════════════════════════════════════════════════════════
