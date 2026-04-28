@@ -82,9 +82,7 @@ processar_grupo() {
 # Limpa o arquivo de saída
 > "$ARQUIVO_SAIDA"
 
-echo "════════════════════════════════════════════════════════════════════" >> "$ARQUIVO_SAIDA"
-echo "       RELATÓRIO DE CÓDIGOS - GERADO EM $(date '+%d/%m/%Y %H:%M:%S')" >> "$ARQUIVO_SAIDA"
-echo "════════════════════════════════════════════════════════════════════" >> "$ARQUIVO_SAIDA"
+
 echo "" >> "$ARQUIVO_SAIDA"
 echo "Extensões consideradas: ${EXTENSOES[*]}" >> "$ARQUIVO_SAIDA"
 echo "" >> "$ARQUIVO_SAIDA"
@@ -127,7 +125,3 @@ echo "" >> "$ARQUIVO_SAIDA"
 echo "════════════════════════════════════════════════════════════════════" >> "$ARQUIVO_SAIDA"
 echo "✓ PROCESSO CONCLUÍDO - Total de grupos: ${#sorted_nomes[@]}" >> "$ARQUIVO_SAIDA"
 echo "════════════════════════════════════════════════════════════════════" >> "$ARQUIVO_SAIDA"
-
-echo "✓ Arquivo '$ARQUIVO_SAIDA' gerado com sucesso!"
-echo "✓ Extensões processadas: ${EXTENSOES[*]}"
-echo "✓ Total de grupos (nomes base): ${#sorted_nomes[@]}"
