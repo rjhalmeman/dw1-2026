@@ -16,7 +16,7 @@ O sistema deve apresentar uma interface ou formulário que colete os seguintes *
 * **CPF** do atleta.
 * **Nome** completo do atleta.
 * **Idade** (um valor numérico inteiro).
-* **Nome do Responsável** legal.
+* **Nome do Responsável** 
 * **Cidade de Origem**.
 * **Cidade de Destino** (o local onde ocorrerá a competição).
 * **Modalidade Esportiva:** Esta opção não deve ser de texto livre. Deve ser obrigatoriamente um **menu suspenso (dropdown list)** contendo estritamente as opções: *Vôlei*, *Futebol* e *Natação*.
