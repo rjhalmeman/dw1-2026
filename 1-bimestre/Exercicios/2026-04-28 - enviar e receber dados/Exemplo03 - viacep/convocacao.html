@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Mandado de Convocação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="documento">
+        <h1>CONVOCAÇÃO</h1>
+        <hr>
+        <p>
+            Pelo presente instrumento, fica o(a) Sr(a). <b id="outNome"></b>, 
+            inscrito(a) no CPF sob o nº <b id="outCpf"></b>, convocado(a) a comparecer 
+            à audiência que se realizará nesta comarca.
+        </p>
+        <p>
+            O endereço registrado para o envio desta notificação é: <br>
+            <span id="outEndereco"></span>, nº <span id="outNumero"></span> 
+            (<span id="outComp"></span>). <br>
+            Bairro: <span id="outBairro"></span> | CEP: <span id="outCep"></span> | 
+            Cidade: <span id="outCidade"></span>.
+        </p>
+        <div class="assinatura">
+            <p>_____________________________________</p>
+            <p>Secretaria Judiciária</p>
+        </div>
+        <button onclick="window.print()">Imprimir Documento</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            
+            // Mapeamento de dados
+            document.getElementById('outNome').textContent = params.get('nome');
+            document.getElementById('outCpf').textContent = params.get('cpf');
+            document.getElementById('outEndereco').textContent = params.get('logradouro');
+            document.getElementById('outNumero').textContent = params.get('numero');
+            document.getElementById('outComp').textContent = params.get('complemento') || 'S/C';
+            document.getElementById('outBairro').textContent = params.get('bairro');
+            document.getElementById('outCep').textContent = params.get('cep');
+            document.getElementById('outCidade').textContent = params.get('cidade');
+        }
+    </script>
+</body>
+</html>

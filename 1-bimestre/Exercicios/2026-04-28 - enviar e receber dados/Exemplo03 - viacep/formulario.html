@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Convocação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dados para Convocação Judicial</h2>
+        <form action="convocacao.html" method="GET">
+            <input type="text" name="nome" placeholder="Nome Completo" required>
+            <input type="text" name="cpf" placeholder="CPF (somente números)" required>
+            
+            <div class="endereco-group">
+                <input type="text" id="cep" name="cep" placeholder="CEP" required onblur="buscaCEP()">
+                <input type="text" id="logradouro" name="logradouro" placeholder="Endereço" required>
+                <input type="text" name="numero" placeholder="Número" required>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                <input type="text" name="complemento" placeholder="Complemento">
+            </div>
+
+            <button type="submit">Gerar Convocação</button>
+        </form>
+    </div>
+
+    <script>
+        function buscaCEP() {
+            let cep = document.getElementById('cep').value.replace(/\D/g, '');
+            if (cep !== "") {
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(dados => {
+                        if (!dados.erro) {
+                            document.getElementById('logradouro').value = dados.logradouro;
+                            document.getElementById('bairro').value = dados.bairro;
+                            document.getElementById('cidade').value = dados.localidade;
+                        } else {
+                            alert("CEP não encontrado.");
+                        }
+                    })
+                    .catch(() => alert("Erro ao buscar CEP."));
+            }
+        }
+    </script>
+</body>
+</html>

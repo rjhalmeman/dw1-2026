@@ -1,6 +1,5 @@
 # Comunicação entre Páginas com HTML e JavaScript
 
-
 ## 1. O Conceito Principal: Query Strings
 
 O alicerce deste projeto é o uso do **método GET**. Diferente do método POST (onde os dados vão no corpo da requisição), o GET anexa as informações diretamente na **URL** da página de destino.
