@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
-  <title>Teste Layout Flex</title>
+  <title>Professor - Layout Flex</title>
   <link rel="stylesheet" href="flex.css">
 </head>
-
-
-
 <body>
 
-  <div class="linha1">
-    <div class="coluna">
-      <p>1.1</p>
-    </div>
-    <div class="coluna">
-      <p>1.2</p>
-    </div>
+  <!-- LINHA 1 -->
+  <div class="linha linha1">
+    <div class="coluna">1.1</div>
+    <div class="coluna">1.2</div>
   </div>
 
-  <div class="linha2">
-    <div class="coluna">
-      <p>2.1</p>
-    </div>
-    <div class="coluna">
-      <p>2.2</p>
-    </div>
+  <!-- LINHA 2 -->
+  <div class="linha linha2">
+    <div class="coluna">2.1</div>
+    <div class="coluna">2.2</div>
   </div>
 
-
-  <div class="linha3">
+  <!-- LINHA 3 -->
+  <div class="linha linha3">
     <div class="coluna">3.1</div>
-    <div class="coluna32">
-      <div class="subcoluna32a">
-        <img src="./imagens/gato01.jpeg" alt="">
+
+    <div class="coluna coluna3-direita">
+      <div class="item">
+        <img src="./imagens/gato01.jpeg">
         <p>Gato</p>
       </div>
-      <div class="subcoluna32b">
-        <img src="./imagens/cachorro.jpeg" alt="cachorro">        
+
+      <div class="item">
+        <img src="./imagens/cachorro.jpeg">
         <p>Cachorro</p>
       </div>
-      <div class="subcoluna32c">
-         <img src="./imagens/coelho.jpg" alt="coelho">        
+
+      <div class="item">
+        <img src="./imagens/coelho.jpg">
         <p>Coelho</p>
       </div>
     </div>
   </div>
 
-  <div class="linha4">
-    <div class="coluna">4.1</div>
-    <div class="coluna42">
-      <div class="coluna42a">
-        42a
+  <!-- LINHA 4 -->
+  <div class="linha linha4">
+    <div class="coluna coluna4-esquerda">
+      <div class="item">
+        <img src="./imagens/casa.jpeg">
+        <p>Casa</p>
       </div>
-      <div class="coluna42b">
-        42b
+
+      <div class="item">
+        <img src="./imagens/castelo.jpeg">
+        <p>Castelo</p>
       </div>
-      
+    </div>
+
+    <div class="coluna coluna4-direita">
+      <div class="metade">4.2.1</div>
+      <div class="metade">4.2.2</div>
     </div>
   </div>
-</body>
 
+</body>
 </html>
