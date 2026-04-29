@@ -13,6 +13,10 @@
     color: orange;
 }
 
+#labelDoInputB:active {
+    background-color: red; /* Fica vermelho quando o mouse em cima */
+}
+
 #respX1{
     color: #dc2626;
 }

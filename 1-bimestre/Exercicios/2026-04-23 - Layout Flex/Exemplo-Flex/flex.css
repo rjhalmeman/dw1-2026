@@ -32,9 +32,9 @@ body {
     flex-direction: column;
 }
 
-.linha3 .coluna:not(:last-child) {
+/* .linha3 .coluna:not(:last-child) {
     display: block;
-}
+} */
 
 .linha3 .coluna .subcoluna {
     flex: 1;
