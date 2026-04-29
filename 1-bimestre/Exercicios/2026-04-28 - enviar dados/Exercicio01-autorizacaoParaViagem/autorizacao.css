@@ -1,0 +1,105 @@
+body {
+    background-color: #e0e0e0;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#documento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#folha {
+    background-color: #fff;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 1.6rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    text-align: justify;
+    line-height: 2;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.dado-preenchido {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dado-destaque {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f0f0f0;
+    padding: 2px 6px;
+    border: 1px solid #333;
+}
+
+footer {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.linha {
+    border-top: 1px solid #000;
+    width: 350px;
+    margin: 10px auto;
+}
+
+/* Estilos dos botões fora da folha */
+.acoes {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-acao {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px 20px;
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-acao:hover {
+    background-color: #34495e;
+}
+
+.btn-imprimir {
+    background-color: #27ae60;
+}
+
+.btn-imprimir:hover {
+    background-color: #1e8449;
+}
+
+/* Esconde os botões na hora da impressão */
+@media print {
+    body { background-color: #fff; padding: 0; }
+    #folha { box-shadow: none; border: none; padding: 20px; }
+    .acoes { display: none; }
+}
