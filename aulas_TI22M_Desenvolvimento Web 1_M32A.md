@@ -10,9 +10,9 @@
 - [x] [07/04/2026 - Exercícios. Construção de prompts.](#07042026)
 - [x] [09/04/2026 - Seletores CSS](#09042026)
 - [x] [14/04/2026 - Exercícios com seletores css](#14042026)
-- [ ] [16/04/2026 - Seletor de elementos](#16042026)
-- [ ] [23/04/2026 - Exercícios com seletores de elementos.](#23042026)
-- [ ] [28/04/2026 - seletores de classe](#28042026)
+- [x] [16/04/2026 - Seletor de elementos](#16042026)
+- [x] [23/04/2026 - Exercícios com seletores de elementos.](#23042026)
+- [x] [28/04/2026 - seletores de classe](#28042026)
 - [ ] [30/04/2026 - Seletores combinadores](#30042026)
 - [ ] [05/05/2026 - Avaliação do 1º bimestre](#05052026)
 - [ ] [05/05/2026 - 1º Bimestre - Avaliação](#05052026)
@@ -204,18 +204,20 @@ Exercício exploratório (sem que o professor mostre os comandos a serem usados)
 [↑ Voltar para o Índice](#índice--checklist)
 
 - Exercícios com seletores de elementos.
+- Display flex
 
 ---
 ## 28/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-- seletores de classe
+- Seletores de classe
+- Enviar dados de uma página para outra. (form).
 
 ---
 ## 30/04/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-- Seletores combinadores
+- Recapitulação
 
 ---
 ## 05/05/2026
