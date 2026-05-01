@@ -13,7 +13,7 @@
 - [x] [16/04/2026 - Seletor de elementos](#16042026)
 - [x] [23/04/2026 - Exercícios com seletores de elementos.](#23042026)
 - [x] [28/04/2026 - seletores de classe](#28042026)
-- [ ] [30/04/2026 - Seletores combinadores](#30042026)
+- [x] [30/04/2026 - Seletores combinadores](#30042026)
 - [ ] [05/05/2026 - Avaliação do 1º bimestre](#05052026)
 - [ ] [05/05/2026 - 1º Bimestre - Avaliação](#05052026)
 - [ ] [07/05/2026 - Avaliação de projetos](#07052026)
