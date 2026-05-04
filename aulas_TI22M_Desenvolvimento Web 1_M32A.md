@@ -219,6 +219,45 @@ Exercício exploratório (sem que o professor mostre os comandos a serem usados)
 
 - Recapitulação
 
+# Informações sobre a Avaliação - DW1
+
+Bom dia a todos,
+
+Nesta primeira avaliação, não utilizaremos os computadores; a prova será realizada no papel. Reservei a sala **G103** para que possamos fazê-la em um ambiente de sala teórica.
+
+Conforme explicado nas últimas aulas, o conteúdo abrange **HTML, CSS básico e JavaScript**.
+
+---
+
+### Orientações para a "cola"
+* Vocês podem trazer uma folha de consulta com exemplos e anotações.
+* **Regra:** Limitada a uma página de tamanho A4, escrita exclusivamente à mão.
+
+---
+
+### O que será avaliado?
+
+#### 1. HTML
+* **Tags semânticas:** importância e uso.
+* **Tabelas:** tag `<table>` e estrutura básica.
+* **Formulários:** tags `<form>`, `<select>` (menu suspenso) e demais elementos.
+* **Estruturação:** uso da tag `<div>`.
+* **Imagens:** tag `<img>`, diferenciação entre caminhos absolutos e caminhos relativos.
+  * *Exemplo:* `<img src="./imagens/gato01.jpeg" alt="gato bravo molhado">`
+
+#### 2. CSS
+* **Seletores:** ID, classe e elemento.
+* **Variáveis:** uso de `:root` e a função `var()`.
+  * *Exemplo:* `--azul: #2563eb;` -> `color: var(--azul);`
+* **Principais propriedades:**
+  * `background-color`, `color`, `padding`, `text-align`, `font-weight`.
+  * `margin: 0 auto;` (centralização de blocos).
+  * `display: flex;` (conceitos básicos).
+
+#### 3. JavaScript (JS)
+* **Lógica e Algoritmos:** conteúdos já trabalhados (estruturas sequenciais, condicionais, funções e manipulação de *strings*).
+* **Validação:** lógica para validar dados informados pelo usuário via formulário.
+
 ---
 ## 05/05/2026
 [↑ Voltar para o Índice](#índice--checklist)
