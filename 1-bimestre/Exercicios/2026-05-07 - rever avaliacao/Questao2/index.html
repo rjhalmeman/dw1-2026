@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximo dia</title>
+</head>
+<body>
+    <h1>Próximo Dia</h1>
+    <form action="paginaResposta.html" method="GET" onsubmit="return validarDados()">
+        <label for="dia">Dia:</label>
+        <input type="number" id="dia" name="dia" min="1" max="31" required><br><br>
+
+        <label for="mes">Mês:</label>
+        <input type="number" id="mes" name="mes" min="1" max="12" required><br><br>
+
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" name="ano" min="1" required><br><br>
+
+        <input type="submit" value="Calcular Próximo Dia">
+    </form>
+    <script>
+        function validarDados() {
+            const dia = parseInt(document.getElementById('dia').value);
+            const mes = parseInt(document.getElementById('mes').value);
+            const ano = parseInt(document.getElementById('ano').value);
+
+            if(isNaN(dia) || isNaN(mes) || isNaN(ano)) {
+                return alert('Por favor, insira valores numéricos válidos para dia, mês e ano.');
+            }
+            if(isFloat(dia) || isFloat(mes) || isFloat(ano)) {
+                return alert('Por favor, insira valores inteiros para dia, mês e ano.');
+            }
+            if (dia <= 0) {
+                return alert('O dia deve ser maior que 0');
+            } else if (dia > 31) {
+                return alert('O dia deve ser menor ou igual a 31');
+            }
+            if (mes <= 0 || mes > 12) {
+                return alert('O mês deve ser um valor entre 1 e 12');
+            }
+            if (ano <= 0) {
+                return alert('O ano deve ser um valor positivo');
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

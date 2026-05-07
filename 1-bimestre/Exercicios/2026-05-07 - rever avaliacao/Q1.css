@@ -1,0 +1,35 @@
+* { /* seleciona todos os elementos */
+    box-sizing: border-box; /* inclui borda e padding no tamanho total */
+    margin: 0; /* remove margens padrão */
+    padding: 0; /* remove espaçamentos internos padrão */
+}
+
+body { /* estiliza o corpo da página */
+    font-family: Arial, sans-serif; /* define a fonte do texto */
+    margin: 20px; /* adiciona margem externa na página */
+    background-color: aqua; /* define cor de fundo azul claro */
+}
+
+table { /* estiliza a tabela */
+    width: 50%; /* define largura de 50% da tela */
+    background-color: white; /* define fundo branco */
+    margin: 0 auto; /* centraliza a tabela */
+}
+
+th, /* estiliza cabeçalhos */
+td { /* estiliza células */
+    border: 1px solid black; /* adiciona borda preta */
+    padding: 12px; /* adiciona espaço interno */
+    text-align: center; /* centraliza o texto */
+}
+
+th { /* estiliza apenas cabeçalhos */
+    background-color: black; /* define fundo preto */
+    color: white; /* define texto branco */
+    font-weight: bold; /* deixa texto em negrito */
+}
+
+h1 { /* estiliza o título principal */
+    text-align: center; /* centraliza o texto */
+    color: black; /* define cor preta */
+}
