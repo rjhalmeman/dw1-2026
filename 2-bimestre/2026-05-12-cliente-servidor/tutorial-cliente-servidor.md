@@ -184,6 +184,8 @@ Os principais métodos
 | **DELETE** | remover / excluir | Apaga um recurso | "Delete este usuário" |
 
 
+Relembrando... (conceitos de GET e comparando com POST)
+
 | Característica | GET | POST |
 | :--- | :--- | :--- |
 | **Onde os dados vão** | Na URL (query string) | No corpo da requisição (body) |
@@ -191,11 +193,14 @@ Os principais métodos
 | **Tamanho** | Limitado (~2048 caracteres) | Ilimitado |
 | **Tipo de dado** | Apenas texto (parâmetros simples) | Qualquer tipo (arquivos, JSON, etc.) |
 
+``` 
 Imagine que você quer enviar um bilhete para alguém:
 
 GET = Você escreve o bilhete na testa e chega na pessoa (todo mundo vê)
 
 POST = Você coloca o bilhete dentro de um envelope lacrado e entrega
+
+``` 
 
 ## headers
 
@@ -261,23 +266,24 @@ const port = 3000;
 
 # 🧩 Middleware
 
-## O que é middleware?
+### O que é middleware?
 
-São funções executadas antes da rota principal.
+Tradução literal: "intermediário" ou "camada do meio"
 
----
+Definição prática: Uma função que intercepta a requisição antes dela chegar no destino final (a rota principal), podendo:
 
-## Middleware JSON
+Inspecionar os dados
 
-```javascript
-app.use(express.json());
-```
+Modificar algo
 
-Permite que o servidor entenda JSON enviado pelo cliente.
+Tomar decisões (permitir, negar, redirecionar)
 
-Analogia para entender o que é um "middleware"
+Encerrar a requisição
 
-1. A Analogia do Segurança da Balada (Filtro e Verificação)
+### Analogia para entender o que é um "middleware"
+
+1. O segurança da Balada (Filtro e Verificação)
+2. 
 Imagine que você quer entrar em uma festa. Antes de chegar à pista de dança (que é o seu objetivo final/rota), você precisa passar por várias etapas:
 
 Middleware de Segurança: O segurança checa se você está com o ingresso (Autenticação).
@@ -292,11 +298,25 @@ Se algo estiver errado: O segurança te barra ali mesmo e você nem chega a ver 
 
 ---
 
+## No projeto, temos o middleware JSON
+
+```javascript
+app.use(express.json());
+```
+
+Permite que o servidor entenda JSON enviado pelo cliente.
+
+
+
+---
+
 # 🌍 CORS
 
 ## Problema
 
 O navegador bloqueia comunicações entre portas diferentes.
+
+Navegadores implementam uma regra chamada **"Mesma Origem" (Same-Origin Policy)**:
 
 ---
 
@@ -311,6 +331,43 @@ res.header('Access-Control-Allow-Origin', '*');
 Isso libera acesso para qualquer origem.
 
 ---
+
+# O que é CORS?
+
+**Sigla:** Cross-Origin Resource Sharing (Compartilhamento de Recursos entre Origens Diferentes)
+
+**Definição prática:** É um **mecanismo de segurança** implementado pelos navegadores que **restringe** requisições feitas por um site (origem) para **outro site diferente** (origem diferente).
+
+---
+
+## Analogias do CORS
+
+### 1. A analogia do "porteiro desconfiado"
+
+Imagine que a internet é um **grande condomínio** com vários blocos de apartamentos:
+
+```
+Bloco A (seusite.com)  →  Sua aplicação mora aqui
+Bloco B (api.outrosite.com) → A API que você quer acessar
+```
+
+**Sem CORS (o "porteiro" ausente):**
+```
+Você (site A) → Tenta entrar no Bloco B sem permissão
+Bloco B → "Claro, entra aí!" 🤝
+PROBLEMA: QUALQUER site malicioso pode roubar dados do Bloco B!
+```
+
+**Com CORS (o "porteiro" presente):**
+```
+Você (site A) → "Quero entrar no Bloco B"
+Porteiro do Bloco B → "Deixa eu ver... você NÃO está na lista de permissões"
+Você → "Mas eu só quero uns dados..."
+Porteiro → "BLOQUEADO! 🚫 Volta pro seu bloco!"
+
+```
+** na pasta tem uma explicação mais completa de CORS.
+
 
 # 📬 Rota do servidor
 
