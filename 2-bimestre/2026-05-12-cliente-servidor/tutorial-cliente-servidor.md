@@ -452,21 +452,7 @@ Esse modelo é utilizado em praticamente todos os sistemas modernos:
 
 ---
 
-# 🚀 Próximos Passos
 
-Depois desse exemplo, é possível aprender:
-
-- banco de dados
-- login
-- cadastro
-- autenticação
-- cookies
-- sessões
-- APIs REST
-- React
-- PostgreSQL
-
----
 
 # 📌 Conclusão
 
