@@ -34,7 +34,7 @@ Imagine que você vai a um **restaurante**:
 
 VOCÊ (navegador) RESTAURANTE (servidor)
 
- "Quero fazer um PEDIDO" (REQUEST) 
+ "Esse é meu PEDIDO" (REQUEST) 
 
  "Aqui está sua COMIDA" (RESPONSE)
 
