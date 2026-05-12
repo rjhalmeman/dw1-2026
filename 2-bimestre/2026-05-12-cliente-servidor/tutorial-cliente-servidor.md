@@ -1,4 +1,6 @@
-# 📋 Tutorial Simples de Cliente/Servidor com HTML, JavaScript e Node.js
+# 📋 Cliente/Servidor com HTML, JavaScript e Node.js
+
+
 
 ## 🎯 Objetivo
 
@@ -17,6 +19,27 @@ O exemplo funciona como uma conversa:
 - O **servidor** devolve uma resposta.
 
 ---
+
+# O que é o Protocolo HTTP?
+
+## Definição simples
+
+**HTTP** = **H**yper**T**ext **T**ransfer **P**rotocol (Protocolo de Transferência de Hipertexto)
+
+**Tradução para iniciante:** É a **língua** que navegadores e servidores usam para **conversar** na internet.
+
+## Analogia do "Restaurante"
+
+Imagine que você vai a um **restaurante**:
+
+VOCÊ (navegador) RESTAURANTE (servidor)
+│ │
+│ "Quero fazer um PEDIDO" (REQUEST) │
+├───────────────────────────────────>│
+│ │
+│ "Aqui está sua COMIDA" (RESPONSE)
+│<───────────────────────────────────┤
+│ │
 
 # 🧠 O que é Cliente e Servidor?
 
