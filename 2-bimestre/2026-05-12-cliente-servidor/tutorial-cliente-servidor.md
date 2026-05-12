@@ -171,6 +171,7 @@ Define que estamos enviando dados.
 ---
 
 O que são métodos HTTP?
+
 São como verbos de ação que dizem ao servidor: "Ei, eu quero fazer isso com seus dados!"
 
 Os principais métodos
@@ -181,6 +182,14 @@ Os principais métodos
 | **PUT** | substituir / atualizar | Substitui um recurso inteiro | "Atualize tudo deste usuário" |
 | **PATCH** | modificar / ajustar | Altera apenas parte do recurso | "Só mude o e-mail" |
 | **DELETE** | remover / excluir | Apaga um recurso | "Delete este usuário" |
+
+
+| Característica | GET | POST |
+| :--- | :--- | :--- |
+| **Onde os dados vão** | Na URL (query string) | No corpo da requisição (body) |
+| **É visível?** | ✅ Sim, na barra de endereço | ❌ Não, fica oculto |
+| **Tamanho** | Limitado (~2048 caracteres) | Ilimitado |
+| **Tipo de dado** | Apenas texto (parâmetros simples) | Qualquer tipo (arquivos, JSON, etc.) |
 
 Imagine que você quer enviar um bilhete para alguém:
 
