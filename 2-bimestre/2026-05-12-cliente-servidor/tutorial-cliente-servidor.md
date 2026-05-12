@@ -262,6 +262,18 @@ const app = express();
 const port = 3000;
 ```
 
+//Analogia do Restaurante para express
+
+express     = a COZINHA (a biblioteca/funcionalidade)
+
+app         = o GARÇOM (quem recebe os pedidos)
+
+app.get()   = "Quando pedirem um prato (GET), traga a comida"
+
+app.post()  = "Quando fizerem um pedido (POST), anote e envie pra cozinha"
+
+app.listen(3000) = "Abra o restaurante na porta 3000"
+
 ---
 
 # 🧩 Middleware
@@ -282,8 +294,8 @@ Encerrar a requisição
 
 ### Analogia para entender o que é um "middleware"
 
-1. O segurança da Balada (Filtro e Verificação)
-2. 
+# O segurança da Balada (Filtro e Verificação)
+
 Imagine que você quer entrar em uma festa. Antes de chegar à pista de dança (que é o seu objetivo final/rota), você precisa passar por várias etapas:
 
 Middleware de Segurança: O segurança checa se você está com o ingresso (Autenticação).
@@ -436,6 +448,41 @@ function obterIP()
 
 Ela procura o IP da máquina na rede.
 
+Arrow functions do JS
+
+const os = require('os');// import, vai precisar disso na função
+
+
+function obterIP() {
+    const interfaces = os.networkInterfaces()
+    for (let nomeInterface in interfaces) {
+        for (let info of interfaces[nomeInterface]) {
+            if (info.family === 'IPv4' && !info.internal) {
+                return info.address
+            }
+        }
+    }
+    return 'localhost'
+}
+
+const obterIP = () => {
+    const interfaces = os.networkInterfaces();
+    for (let nomeInterface in interfaces) {
+        for (let info of interfaces[nomeInterface]) {
+            if (info.family === 'IPv4' && !info.internal) {
+                return info.address;
+            }
+        }
+    }
+    return 'localhost';
+};
+
+// Usando a função
+const ipDoServidor = obterIP();
+console.log(`✅ Servidor rodando em: http://${ipDoServidor}:3000`);
+
+
+
 ---
 
 # 📡 Exemplo de IP
@@ -542,11 +589,7 @@ Método para envio de dados.
 
 Liberação de acesso entre origens diferentes.
 
----
 
-## API
-
-Conjunto de rotas e funcionalidades do servidor.
 
 ---
 

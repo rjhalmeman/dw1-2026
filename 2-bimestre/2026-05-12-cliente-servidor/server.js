@@ -24,17 +24,15 @@ app.post('/enviar-mensagem', (req, res) => {
     res.send(resposta);
 });
 
-function obterIP() {
-    const interfaces = os.networkInterfaces()
+const obterIP = () => {
+    const interfaces = os.networkInterfaces();
     for (let nomeInterface in interfaces) {
         for (let info of interfaces[nomeInterface]) {
-            if (info.family === 'IPv4' && !info.internal) {
-                return info.address
-            }
+            if (info.family === 'IPv4' && !info.internal) return info.address;
         }
     }
-    return 'localhost'
-}
+    return 'localhost';
+};
 
 const ip = obterIP()
 
