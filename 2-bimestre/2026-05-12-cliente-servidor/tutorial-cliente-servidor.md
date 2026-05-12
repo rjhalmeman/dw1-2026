@@ -2,7 +2,7 @@
 
 ## 🎯 Objetivo
 
-Neste tutorial, vamos entender de forma simples como funciona a comunicação entre **cliente** e **servidor** utilizando:
+Como funciona a comunicação entre **cliente** e **servidor** utilizando:
 
 - **HTML**
 - **JavaScript**
@@ -22,15 +22,11 @@ O exemplo funciona como uma conversa:
 
 ## 🖥️ Cliente
 
-O **cliente** é quem faz a requisição.
+O **cliente** é quem faz a requisição. Normalmente o computador que solicita dados ou informações a outro computador (servidor).
 
-Exemplos:
+As solicitações podem ser feitas via navegador, celular, aplicativo web, etc.
 
-- navegador
-- celular
-- aplicativo
-
-No nosso projeto, o cliente será a página HTML.
+Neste projeto, o cliente será a página HTML que envia uma mensagem para o servidor, espera e ao receber a resposta ela mostra.
 
 ---
 
@@ -41,11 +37,11 @@ O **servidor** é quem recebe pedidos e responde.
 Ele pode:
 
 - salvar dados
-- consultar banco
+- consultar banco de dados
 - processar informações
 - devolver respostas
 
-No nosso projeto, o servidor será um programa Node.js usando Express.
+Neste projeto, o servidor será um programa Node.js usando Express.
 
 ---
 
@@ -74,7 +70,7 @@ Cliente mostra resposta
 ## Arquivo do Cliente
 
 ```text
-index.html
+cliente.html
 ```
 
 Responsável pela interface.
@@ -93,7 +89,7 @@ Responsável por receber e responder mensagens.
 
 # 🖥️ Parte do Cliente (HTML)
 
-## Estrutura da página
+## Estrutura da página de exemplo:
 
 O cliente possui:
 
@@ -123,6 +119,8 @@ O cliente usa:
 
 ```javascript
 fetch()
+
+**A palavra fetch() em inglês tem o sentido de "buscar", "pegar", "trazer" ou "recuperar".**
 ```
 
 para conversar com o servidor.
@@ -141,6 +139,27 @@ const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-mensage
 });
 ```
 
+JSON = JavaScript Object Notation (Notação de Objeto JavaScript)
+
+Stringify = transformar em string / converter para texto
+
+JSON.stringify() = "converter para string no formato JSON" ou "serializar como JSON"
+
+O que ele faz?
+Pega um objeto ou valor JavaScript (como arrays, números, booleanos, etc.) e transforma em uma string JSON válida.
+
+Exemplo (Básico)
+javascript
+const pessoa = {
+  nome: "João",
+  idade: 30,
+  cidade: "São Paulo"
+};
+
+const textoJSON = JSON.stringify(pessoa);
+console.log(textoJSON);
+// Resultado: '{"nome":"João","idade":30,"cidade":"São Paulo"}'
+
 ---
 
 # 🔍 Explicando cada parte
@@ -150,6 +169,24 @@ const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-mensage
 Define que estamos enviando dados.
 
 ---
+
+O que são métodos HTTP?
+São como verbos de ação que dizem ao servidor: "Ei, eu quero fazer isso com seus dados!"
+
+Os principais métodos
+| Método | Tradução | O que faz | Analogia |
+| :--- | :--- | :--- | :--- |
+| **GET** | obter / buscar | Busca dados sem alterar nada | "Me mostre os dados" |
+| **POST** | enviar / criar | Cria um novo recurso | "Cadastre um novo usuário" |
+| **PUT** | substituir / atualizar | Substitui um recurso inteiro | "Atualize tudo deste usuário" |
+| **PATCH** | modificar / ajustar | Altera apenas parte do recurso | "Só mude o e-mail" |
+| **DELETE** | remover / excluir | Apaga um recurso | "Delete este usuário" |
+
+Imagine que você quer enviar um bilhete para alguém:
+
+GET = Você escreve o bilhete na testa e chega na pessoa (todo mundo vê)
+
+POST = Você coloca o bilhete dentro de um envelope lacrado e entrega
 
 ## headers
 

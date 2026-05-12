@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4cb; Tutorial Simples de Cliente&sol;Servidor com HTML&comma; JavaScript e Node&period;js</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-tutorial-simples-de-clienteservidor-com-html-javascript-e-nodejs">📋 Tutorial Simples de Cliente/Servidor com HTML, JavaScript e Node.js</h1>
+<h2 id="-objetivo">🎯 Objetivo</h2>
+<p>Como funciona a comunicação entre <strong>cliente</strong> e <strong>servidor</strong> utilizando:</p>
+<ul>
+<li><strong>HTML</strong></li>
+<li><strong>JavaScript</strong></li>
+<li><strong>Node.js</strong></li>
+<li><strong>Express</strong></li>
+</ul>
+<p>O exemplo funciona como uma conversa:</p>
+<ul>
+<li>O <strong>cliente</strong> envia uma mensagem.</li>
+<li>O <strong>servidor</strong> recebe.</li>
+<li>O <strong>servidor</strong> processa a mensagem.</li>
+<li>O <strong>servidor</strong> devolve uma resposta.</li>
+</ul>
+<hr>
+<h1 id="-o-que-é-cliente-e-servidor">🧠 O que é Cliente e Servidor?</h1>
+<h2 id="️-cliente">🖥️ Cliente</h2>
+<p>O <strong>cliente</strong> é quem faz a requisição. Normalmente o computador que solicita dados ou informações a outro computador (servidor).</p>
+<p>As solicitações podem ser feitas via navegador, celular, aplicativo web, etc.</p>
+<p>Neste projeto, o cliente será a página HTML que envia uma mensagem para o servidor, espera e ao receber a resposta ela mostra.</p>
+<hr>
+<h2 id="-servidor">🖧 Servidor</h2>
+<p>O <strong>servidor</strong> é quem recebe pedidos e responde.</p>
+<p>Ele pode:</p>
+<ul>
+<li>salvar dados</li>
+<li>consultar banco de dados</li>
+<li>processar informações</li>
+<li>devolver respostas</li>
+</ul>
+<p>Neste projeto, o servidor será um programa Node.js usando Express.</p>
+<hr>
+<h1 id="-funcionamento-da-comunicação">🔄 Funcionamento da Comunicação</h1>
+<h2 id="fluxo-da-comunicação">Fluxo da comunicação</h2>
+<pre><code class="language-text">Cliente (HTML)
+       ↓
+Envia mensagem usando fetch()
+       ↓
+Servidor Node.js recebe
+       ↓
+Servidor processa
+       ↓
+Servidor responde
+       ↓
+Cliente mostra resposta
+</code></pre>
+<hr>
+<h1 id="-arquivos-do-projeto">📁 Arquivos do Projeto</h1>
+<h2 id="arquivo-do-cliente">Arquivo do Cliente</h2>
+<pre><code class="language-text">cliente.html
+</code></pre>
+<p>Responsável pela interface.</p>
+<hr>
+<h2 id="arquivo-do-servidor">Arquivo do Servidor</h2>
+<pre><code class="language-text">server.js
+</code></pre>
+<p>Responsável por receber e responder mensagens.</p>
+<hr>
+<h1 id="️-parte-do-cliente-html">🖥️ Parte do Cliente (HTML)</h1>
+<h2 id="estrutura-da-página-de-exemplo">Estrutura da página de exemplo:</h2>
+<p>O cliente possui:</p>
+<ul>
+<li>campo para endereço do servidor</li>
+<li>campo para porta</li>
+<li>campo para mensagem</li>
+<li>botão enviar</li>
+</ul>
+<hr>
+<h1 id="-código-principal-do-cliente">🧾 Código principal do Cliente</h1>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputMensagem&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;enviarMensagem()&quot;</span>&gt;</span>Enviar<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>Quando o botão é clicado, a função <code>enviarMensagem()</code> é executada.</p>
+<hr>
+<h1 id="-enviando-dados-para-o-servidor">🚀 Enviando dados para o servidor</h1>
+<h2 id="função-fetch">Função fetch()</h2>
+<p>O cliente usa:</p>
+<pre><code class="language-javascript"><span class="hljs-title function_">fetch</span>()
+
+**A palavra <span class="hljs-title function_">fetch</span>() em inglês tem o sentido de <span class="hljs-string">&quot;buscar&quot;</span>, <span class="hljs-string">&quot;pegar&quot;</span>, <span class="hljs-string">&quot;trazer&quot;</span> ou <span class="hljs-string">&quot;recuperar&quot;</span>.**
+</code></pre>
+<p>para conversar com o servidor.</p>
+<hr>
+<h2 id="código-principal">Código principal</h2>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">`http://<span class="hljs-subst">${enderecoServidor}</span>:<span class="hljs-subst">${porta}</span>/enviar-mensagem`</span>, {
+    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+    <span class="hljs-attr">headers</span>: {
+        <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    },
+    <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ mensagem })
+});
+</code></pre>
+<p>JSON = JavaScript Object Notation (Notação de Objeto JavaScript)</p>
+<p>Stringify = transformar em string / converter para texto</p>
+<p>JSON.stringify() = &quot;converter para string no formato JSON&quot; ou &quot;serializar como JSON&quot;</p>
+<p>O que ele faz?
+Pega um objeto ou valor JavaScript (como arrays, números, booleanos, etc.) e transforma em uma string JSON válida.</p>
+<p>Exemplo (Básico)
+javascript
+const pessoa = {
+nome: &quot;João&quot;,
+idade: 30,
+cidade: &quot;São Paulo&quot;
+};</p>
+<p>const textoJSON = JSON.stringify(pessoa);
+console.log(textoJSON);
+// Resultado: '{&quot;nome&quot;:&quot;João&quot;,&quot;idade&quot;:30,&quot;cidade&quot;:&quot;São Paulo&quot;}'</p>
+<hr>
+<h1 id="-explicando-cada-parte">🔍 Explicando cada parte</h1>
+<h2 id="method-post">method: 'POST'</h2>
+<p>Define que estamos enviando dados.</p>
+<hr>
+<p>O que são métodos HTTP?
+São como verbos de ação que dizem ao servidor: &quot;Ei, eu quero fazer isso com seus dados!&quot;</p>
+<p>Os principais métodos</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Método</th>
+<th style="text-align:left">Tradução</th>
+<th style="text-align:left">O que faz</th>
+<th style="text-align:left">Analogia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>GET</strong></td>
+<td style="text-align:left">obter / buscar</td>
+<td style="text-align:left">Busca dados sem alterar nada</td>
+<td style="text-align:left">&quot;Me mostre os dados&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>POST</strong></td>
+<td style="text-align:left">enviar / criar</td>
+<td style="text-align:left">Cria um novo recurso</td>
+<td style="text-align:left">&quot;Cadastre um novo usuário&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PUT</strong></td>
+<td style="text-align:left">substituir / atualizar</td>
+<td style="text-align:left">Substitui um recurso inteiro</td>
+<td style="text-align:left">&quot;Atualize tudo deste usuário&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PATCH</strong></td>
+<td style="text-align:left">modificar / ajustar</td>
+<td style="text-align:left">Altera apenas parte do recurso</td>
+<td style="text-align:left">&quot;Só mude o e-mail&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>DELETE</strong></td>
+<td style="text-align:left">remover / excluir</td>
+<td style="text-align:left">Apaga um recurso</td>
+<td style="text-align:left">&quot;Delete este usuário&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>Imagine que você quer enviar um bilhete para alguém:</p>
+<p>GET = Você escreve o bilhete na testa e chega na pessoa (todo mundo vê)</p>
+<p>POST = Você coloca o bilhete dentro de um envelope lacrado e entrega</p>
+<h2 id="headers">headers</h2>
+<p>Informa o formato dos dados.</p>
+<pre><code class="language-javascript"><span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>
+</code></pre>
+<hr>
+<h2 id="jsonstringify">JSON.stringify()</h2>
+<p>Transforma objeto JavaScript em JSON.</p>
+<p>Exemplo:</p>
+<pre><code class="language-javascript">{ <span class="hljs-attr">mensagem</span>: <span class="hljs-string">&quot;Olá&quot;</span> }
+</code></pre>
+<p>vira:</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;mensagem&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Olá&quot;</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<hr>
+<h1 id="-o-que-é-json">📦 O que é JSON?</h1>
+<h2 id="json-significa">JSON significa:</h2>
+<pre><code class="language-text">JavaScript Object Notation
+</code></pre>
+<p>É um formato muito usado para troca de dados entre cliente e servidor.</p>
+<hr>
+<h1 id="-parte-do-servidor">🖧 Parte do Servidor</h1>
+<h2 id="importando-bibliotecas">Importando bibliotecas</h2>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);
+<span class="hljs-keyword">const</span> os = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;os&#x27;</span>);
+</code></pre>
+<hr>
+<h1 id="️-criando-o-servidor">⚙️ Criando o servidor</h1>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>();
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>;
+</code></pre>
+<hr>
+<h1 id="-middleware">🧩 Middleware</h1>
+<h2 id="o-que-é-middleware">O que é middleware?</h2>
+<p>São funções executadas antes da rota principal.</p>
+<hr>
+<h2 id="middleware-json">Middleware JSON</h2>
+<pre><code class="language-javascript">app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">json</span>());
+</code></pre>
+<p>Permite que o servidor entenda JSON enviado pelo cliente.</p>
+<p>Analogia para entender o que é um &quot;middleware&quot;</p>
+<ol>
+<li>A Analogia do Segurança da Balada (Filtro e Verificação)
+Imagine que você quer entrar em uma festa. Antes de chegar à pista de dança (que é o seu objetivo final/rota), você precisa passar por várias etapas:</li>
+</ol>
+<p>Middleware de Segurança: O segurança checa se você está com o ingresso (Autenticação).</p>
+<p>Middleware de Idade: Outro funcionário checa seu RG (Autorização).</p>
+<p>Middleware de Revista: Um terceiro checa se você está carregando objetos proibidos (Validação de dados).</p>
+<p>Se tudo estiver certo: Eles te dão um &quot;empurrãozinho&quot; para a próxima etapa (o famoso comando next()).</p>
+<p>Se algo estiver errado: O segurança te barra ali mesmo e você nem chega a ver a pista de dança (o servidor envia um erro antes de processar a lógica principal).</p>
+<hr>
+<h1 id="-cors">🌍 CORS</h1>
+<h2 id="problema">Problema</h2>
+<p>O navegador bloqueia comunicações entre portas diferentes.</p>
+<hr>
+<h2 id="solução">Solução</h2>
+<p>Usar CORS.</p>
+<pre><code class="language-javascript">res.<span class="hljs-title function_">header</span>(<span class="hljs-string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="hljs-string">&#x27;*&#x27;</span>);
+</code></pre>
+<p>Isso libera acesso para qualquer origem.</p>
+<hr>
+<h1 id="-rota-do-servidor">📬 Rota do servidor</h1>
+<h2 id="rota-post">Rota POST</h2>
+<pre><code class="language-javascript">app.<span class="hljs-title function_">post</span>(<span class="hljs-string">&#x27;/enviar-mensagem&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+</code></pre>
+<p>Significa:</p>
+<ul>
+<li>se alguém enviar um POST para <code>/enviar-mensagem</code></li>
+<li>execute esta função</li>
+</ul>
+<hr>
+<h1 id="-recebendo-dados">📥 Recebendo dados</h1>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> mensagem = req.<span class="hljs-property">body</span>.<span class="hljs-property">mensagem</span>;
+</code></pre>
+<p>O servidor pega a mensagem enviada pelo cliente.</p>
+<hr>
+<h1 id="-processando-dados">🔠 Processando dados</h1>
+<pre><code class="language-javascript">mensagem = mensagem.<span class="hljs-title function_">toUpperCase</span>();
+</code></pre>
+<p>Transforma o texto em maiúsculo.</p>
+<hr>
+<h1 id="-respondendo-ao-cliente">📤 Respondendo ao cliente</h1>
+<pre><code class="language-javascript">res.<span class="hljs-title function_">send</span>(resposta);
+</code></pre>
+<p>O servidor envia uma resposta.</p>
+<hr>
+<h1 id="️-exibindo-resposta-no-cliente">🖥️ Exibindo resposta no cliente</h1>
+<h2 id="código">Código</h2>
+<pre><code class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;respostaDoServidor&quot;</span>).<span class="hljs-property">innerHTML</span> = data;
+</code></pre>
+<p>Mostra a resposta recebida.</p>
+<hr>
+<h1 id="-descobrindo-o-ip-da-máquina">🌐 Descobrindo o IP da máquina</h1>
+<p>O servidor possui uma função:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">obterIP</span>(<span class="hljs-params"></span>)
+</code></pre>
+<p>Ela procura o IP da máquina na rede.</p>
+<hr>
+<h1 id="-exemplo-de-ip">📡 Exemplo de IP</h1>
+<pre><code class="language-text">192.168.0.15
+</code></pre>
+<p>Assim outros computadores da rede podem acessar o servidor.</p>
+<hr>
+<h1 id="️-iniciando-o-servidor">▶️ Iniciando o servidor</h1>
+<pre><code class="language-javascript">app.<span class="hljs-title function_">listen</span>(port, <span class="hljs-string">&#x27;0.0.0.0&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Servidor rodando em http://<span class="hljs-subst">${ip}</span>:<span class="hljs-subst">${port}</span>`</span>)
+})
+</code></pre>
+<hr>
+<h1 id="-explicação">🔎 Explicação</h1>
+<h2 id="applisten">app.listen()</h2>
+<p>Faz o servidor começar a funcionar.</p>
+<hr>
+<h2 id="0000">0.0.0.0</h2>
+<p>Permite acesso externo.</p>
+<hr>
+<h1 id="-exemplo-de-funcionamento">🧪 Exemplo de Funcionamento</h1>
+<h2 id="cliente-envia">Cliente envia:</h2>
+<pre><code class="language-text">Olá servidor
+</code></pre>
+<hr>
+<h2 id="servidor-recebe">Servidor recebe:</h2>
+<pre><code class="language-text">Olá servidor
+</code></pre>
+<hr>
+<h2 id="servidor-transforma">Servidor transforma:</h2>
+<pre><code class="language-text">OLÁ SERVIDOR
+</code></pre>
+<hr>
+<h2 id="servidor-responde">Servidor responde:</h2>
+<pre><code class="language-text">Eu sou o servidor, você mandou a mensagem &quot;OLÁ SERVIDOR&quot;
+</code></pre>
+<hr>
+<h1 id="-conceitos-aprendidos">📚 Conceitos Aprendidos</h1>
+<h2 id="cliente">Cliente</h2>
+<p>Quem faz pedidos.</p>
+<hr>
+<h2 id="servidor">Servidor</h2>
+<p>Quem responde pedidos.</p>
+<hr>
+<h2 id="http">HTTP</h2>
+<p>Protocolo de comunicação.</p>
+<hr>
+<h2 id="json">JSON</h2>
+<p>Formato de troca de dados.</p>
+<hr>
+<h2 id="post">POST</h2>
+<p>Método para envio de dados.</p>
+<hr>
+<h2 id="cors">CORS</h2>
+<p>Liberação de acesso entre origens diferentes.</p>
+<hr>
+<h2 id="api">API</h2>
+<p>Conjunto de rotas e funcionalidades do servidor.</p>
+<hr>
+<h1 id="-resumo-final">🧠 Resumo Final</h1>
+<p>Neste projeto:</p>
+<ul>
+<li>o <strong>cliente</strong> envia uma mensagem</li>
+<li>o <strong>servidor</strong> recebe</li>
+<li>o <strong>servidor</strong> processa</li>
+<li>o <strong>servidor</strong> devolve uma resposta</li>
+<li>o <strong>cliente</strong> mostra o resultado</li>
+</ul>
+<p>Esse modelo é utilizado em praticamente todos os sistemas modernos:</p>
+<ul>
+<li>redes sociais</li>
+<li>bancos</li>
+<li>lojas online</li>
+<li>aplicativos</li>
+<li>jogos online</li>
+</ul>
+<hr>
+<h1 id="-conclusão">📌 Conclusão</h1>
+<p>O modelo <strong>cliente/servidor</strong> é a base do desenvolvimento web moderno.</p>
+<p>Entender esse funcionamento ajuda a compreender como:</p>
+<ul>
+<li>sites</li>
+<li>aplicativos</li>
+<li>sistemas online</li>
+</ul>
+<p>trocam informações pela internet.</p>
+<p>Com poucos arquivos e pouco código já foi possível criar uma comunicação real entre cliente e servidor.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
