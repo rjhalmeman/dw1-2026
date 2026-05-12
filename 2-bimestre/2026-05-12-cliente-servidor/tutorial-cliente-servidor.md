@@ -33,13 +33,11 @@ O exemplo funciona como uma conversa:
 Imagine que você vai a um **restaurante**:
 
 VOCÊ (navegador) RESTAURANTE (servidor)
-│ │
-│ "Quero fazer um PEDIDO" (REQUEST) │
-├───────────────────────────────────>│
-│ │
-│ "Aqui está sua COMIDA" (RESPONSE)
-│<───────────────────────────────────┤
-│ │
+
+ "Quero fazer um PEDIDO" (REQUEST) 
+
+ "Aqui está sua COMIDA" (RESPONSE)
+
 
 # 🧠 O que é Cliente e Servidor?
 
