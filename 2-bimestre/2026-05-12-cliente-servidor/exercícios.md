@@ -7,17 +7,7 @@ Este guia consolida o funcionamento da arquitetura **Cliente/Servidor** utilizan
 ## 🎯 Objetivo
 Entender como dados trafegam da interface do usuário (Cliente) para a lógica de processamento (Servidor) e retornam como resposta.
 
----
 
-## 🧠 O que é Cliente e Servidor?
-
-### 🖥️ Cliente (Front-end)
-É a interface que interage com o usuário. No nosso caso, uma página **HTML** com **JavaScript**. Ele é responsável por **fazer requisições**.
-
-### 🖧 Servidor (Back-end)
-É onde a lógica de negócio reside. No nosso caso, um script **Node.js** com **Express**. Ele é responsável por **processar pedidos e devolver respostas**.
-
----
 
 ## 🔄 Funcionamento da Comunicação
 
