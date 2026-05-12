@@ -26,7 +26,6 @@ app.post('/enviar-mensagem', (req, res) => {
 
 function obterIP() {
     const interfaces = os.networkInterfaces()
-
     for (let nomeInterface in interfaces) {
         for (let info of interfaces[nomeInterface]) {
             if (info.family === 'IPv4' && !info.internal) {
@@ -34,7 +33,6 @@ function obterIP() {
             }
         }
     }
-
     return 'localhost'
 }
 

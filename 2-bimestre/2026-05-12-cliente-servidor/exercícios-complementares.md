@@ -33,31 +33,25 @@ Entender como dados trafegam da interface do usuário (Cliente) para a lógica d
 
 Aplique os conceitos acima para resolver as situações abaixo. Em todos os casos, o servidor deve processar a lógica e o cliente deve exibir o resultado final.
 
-### 1. 📐 Teorema de Pitágoras Digital
-**Objetivo:** Praticar cálculos matemáticos no servidor.
-* **O Cliente:** Envia dois números (cateto A e cateto B).
-* **O Servidor:** Recebe os catetos e aplica a fórmula $c = \sqrt{a^2 + b^2}$.
-* **O Retorno:** O servidor deve responder: *"A hipotenusa para os catetos digitados é: [resultado]"*.
-
-### 2. 🍽️ Garçom e Cozinha (O Pedido)
+### 1. 🍽️ Garçom e Cozinha (O Pedido)
 **Objetivo:** Simular o fluxo de trabalho de um serviço.
 * **O Cliente:** Envia o nome de um prato (ex: "Lasanha") e o número da mesa.
 * **O Servidor:** Recebe o pedido e simula um status.
 * **O Retorno:** O servidor deve responder: *"O pedido [Prato] da mesa [X] foi recebido pela cozinha e está sendo preparado!"*.
 
-### 3. 🔧 Oficina e Estoque de Peças
+### 2. 🔧 Oficina e Estoque de Peças
 **Objetivo:** Trabalhar com validação de dados simples.
 * **O Cliente:** Envia o nome de uma peça de carro.
 * **O Servidor:** Possui uma lista interna de peças (ex: `["Amortecedor", "Filtro de Óleo", "Pneu"]`).
 * **O Retorno:** Se a peça enviada estiver na lista, responde *"Peça em estoque"*. Se não estiver, responde *"Peça não encontrada no sistema"*.
 
-### 4. 🍎 Aluno e Professor (Feedback de Nota)
+### 3. 🍎 Aluno e Professor (Feedback de Nota)
 **Objetivo:** Praticar lógica condicional (`if/else`) no servidor.
 * **O Cliente:** Envia o nome do aluno e sua nota final (0 a 10).
 * **O Servidor:** Verifica se a nota é maior ou igual a 7.
 * **O Retorno:** Se aprovado, responde *"Parabéns [Nome]! Você foi aprovado!"*. Caso contrário, *"Olá [Nome], você precisará de recuperação"*.
 
-### 5. 🏫 Secretaria Escolar (Consulta por RA)
+### 4. 🏫 Secretaria Escolar (Consulta por RA)
 **Objetivo:** Simular busca em um "Banco de Dados" (Objeto/Array).
 * **O Cliente:** Envia o número do **RA** (Registro Acadêmico) e o tipo de documento desejado (Boletim, Histórico ou Declaração).
 * **O Servidor:** Possui uma lista de objetos como esta:
