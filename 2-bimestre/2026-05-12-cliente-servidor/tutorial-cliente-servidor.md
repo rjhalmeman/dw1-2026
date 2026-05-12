@@ -502,7 +502,78 @@ const obterIP = () => {
 const ipDoServidor = obterIP();
 console.log(`✅ Servidor rodando em: http://${ipDoServidor}:3000`);
 
+# Rotas no Express - Essencial
 
+## O que é uma rota?
+
+**Rota** = **endereço (URL)** que o servidor responde.
+
+```javascript
+app.get('/usuarios', (req, res) => {
+    res.send('Resposta para quem acessar /usuarios');
+});
+```
+
+## Os 5 métodos principais
+
+```javascript
+app.get('/rota', (req, res) => res.send('BUSCAR dados'));
+app.post('/rota', (req, res) => res.send('CRIAR dados'));
+app.put('/rota/:id', (req, res) => res.send('SUBSTITUIR tudo'));
+app.patch('/rota/:id', (req, res) => res.send('MODIFICAR parte'));
+app.delete('/rota/:id', (req, res) => res.send('DELETAR dados'));
+```
+
+## Os 3 tipos de parâmetros
+
+```javascript
+// 1. ROUTE PARAMS - Na URL (obrigatório)
+app.get('/usuario/:id', (req, res) => {
+    req.params.id; // /usuario/5 → "5"
+});
+
+// 2. QUERY PARAMS - ?chave=valor (opcional)
+app.get('/buscar', (req, res) => {
+    req.query.q; // /buscar?q=joao → "joao"
+});
+
+// 3. BODY - Dentro da requisição (POST/PUT/PATCH)
+app.post('/usuario', (req, res) => {
+    req.body.nome; // Precisa de app.use(express.json())
+});
+```
+
+## Exemplo mínimo funcional
+
+```javascript
+const express = require('express');
+const app = express();
+app.use(express.json()); // Para ler body JSON
+
+// Rota GET
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
+// Rota POST
+app.post('/dados', (req, res) => {
+    res.json({ recebido: req.body });
+});
+
+app.listen(3000);
+```
+
+## Regra de ouro
+
+**Ordem importa!** Rotas específicas **antes** de rotas genéricas:
+
+```javascript
+app.get('/usuarios/novo', ...);  // ✅ Específica primeiro
+app.get('/usuarios/:id', ...);   // ✅ Genérica depois
+```
+
+**Nunca esquecer:** Toda rota precisa de um `res.send()` ou `res.json()` para responder.
+```
 
 ---
 
