@@ -6,12 +6,18 @@
 
 
 Procedimento.
-Crie uma pasta para resolver o exercício, preferencialmente com a data no nome da pasta.
-Nessa pasta, copie os arquivos cliente.html e server.js
-Renomeie os arquivos para pitagorasCliente.html e pitagorasServer.html
-Modifique os arquivos para fazer que o cliente capture os dados dos catetos, envie ao servidor, espere a resposta e exiba a resposta. O servidor deve receber a requisição com os dados dos catetos, fazer a conta e devolver o resultado.
 
-Crie no github um repositório chamado dw1-2bimestre.
+Crie uma pasta para resolver o exercício, preferencialmente com a data no nome da pasta.
+
+Nessa pasta, copie os arquivos cliente.html e server.js
+
+Renomeie os arquivos para pitagorasCliente.html e pitagorasServer.html
+
+Modifique os arquivos para fazer que o cliente capture os dados dos catetos, envie ao servidor, 
+espere a resposta e exiba a resposta. O servidor deve receber a requisição com os dados dos catetos, 
+fazer a conta e devolver o resultado.
+
+Crie no github um repositório chamado dw1-2bimestre. Neste repositório estarão todos os exercícios, cada um em uma pasta, do bimestre.
 
 Suba seu projeto para o github.
 
