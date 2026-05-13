@@ -40,32 +40,6 @@ Você (Site A) → Tenta entrar
 Porteiro → "Ah, você está na lista! PODE ENTRAR. ✅"
 ```
 
-### 2. Analogia do "Carimbo de visto"
-
-```
-Seu site = Seu passaporte
-API que quer acessar = País estrangeiro
-
-Sem CORS = País com fronteira fechada (ninguém entra)
-Com CORS liberado = País concede visto (você pode entrar)
-CORS seletivo = País concede visto APENAS para certos países
-```
-
-### 3. Analogia do "Segurança de shows"
-
-```
-Backstage de um show (API)
-Fã (seu frontend)
-
-Segurança: "Só quem está na lista VIP pode entrar"
-Fã: "Quero entrar!"
-Segurança: "Seu nome está na lista? Não? BLOQUEADO!"
-
-(Adiciona nome na lista = Configura CORS no backend)
-Fã: "Agora meu nome está na lista!"
-Segurança: "Pode entrar! ✅"
-```
-
 ---
 
 ## O problema básico (Same-Origin Policy)
