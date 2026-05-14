@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 1 - Flexbox em Linha</title>
+    <style>
+        .container {
+            display: flex;
+            height: 300px;
+            background-color: #ddd;
+            
+            /* Eixo Principal é Horizontal. Aqui centraliza na HORIZONTAL */
+            justify-content: center; 
+            
+            /* Eixo Cruzado é Vertical. Aqui centraliza na VERTICAL */
+            align-items: center; 
+        }
+        .caixa {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 1: flex-direction padrão (row)</h2>
+    <div class="container">
+        <div class="caixa">Caixa 1</div>
+        <div class="caixa">Caixa 2</div>
+    </div>
+</body>
+</html>

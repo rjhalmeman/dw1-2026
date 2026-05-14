@@ -1,0 +1,38 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinhado ao topo com respiro */
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    /* Ajuste de 50% da tela */
+    width: 50%;
+    min-width: 400px;
+    /* Impede que fique pequeno demais em telas estreitas */
+    box-sizing: border-box;
+}
+
+/* Restante dos estilos anteriores (binários, colunas, etc) mantidos... */
+.binary-display {
+    background: black;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.2rem;
+    /* Aumentado para destaque */
+    letter-spacing: 8px;
+    text-align: center;
+}

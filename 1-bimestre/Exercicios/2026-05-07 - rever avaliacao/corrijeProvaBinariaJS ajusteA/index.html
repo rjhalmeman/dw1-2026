@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corretor de Somatória</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Corretor de Somatória - ignorando 16 e 32</h2>
+
+        <div class="row">
+            <div class="input-group">
+                <button onclick="qualProva('A')">Prova A</button>
+                <button onclick="qualProva('B')">Prova B</button><br><br>
+
+                <label>Valor da Questão:</label>
+                <input type="number" id="valorQuestao" value="2.0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Gabarito:</label>
+                <input type="number" id="gabarito" placeholder="Ex: 15">
+            </div>
+            <div class="input-group">
+                <label>Resposta:</label>
+                <input type="number" id="resposta" placeholder="Ex: 10">
+            </div>
+        </div>
+
+        <button onclick="corrigir()">Analisar Resposta</button>
+
+        <div id="resultado" class="hidden">
+            <div class="binary-display">
+                <div class="bin-row">
+                    <span>GABARITO:</span>
+                    <code id="bin-gabarito"></code>
+                </div>
+                <div class="bin-row">
+                    <span>RESPOSTA:</span>
+                    <code id="bin-resposta"></code>
+                </div>
+            </div>
+
+            <div class="comparison">
+                <div class="column">
+                    <p>Esperado:</p>
+                    <ul id="lista-gabarito"></ul>
+                </div>
+                <div class="column">
+                    <p>Marcado:</p>
+                    <ul id="lista-resposta"></ul>
+                </div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat-card">
+                    <span class="label">Nota Final</span>
+                    <span class="value" id="nota-final">0.00</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Aproveitamento</span>
+                    <span class="value" id="porcentagem">0%</span>
+                </div>
+            </div>
+            <p id="detalhe-calculo"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

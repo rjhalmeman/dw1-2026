@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 2 - Flexbox em Coluna</title>
+    <style>
+        .container {
+            display: flex;
+            background-color: #ddd;
+            height: 300px;
+            
+            /* A MÁGICA ACONTECE AQUI: O Eixo Principal vira VERTICAL */
+            flex-direction: column; 
+            
+            /* Como o Eixo Principal agora é vertical, isso centraliza na VERTICAL */
+            justify-content: center; 
+            
+            /* Como o Eixo Cruzado agora é horizontal, isso centraliza na HORIZONTAL */
+            align-items: center; 
+        }
+        .caixa {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 2: flex-direction: column</h2>
+    <div class="container">
+        <div class="caixa">Caixa 1</div>
+        <div class="caixa">Caixa 2</div>
+    </div>
+</body>
+</html>

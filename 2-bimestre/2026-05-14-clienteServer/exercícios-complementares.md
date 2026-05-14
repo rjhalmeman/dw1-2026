@@ -5,17 +5,20 @@ Este guia consolida o funcionamento da arquitetura **Cliente/Servidor** utilizan
 ---
 
 ## 🎯 Objetivo
-Entender como dados trafegam da interface do usuário (Cliente) para a lógica de processamento (Servidor) e retornam como resposta.
+
+Entender como dados trafegam da interface do usuário (Cliente) para a lógica de processamento (Servidor) e 
+
+retornam como resposta.
 
 
 
-## 🔄 Funcionamento da Comunicação
+## 🔄 Funcionamento da Comunicação (isso que estamos praticando)
 
 1.  **Cliente** captura dados de um formulário.
 2.  **Cliente** empacota esses dados em um formato chamado **JSON**.
 3.  **Cliente** envia os dados via protocolo **HTTP** (usando o método **POST**).
 4.  **Servidor** recebe o pacote, lê o **JSON** e executa uma ação (cálculo, busca, etc).
-5.  **Servidor** envia uma resposta de texto ou objeto de volta.
+5.  **Servidor** envia empacota a resposta em um **JSON** ou objeto e responde.
 6.  **Cliente** recebe a resposta e atualiza a tela para o usuário.
 
 ---
@@ -29,27 +32,24 @@ Entender como dados trafegam da interface do usuário (Cliente) para a lógica d
 
 ---
 
-## 📝 Exercícios Práticos
+## 📝 Exercícios
 
 Aplique os conceitos acima para resolver as situações abaixo. Em todos os casos, o servidor deve processar a lógica e o cliente deve exibir o resultado final.
 
-### 1. 🍽️ Garçom e Cozinha (O Pedido)
-**Objetivo:** Simular o fluxo de trabalho de um serviço.
-* **O Cliente:** Envia o nome de um prato (ex: "Lasanha") e o número da mesa.
-* **O Servidor:** Recebe o pedido e simula um status.
-* **O Retorno:** O servidor deve responder: *"O pedido [Prato] da mesa [X] foi recebido pela cozinha e está sendo preparado!"*.
+### 1. 🍎 Aluno e Professor (Feedback de Nota)
+**Objetivo:** Praticar lógica condicional (`if/else`) no servidor.
+* **O Cliente:** Envia o nome do aluno e sua nota final (0 a 10).
+* **O Servidor:** Verifica se a nota é maior ou igual a 7.
+* **O Retorno:** Se aprovado, responde *"Parabéns [Nome]! Você foi aprovado!"*. Caso contrário, *"Olá [Nome], você precisará de recuperação"*.
 
-### 2. 🔧 Oficina e Estoque de Peças
+
+### 3. 🔧 Oficina e Estoque de Peças
 **Objetivo:** Trabalhar com validação de dados simples.
 * **O Cliente:** Envia o nome de uma peça de carro.
 * **O Servidor:** Possui uma lista interna de peças (ex: `["Amortecedor", "Filtro de Óleo", "Pneu"]`).
 * **O Retorno:** Se a peça enviada estiver na lista, responde *"Peça em estoque"*. Se não estiver, responde *"Peça não encontrada no sistema"*.
 
-### 3. 🍎 Aluno e Professor (Feedback de Nota)
-**Objetivo:** Praticar lógica condicional (`if/else`) no servidor.
-* **O Cliente:** Envia o nome do aluno e sua nota final (0 a 10).
-* **O Servidor:** Verifica se a nota é maior ou igual a 7.
-* **O Retorno:** Se aprovado, responde *"Parabéns [Nome]! Você foi aprovado!"*. Caso contrário, *"Olá [Nome], você precisará de recuperação"*.
+
 
 ### 4. 🏫 Secretaria Escolar (Consulta por RA)
 **Objetivo:** Simular busca em um "Banco de Dados" (Objeto/Array).

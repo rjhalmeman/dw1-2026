@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Teen - Gamer</title>
+    <style>
+        :root {
+            --cor: blue;
+            --cor2: red;
+            --w: 800px;
+            --h: 150px;
+            --bg-body: black;
+            --bg-container: white;
+            --border-container: yellow --shadow-container: orange;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            color: var(--cor);
+            align-items: center;
+            background-color: var(--bg-container);
+            font-family: var(--font-family);
+            text-transform: uppercase;
+            flex-direction: column;
+        }
+
+        .container p {
+            color: var(--cor2);
+            text-align: center;
+        }
+
+        div {
+            width: var(--w);
+            height: var(--h);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>UTFPR - 2026</h1>
+        <p>Curso Técnico Integrado em Informática para Internet</p>
+    </div>
+</body>
+
+</html>
