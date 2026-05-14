@@ -44,7 +44,7 @@ app.post('/enviar-mensagem', (req, res) => {
     };
 
     // Passo 4: Enviar de volta para o cliente usando res.json()
-    res.json(pacoteComResposta);
+    res.json(pacoteComResposta); //envia o objeto pacoteComResposta de volta para o cliente em formato JSON. O cliente receberá uma resposta contendo a hipotenusa calculada com base nos valores de x e y enviados.
 });
 
 const obterIP = () => {
