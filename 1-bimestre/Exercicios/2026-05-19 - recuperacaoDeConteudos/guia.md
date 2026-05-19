@@ -53,7 +53,7 @@ tamanho A4**, que deve ser feita **à mão**.
 ```
 
 * **menu suspenso** (`<select>`),
-  ```html
+```html
 <label for="cars">Choose a car:</label>
 
 <select name="cars" id="cars">
@@ -62,7 +62,7 @@ tamanho A4**, que deve ser feita **à mão**.
   <option value="mercedes">Mercedes</option>
   <option value="audi">Audi</option>
 </select>
-  ```
+ ``` 
 * **formulário** (`<form>`) e blocos de divisão (`<div>`). Conceitos.
 
 * enviar dados de uma página para outra usando form/GET. Parâmetros para receber os dados na página de destino.
