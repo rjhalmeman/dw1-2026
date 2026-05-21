@@ -1,0 +1,281 @@
+  ARQUIVO: cliente                                                  
+ Arquivo: cliente.html 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Imagem e Mensagens</title>
+    <link rel="stylesheet" href="cliente.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Configurações de Conexão</h1>
+        <label for="enderecoServidorInput">Endereço do Servidor:</label>
+        <input type="text" id="enderecoServidorInput" placeholder="Digite o endereço do servidor" value="localhost">
+        
+        <label for="inputPorta">Porta:</label>
+        <input type="text" id="inputPorta" placeholder="Digite a porta" value="3000">
+        
+        <hr>
+
+        <h2>Envie uma Imagem para o servidor</h2>
+        <label for="inputImagem">Selecione a Imagem:</label>
+        <input type="file" id="inputImagem" accept="image/*" onchange="mostrarPreview(event)">
+        
+        <div class="preview-container">
+            <img id="previewImagem" alt="Preview da Imagem Escolhida">
+        </div>
+
+        <button type="button" onclick="enviarImagem()">Enviar Imagem</button>
+        
+        <h3>Resposta do servidor (Upload)</h3>
+        <div id="respostaImagem" class="resposta">Nenhum arquivo enviado ainda.</div>   
+
+        <hr>
+
+        <h2>Calcular Hipotenusa</h2>
+        <label for="inputCateto1">Cateto 1:</label>
+        <input type="text" id="inputCateto1" placeholder="Digite o valor do cateto 1">
+        
+        <label for="inputCateto2">Cateto 2:</label>
+        <input type="text" id="inputCateto2" placeholder="Digite o valor do cateto 2">
+        
+        <button type="button" onclick="enviarMensagem()">Calcular</button>
+        
+        <h3>Resposta do servidor (Pitágoras)</h3>
+        <div id="respostaDoServidor" class="resposta">Nenhum cálculo realizado ainda.</div>    
+    </div>
+
+    <script>
+        // Nova função que lê o arquivo local e exibe na tela antes/depois do upload
+        function mostrarPreview(event) {
+            const input = event.target;
+            const preview = document.getElementById('previewImagem');
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                
+                // Quando o navegador terminar de processar a imagem localmente, define o src
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Torna a imagem visível
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+            }
+        }
+
+        // --- FUNÇÃO PARA ENVIAR IMAGEM ---
+        async function enviarImagem() {
+            const enderecoServidor = document.getElementById('enderecoServidorInput').value;
+            const porta = document.getElementById('inputPorta').value;
+            const inputImagem = document.getElementById('inputImagem');
+            const respostaDiv = document.getElementById("respostaImagem");
+
+            if (inputImagem.files.length === 0) {
+                respostaDiv.className = "resposta aviso"; // Classe amarela
+                respostaDiv.innerHTML = "Por favor, selecione uma imagem primeiro!";
+                return;
+            }
+
+            const arquivoImagem = inputImagem.files[0];
+            const formData = new FormData();
+            formData.append('foto', arquivoImagem);
+
+            try {
+                respostaDiv.className = "resposta";
+                respostaDiv.innerHTML = "Enviando arquivo...";
+
+                const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-imagem`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Falha na resposta do servidor');
+                }
+
+                const data = await response.json();
+
+                // Define a classe de sucesso (Verde) e atualiza o texto permanentemente
+                respostaDiv.className = "resposta sucesso";
+                respostaDiv.innerHTML = `<b>${data.mensagem}</b><br>Salvo no servidor como: <i>${data.nomeArquivo}</i>`;
+
+            } catch (error) {
+                console.error('Erro:', error);
+                // Define a classe de erro (Vermelho)
+                respostaDiv.className = "resposta erro";
+                respostaDiv.innerHTML = "Erro de comunicação: Não foi possível salvar a imagem no servidor.";
+            }
+        }
+
+        // --- FUNÇÃO DE PITÁGORAS ---
+        async function enviarMensagem() {            
+            const enderecoServidor = document.getElementById('enderecoServidorInput').value;
+            const porta = document.getElementById('inputPorta').value;
+            const respostaDiv = document.getElementById("respostaDoServidor");
+            
+            const c1 = parseFloat(document.getElementById('inputCateto1').value);
+            const c2 = parseFloat(document.getElementById('inputCateto2').value);
+
+            if (isNaN(c1) || isNaN(c2)) {
+                respostaDiv.className = "resposta aviso"; // Amarelo
+                respostaDiv.innerHTML = "Por favor, insira valores numéricos válidos nos dois catetos.";
+                return;
+            }
+
+            const meuPacoteDeDados = { x: c1, y: c2 };
+            
+            try {
+                respostaDiv.className = "resposta";
+                respostaDiv.innerHTML = "Processando cálculo...";
+
+                const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-mensagem`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(meuPacoteDeDados),
+                });
+                
+                const data = await response.text();
+                const { hipotenusa } = JSON.parse(data); 
+                
+                respostaDiv.className = "resposta sucesso"; // Verde
+                respostaDiv.innerHTML = "Cálculo concluído! A hipotenusa é: <b>" + hipotenusa + "</b>";
+            } catch (error) {
+                console.error('Erro:', error);
+                respostaDiv.className = "resposta erro"; // Vermelho
+                respostaDiv.innerHTML = "Erro ao se comunicar com o servidor para calcular a hipotenusa.";
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+✓ Fim do arquivo: cliente.html
+
+
+
+✓ Grupo cliente processado (1 arquivos)
+
+
+
+════════════════════════════════════════════════════════════════════
+
+
+
+  ARQUIVO: server                                                   
+ Arquivo: server.js 
+const express = require('express');
+const os = require('os');
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
+
+const app = express();
+const port = 3000;
+
+// Configuração do diretório onde as imagens serão salvas
+const pastaImagens = './imagens/';
+
+// Garante que a pasta existe, se não existir, cria ela
+if (!fs.existsSync(pastaImagens)){
+    fs.mkdirSync(pastaImagens, { recursive: true });
+}
+
+// Configuração de armazenamento do Multer
+const armazenamento = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, pastaImagens); // Define a pasta de destino
+    },
+    filename: (req, file, cb) => {
+        // Define o nome do arquivo: timestamp atual + nome original do arquivo para evitar duplicatas
+        const nomeUnico = Date.now() + '-' + file.originalname;
+        cb(null, nomeUnico);
+    }
+});
+
+// Inicializa o middleware do multer com a configuração de armazenamento
+const upload = multer({ storage: armazenamento });
+
+// Middlewares padrão
+app.use(express.json());
+
+// Middleware CORS adaptado para suportar o FormData e métodos necessários
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
+// --- ROTA ANTERIOR (Mantida para exemplo) ---
+app.post('/enviar-mensagem', (req, res) => {
+    let x = req.body.x;
+    let y = req.body.y;
+    console.log(`As coordenadas recebidas foram: (${x}, ${y})`);
+    let h = Math.hypot(x, y);
+    res.json({ hipotenusa: h });
+});
+
+// --- NOVA ROTA: Enviar Imagem ---
+// 'foto' é o nome do campo (input) que virá do HTML
+app.post('/enviar-imagem', upload.single('foto'), (req, res) => {
+    try {
+        // Se nenhum arquivo foi enviado
+        if (!req.file) {
+            return res.status(400).send('Nenhum arquivo foi enviado.');
+        }
+
+        console.log(`Imagem recebida com sucesso: ${req.file.filename}`);
+        
+        // Resposta enviada de volta ao cliente
+        res.json({ 
+            mensagem: 'Imagem salva com sucesso!',
+            nomeArquivo: req.file.filename,
+            caminho: req.file.path
+        });
+
+    } catch (error) {
+        console.error('Erro no upload:', error);
+        res.status(500).send('Erro interno ao salvar a imagem.');
+    }
+});
+
+const obterIP = () => {
+    const interfaces = os.networkInterfaces();
+    for (let nomeInterface in interfaces) {
+        for (let info of interfaces[nomeInterface]) {
+            if (info.family === 'IPv4' && !info.internal) return info.address;
+        }
+    }
+    return 'localhost';
+};
+
+const ip = obterIP();
+
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Servidor rodando em http://${ip}:${port}`);
+});
+
+✓ Fim do arquivo: server.js
+
+
+
+✓ Grupo server processado (1 arquivos)
+
+
+
+════════════════════════════════════════════════════════════════════
+
+
+
+
