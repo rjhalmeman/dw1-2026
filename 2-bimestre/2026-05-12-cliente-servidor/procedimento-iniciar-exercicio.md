@@ -1,5 +1,8 @@
 # Organize-se para não sofrer...
 
+Antes de tudo, git clone
+
+
 1) Crie uma pasta para seu novo projeto.
 2) Abra essa pasta no vscode.
 3) Copie um server.js (modelo)
