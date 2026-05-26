@@ -18,6 +18,8 @@ Entender como dados de imagens trafegam da interface do usuário (Cliente) para 
 
 * **O Servidor:** Calcula o imc, classifica de acordo com o imc e armazena a foto do aluno em uma pasta no servidor usando o cpf como nome do arquivo. Extensão PNG.
 
+imc = peso / altura²
+
 | Classificação IMC |    IMC     |
 |------------------|-------------|
 | Magreza grave | < 16,0 |

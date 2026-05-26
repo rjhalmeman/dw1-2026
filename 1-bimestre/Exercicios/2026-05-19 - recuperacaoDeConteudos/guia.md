@@ -68,7 +68,7 @@ tamanho A4**, que deve ser feita **à mão**.
  ``` 
 * **formulário** (`<form>`) e blocos de divisão (`<div>`). Conceitos.
 
-* enviar dados de uma página para outra usando form/GET. Parâmetros para receber os dados na página de destino.
+* enviar dados de uma página para outra usando form/GET. Recuperar os dados via parâmetros para receber os dados na página de destino.
 
 * **Tag img - Imagens (`<img>`):** Aplicação de imagens compreendendo a
   diferença e o uso de **caminho absoluto** e **caminho relativo**.

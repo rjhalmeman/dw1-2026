@@ -110,8 +110,9 @@
 
             // Preparando os dados para enviar
             // o formData é uma estrutura que facilita o envio de dados, incluindo arquivos, em requisições HTTP POST
-            // analogia, é uma mala onde podemos colocar vários itens (dados do aluno e a foto) e enviar tudo de uma vez para o servidor
+            // analogia, formData é uma mala onde podemos colocar vários itens (dados do aluno e a foto) e enviar tudo de uma vez para o servidor
             const formData = new FormData();
+            
             formData.append('ra', ra);
             formData.append('nome', nome);
             formData.append('nota1', nota1);
