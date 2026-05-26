@@ -1,6 +1,5 @@
 #!/bin/bash
 
-./killNode_Modules.sh
 
 # Obtém o nome da pasta atual
 current_folder=$(basename "$PWD")
