@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9; /* Fundo levemente acinzentado para dar contraste */
+    background-color: #f4f6f9;
     color: #333333;
     margin: 0;
     padding: 20px;
@@ -10,15 +10,15 @@ body {
 
 .container {
     max-width: 600px;
-    background-color: #ffffff; /* Predominantemente Branco */
+    background-color: #ffffff;
     margin: 20px auto;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    color: #0056b3; /* Azul para títulos */
+h2 {
+    color: #0056b3;
     margin-top: 0;
 }
 
@@ -37,7 +37,33 @@ input[type="text"], input[type="file"] {
     box-sizing: border-box;
 }
 
-/* Botões em azul */
+/* Container das notas em linha */
+.notas-aluno {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.nota-item {
+    flex: 1;
+}
+
+.nota-item label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nota-item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
 button {
     background-color: #007bff;
     color: #ffffff;
@@ -55,14 +81,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #e0e0e0;
-    margin: 30px 0;
-}
-
-/* Estutura base das caixas de resposta */
+/* Estrutura base das caixas de resposta */
 .resposta {
     padding: 12px 15px;
     margin-top: 10px;
@@ -72,21 +91,20 @@ hr {
     font-size: 14px;
 }
 
-/* Cores de avisos dinâmicos */
 .sucesso {
-    background-color: #d4edda; /* Verde claro */
+    background-color: #d4edda;
     color: #155724;
-    border-left: 5px solid #28a745; 
+    border-left: 5px solid #28a745;
 }
 
 .aviso {
-    background-color: #fff3cd; /* Amarelo claro */
+    background-color: #fff3cd;
     color: #856404;
     border-left: 5px solid #ffc107;
 }
 
 .erro {
-    background-color: #f8d7da; /* Vermelho claro */
+    background-color: #f8d7da;
     color: #721c24;
     border-left: 5px solid #dc3545;
 }
@@ -102,6 +120,6 @@ hr {
     max-height: 200px;
     border-radius: 4px;
     border: 1px solid #dddddd;
-    display: none; /* Escondido por padrão até escolher a imagem */
+    display: none;
     margin: 10px auto;
 }
