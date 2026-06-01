@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Logística</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Cálculo de Frete & Comissão</h1>           
+        </header>
+        <section>
+            <form id="form-logistica" action="paginaResposta.html" method="GET" onsubmit="return validarFormulario()">
+                <div class="campo-grupo">
+                    <label for="valor">Valor da Encomenda (R$):</label>
+                    <input type="number" id="valor" name="valor" min="0">
+                </div>
+                <div class="campo-grupo">
+                    <label for="distancia">Distância do Destino (Km):</label>
+                    <input type="number" id="distancia" name="distancia" min="0">
+                </div>
+                <div class="campo-grupo">
+                    <label for="carga">Classificação da Carga:</label>
+                    <select id="carga" name="carga">
+                        <option value="">-- Selecione a Carga --</option>
+                        <option value="leve">Carga Leve (Até 1,0 kg)</option>
+                        <option value="media">Carga Média (Mais de 1,0 kg e menos de 5,0 kg)</option>
+                        <option value="pesada">Carga Pesada (De 5,0 kg até 10,0 kg)</option>
+                        <option value="extra_pesada">Carga Extra Pesada (Acima de 10,0 kg)</option>
+                    </select>
+                </div>
+                <button type="submit">Calcular e Enviar</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        function validarFormulario() {
+            let valor = parseFloat(document.getElementById('valor').value);
+            let distancia = parseFloat(document.getElementById('distancia').value);
+            let carga = document.getElementById('carga').value;
+            let mensagensErro = "";
+            let formularioValido = true;
+            if (isNaN(valor) || valor <= 0) {
+                mensagensErro += "- O valor da encomenda deve ser um número maior que zero.\n";
+                formularioValido = false;            }
+            if (isNaN(distancia) || distancia <= 0) {
+                mensagensErro += "- A distância deve ser maior que zero quilômetros.\n";
+                formularioValido = false;
+            }
+            if (carga === "") {
+                mensagensErro += "- Você deve selecionar uma classificação de carga.\n";
+                formularioValido = false;
+            }
+            if (!formularioValido) {
+                alert("Por favor, corrija os seguintes problemas antes de continuar:\n\n" + mensagensErro);
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

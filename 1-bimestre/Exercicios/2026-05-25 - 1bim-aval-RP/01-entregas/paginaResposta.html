@@ -1,0 +1,52 @@
+<!-- paginaResposta.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Financeiro da Entrega</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Resumo Financeiro da Entrega</h1>           
+        </header>
+
+        <section class="bloco-resultado">
+            <h2>Detalhamento de Custos</h2>            
+            <div class="item-resultado">
+                <span>Valor Base da Encomenda:</span>
+                <strong id="res-encomenda">R$ 0,00</strong>
+            </div>            
+            <div class="item-resultado">
+                <span>Taxa por Distância (R$ 1,20/Km):</span>
+                <strong id="res-distancia">R$ 0,00</strong>
+            </div>            
+            <div class="item-resultado">
+                <p>Taxa Fixa por Carga (Peso):</p>
+                <span id="res-peso">R$ 0,00</span>
+            </div>
+            <div class="item-resultado destaque-frete">
+                <span>Custo Total do Frete:</span>
+                <strong id="res-frete">R$ 0,00</strong>
+            </div>            
+            <div class="item-resultado">
+                <span>Comissão do Entregador (5%):</span>
+                <strong id="res-comissao">R$ 0,00</strong>
+            </div>
+            <hr>
+            <div class="item-resultado total-final">
+                <span>Valor Total da Operação:</span>
+                <strong id="res-total">R$ 0,00</strong>
+            </div>
+        </section>
+
+        <section class="alinhamento-central">
+            <button onclick="window.location.href='index.html'">Voltar e Simular Novamente</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

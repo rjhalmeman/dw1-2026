@@ -1,0 +1,161 @@
+/* style.css */
+/* Definição de Variáveis de Ambiente no Escopo Root */
+:root {
+    --cor-branco-puro: white;
+    --cor-azul-fundo: aliceblue;
+    /* Um azul extremamente claro, quase branco, ideal para fundos */
+    --cor-azul-suave: powderblue;
+    /* Um azul suave e leve para os fundos de blocos */
+    --cor-azul-primario: blue;
+    /* O azul padrão  */
+    --cor-azul-escuro: darkblue;
+    /* Azul escuro para dar destaque e elegância aos títulos */
+    --cor-texto: black;
+    /* Preto puro para garantir o máximo de contraste e leitura */
+    --cor-borda: lightgray;
+    /* Cinza claro ideal para marcação de bordas e divisórias */
+    --cor-vermelho-alerta: crimson;
+    /* Vermelho vibrante para destacar alertas ou erros */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Seletores de Elemento */
+body {
+    background-color: var(--cor-azul-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+main {
+    background-color: var(--cor-branco-puro);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(42, 117, 211, 0.08);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: var(--cor-azul-escuro);
+    font-size: 48px;
+    margin-bottom: 6px;
+}
+
+p,#res-peso {
+    color: var(--cor-vermelho-alerta);
+    font-size: 14px;   
+    font-style: italic;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--cor-azul-escuro);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid var(--cor-azul-suave);
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: var(--cor-branco-puro);
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cor-azul-primario);
+}
+
+button {
+    background-color: var(--cor-azul-primario);
+    color: var(--cor-branco-puro);
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--cor-azul-escuro);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--cor-borda);
+    margin: 15px 0;
+}
+
+/* Seletores de Classe */
+.campo-grupo {
+    margin-bottom: 5px;
+}
+
+.bloco-resultado {
+    background-color: var(--cor-branco-puro);
+    border: 1px solid var(--cor-azul-suave);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bloco-resultado h2 {
+    color: var(--cor-azul-escuro);
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-azul-suave);
+    padding-bottom: 5px;
+}
+
+.item-resultado {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 15px;
+}
+
+.destaque-frete {
+    background-color: var(--cor-azul-fundo);
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: var(--cor-azul-primario);
+}
+
+.total-final {
+    font-size: 18px;
+    color: var(--cor-azul-escuro);
+}
+
+.alinhamento-central {
+    display: flex;
+    justify-content: center;
+}
