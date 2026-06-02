@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1>Consulta ao Banco de Dados - Pessoas</h1>
+    <h1>Consulta ao Banco de Dados - Tabela Pessoa</h1>
     
     <div class="container">
         <h3>Todas as Pessoas</h3>
@@ -91,7 +91,8 @@
             }
 
             try {
-                const response = await fetch(`http://${enderecoServidor}:${porta}/pessoa/cpf/${encodeURIComponent(cpf)}`, {
+                const response = 
+                await fetch(`http://${enderecoServidor}:${porta}/pessoa/cpf/${encodeURIComponent(cpf)}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
