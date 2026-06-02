@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Enviar mensagens</title>
+    <title>Calcular Hipotenusa</title>
 </head>
 
 <body>
-    <h1>Envie uma mensagem para o servidor</h1>
+    <h1>Calcular Hipotenusa</h1>
     <label for="enderecoServidorInput">Endereço do Servidor:</label>
     <input type="text" id="enderecoServidorInput" placeholder="Digite o endereço do servidor" value="localhost"><br><br>
     
@@ -25,29 +25,27 @@
 
     <script>
         async function enviarMensagem() {            
-            const mensagem = document.getElementById('inputCateto1').value;
             const enderecoServidor = document.getElementById('enderecoServidorInput').value;
             const porta = document.getElementById('inputPorta').value;
-            // Criando um pacote de dados para enviar ao servidor
+            
+            // Criando um pacote de dados com os valores numéricos dos catetos
             const meuPacoteDeDados = {               
                 x: parseFloat(document.getElementById('inputCateto1').value),
                 y: parseFloat(document.getElementById('inputCateto2').value)
             };
-            //processo de envio da mensagem para o servidor usando fetch API
+
+            // Enviando o pacote de dados para o servidor usando fetch com método POST
             try {
-                const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-mensagem`, {
+                const response = await fetch(`http://${enderecoServidor}:${porta}/calcular-hipotenusa`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(meuPacoteDeDados),
                 });
-                //quando retornar a resposta do servidor, aguarde e processe a resposta
-                const data = await response.text(); // ESPERE e receba a resposta como texto
 
-                const {hipotenusa} = JSON.parse(data); // ANALISE a resposta JSON para extrair o resultado
-
-                
+                // Aguarda e processa diretamente a resposta em formato JSON
+                const { hipotenusa } = await response.json();
                 
                 document.getElementById("respostaDoServidor").innerHTML = " A hipotenusa é: " + hipotenusa;
             } catch (error) {
