@@ -17,14 +17,19 @@ app.use((req, res, next) => {
 
 // Rota POST para receber os catetos, calcular a hipotenusa e retornar o resultado ao cliente
 app.post('/calcular-hipotenusa', (req, res) => {
+    // req = requisição do cliente, res = resposta do servidor. 
+    // O corpo da requisição (req.body) deve conter os catetos x e y em formato JSON.
+    // O servidor extrai esses valores, calcula a hipotenusa e retorna o resultado.
 
     // Utilizando destructuring para capturar os dados do corpo da requisição de forma limpa
     const { x, y } = req.body;
 
-    console.log(`As coordenadas recebidas foram: (${x}, ${y})`);
+    // Ajustado de "coordenadas" para "catetos" para manter a consistência do termo
+    console.log(`Os catetos recebidos foram: (${x}, ${y})`);
 
     // Realiza o cálculo de Pitágoras usando os valores de x e y recebidos
     const h = Math.hypot(x, y);
+    console.log(`O valor da hipotenusa calculada é: ${h}`);
 
     // Criar o objeto de resposta contendo o resultado do cálculo
     const pacoteComResposta = {
@@ -34,7 +39,7 @@ app.post('/calcular-hipotenusa', (req, res) => {
     // Envia o objeto pacoteComResposta de volta para o cliente em formato JSON
     res.json(pacoteComResposta);
 });
-
+// Função para obter o endereço IP local da máquina (ip onde está rodando o servidor)
 const obterIP = () => {
     const interfaces = os.networkInterfaces();
     for (let nomeInterface in interfaces) {
@@ -48,5 +53,7 @@ const obterIP = () => {
 const ip = obterIP();
 
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor rodando em http://${ip}:${port}`);
+    console.log(`Neste terminal está rodando o Servidor:  http://${ip}:${port}`);
+    console.log(`Aqui aparecem mensagens printadas pelo servidor`);
+    console.log("");
 });
