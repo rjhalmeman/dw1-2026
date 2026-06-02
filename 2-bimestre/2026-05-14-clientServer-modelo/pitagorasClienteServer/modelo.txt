@@ -1,27 +1,14 @@
-════════════════════════════════════════════════════════════════════
-       RELATÓRIO DE CÓDIGOS - GERADO EM 02/06/2026 04:40:31
-════════════════════════════════════════════════════════════════════
-
-Extensões consideradas: html js
-
-
-
-
-╔══════════════════════════════════════════════════════════════╗
-║  ARQUIVO: cliente                                                  ║
-╚══════════════════════════════════════════════════════════════╝
-
 ▶▶▶ Arquivo: cliente.html ◀◀◀
 ────────────────────────────────────────────────────────────────
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Enviar mensagens</title>
+    <title>Calcular Hipotenusa</title>
 </head>
 
 <body>
-    <h1>Envie uma mensagem para o servidor</h1>
+    <h1>Calcular Hipotenusa</h1>
     <label for="enderecoServidorInput">Endereço do Servidor:</label>
     <input type="text" id="enderecoServidorInput" placeholder="Digite o endereço do servidor" value="localhost"><br><br>
     
@@ -40,29 +27,27 @@ Extensões consideradas: html js
 
     <script>
         async function enviarMensagem() {            
-            const mensagem = document.getElementById('inputCateto1').value;
             const enderecoServidor = document.getElementById('enderecoServidorInput').value;
             const porta = document.getElementById('inputPorta').value;
-            // Criando um pacote de dados para enviar ao servidor
+            
+            // Criando um pacote de dados com os valores numéricos dos catetos
             const meuPacoteDeDados = {               
                 x: parseFloat(document.getElementById('inputCateto1').value),
                 y: parseFloat(document.getElementById('inputCateto2').value)
             };
-            //processo de envio da mensagem para o servidor usando fetch API
+
+            // Enviando o pacote de dados para o servidor usando fetch com método POST
             try {
-                const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-mensagem`, {
+                const response = await fetch(`http://${enderecoServidor}:${porta}/calcular-hipotenusa`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(meuPacoteDeDados),
                 });
-                //quando retornar a resposta do servidor, aguarde e processe a resposta
-                const data = await response.text(); // ESPERE e receba a resposta como texto
 
-                const {hipotenusa} = JSON.parse(data); // ANALISE a resposta JSON para extrair o resultado
-
-                
+                // Aguarda e processa diretamente a resposta em formato JSON
+                const { hipotenusa } = await response.json();
                 
                 document.getElementById("respostaDoServidor").innerHTML = " A hipotenusa é: " + hipotenusa;
             } catch (error) {
@@ -75,28 +60,14 @@ Extensões consideradas: html js
 
 </html>
 
-────────────────────────────────────────────────────────────────
-✓ Fim do arquivo: cliente.html
-
-
-
-✓ Grupo cliente processado (1 arquivos)
-
 
 
 ════════════════════════════════════════════════════════════════════
-
-
-
-╔══════════════════════════════════════════════════════════════╗
-║  ARQUIVO: server                                                   ║
-╚══════════════════════════════════════════════════════════════╝
 
 ▶▶▶ Arquivo: server.js ◀◀◀
 ────────────────────────────────────────────────────────────────
 const express = require('express');
 const os = require('os');
-const { json } = require('stream/consumers');
 
 const app = express();
 const port = 3000;
@@ -106,41 +77,30 @@ app.use(express.json());
 
 // Middleware CORS para permitir qualquer origem
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); // '*' permite qualquer origem
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'POST');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-//se vier uma requisição POST para a rota /enviar-mensagem, o servidor irá processar a mensagem recebida, convertê-la para maiúsculas e enviar uma resposta de volta ao cliente.
-app.post('/enviar-mensagem', (req, res) => {
 
-    // usar "destructuring" do JavaScript (mais elegante):
-    // const { mensagem, x, y } = req.body; //cria 3 variáveis: mensagem, x e y, e atribui os valores correspondentes do objeto req.body a elas.
+// Rota POST para receber os catetos, calcular a hipotenusa e retornar o resultado ao cliente
+app.post('/calcular-hipotenusa', (req, res) => {
 
-
-    //Passo 1: Capturar os dados enviados pelo cliente (x e y) a partir do corpo da requisição (req.body) e armazená-los em variáveis para uso posterior.
-
-    //modo tradicional: capturar os dados do corpo da requisição (req.body) e armazená-los em variáveis separadas para uso posterior.
-    //req é o pacoteDeDados que o cliente enviou para o servidor, e body é a parte do pacote que contém os dados enviados pelo cliente.
-
-    let x = req.body.x; //pegue o valor de x que está no corpo da requisição e armazene-o na variável x. O cliente deve enviar um objeto JSON com uma propriedade "x" para que isso funcione corretamente.
-    let y = req.body.y; //pegue o valor de y que está no corpo da requisição e armazene-o na variável y. O cliente deve enviar um objeto JSON com uma propriedade "y" para que isso funcione corretamente.
+    // Utilizando destructuring para capturar os dados do corpo da requisição de forma limpa
+    const { x, y } = req.body;
 
     console.log(`As coordenadas recebidas foram: (${x}, ${y})`);
 
-    // Passo 2. Realiza o cálculo de pitágoras usando os valores de x e y recebidos do cliente. O resultado é armazenado na variável h.
-    let h = Math.hypot(x, y);
+    // Realiza o cálculo de Pitágoras usando os valores de x e y recebidos
+    const h = Math.hypot(x, y);
 
-    //  Enviar um objeto (pacotinho) de volta para o cliente, contendo o resultado do cálculo.
-
-
-    // Passo 3: Criar um objeto chamado pacoteComResposta
+    // Criar o objeto de resposta contendo o resultado do cálculo
     const pacoteComResposta = {
-        hipotenusa: h  // colocar o valor da hipotenusa neste objeto
+        hipotenusa: h
     };
 
-    // Passo 4: Enviar de volta para o cliente usando res.json()
-    res.json(pacoteComResposta); //envia o objeto pacoteComResposta de volta para o cliente em formato JSON. O cliente receberá uma resposta contendo a hipotenusa calculada com base nos valores de x e y enviados.
+    // Envia o objeto pacoteComResposta de volta para o cliente em formato JSON
+    res.json(pacoteComResposta);
 });
 
 const obterIP = () => {
@@ -153,27 +113,9 @@ const obterIP = () => {
     return 'localhost';
 };
 
-const ip = obterIP()
+const ip = obterIP();
 
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor rodando em http://${ip}:${port}`)
-})
+    console.log(`Servidor rodando em http://${ip}:${port}`);
+});
 
-
-────────────────────────────────────────────────────────────────
-✓ Fim do arquivo: server.js
-
-
-
-✓ Grupo server processado (1 arquivos)
-
-
-
-════════════════════════════════════════════════════════════════════
-
-
-
-
-════════════════════════════════════════════════════════════════════
-✓ PROCESSO CONCLUÍDO - Total de grupos: 2
-════════════════════════════════════════════════════════════════════

@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Middleware CORS para permitir qualquer origem
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); 
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'POST');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.post('/calcular-hipotenusa', (req, res) => {
 
     // Utilizando destructuring para capturar os dados do corpo da requisição de forma limpa
-    const { x, y } = req.body; 
+    const { x, y } = req.body;
 
     console.log(`As coordenadas recebidas foram: (${x}, ${y})`);
 
@@ -28,7 +28,7 @@ app.post('/calcular-hipotenusa', (req, res) => {
 
     // Criar o objeto de resposta contendo o resultado do cálculo
     const pacoteComResposta = {
-        hipotenusa: h  
+        hipotenusa: h
     };
 
     // Envia o objeto pacoteComResposta de volta para o cliente em formato JSON
