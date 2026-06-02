@@ -1,3 +1,0 @@
-# Projeto
-
-## Estrutura do Projeto
