@@ -271,4 +271,10 @@ Faça um projeto, usando HTML, CSS, JS no frontend e nodeJS e postgresql no back
 que serão usadas para comunicação entre o cliente e o servidor de modo que mensagens sejam separadas
 das comunicações sobre o estoque.
 
-Usar como base o projeto modelo pitagorasClienteServer, que está no github.
+Usar como base o projeto modelo pitagorasClienteServer, que está no github. [link](https://github.com/rjhalmeman/dw1-2026/tree/main/2-bimestre/2026-05-14-clientServer-modelo/pitagorasClienteServer)
+
+Sejam criativos na estilização, adicionem imagens.
+
+Ao concluir, suba seu projeto para o github.
+
+Envie o link github para: https://forms.gle/orN81F6WqvW5L3rk8
