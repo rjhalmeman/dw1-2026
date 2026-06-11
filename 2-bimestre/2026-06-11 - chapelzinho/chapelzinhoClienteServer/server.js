@@ -30,29 +30,31 @@ app.use((req, res, next) => {
 app.post('/api/mensagens', async (req, res) => {
     try {
         const mensagemRecebida = req.body.mensagem;
-        
+
         if (!mensagemRecebida) {
             return res.status(400).json({ status: "erro", mensagem: "Bilhete vazio!" });
         }
 
-        console.log(`Bilhete recebido da Clientina: ${mensagemRecebida}`);
-        
+        const agora = new Date();
+        const dataHora = `${agora.toLocaleDateString('pt-BR')} ${agora.toLocaleTimeString('pt-BR')}`;
+        console.log(`Bilhete recebido da Clientina: ${mensagemRecebida} - ${dataHora}`);
+
         // REGRA 1: Se for "vovó"
         if (mensagemRecebida === "vovó") {
-            return res.status(200).json({ 
-                status: "sucesso", 
-                mensagem: "Oi, em que posso ajudar?" 
-            });
-        } 
-        
-        // REGRA 2: Se for "chegou"
-        else if (mensagemRecebida === "chegou") {
-            return res.status(200).json({ 
-                status: "sucesso", 
-                mensagem: "a Chapeuzinho chegou aqui com o bilhete" 
+            return res.status(200).json({
+                status: "sucesso",
+                mensagem: "Oi, em que posso ajudar?"
             });
         }
-        
+
+        // REGRA 2: Se for "chegou"
+        else if (mensagemRecebida === "chegou") {
+            return res.status(200).json({
+                status: "sucesso",
+                mensagem: "a Chapeuzinho chegou aqui com o bilhete"
+            });
+        }
+
         // REGRA 3: Se for "situacao" - consulta o estoque e retorna o que precisa ser reposto
         else if (mensagemRecebida === "situacao") {
             try {
@@ -77,7 +79,7 @@ app.post('/api/mensagens', async (req, res) => {
                 // Prepara uma mensagem amigável para mostrar no frontend
                 let mensagemResposta = "";
                 const itens = Object.entries(reposicao);
-                
+
                 if (itens.length === 0) {
                     mensagemResposta = "Tudo ok! Nenhum item precisa ser reposto no momento.";
                 } else {
@@ -87,29 +89,29 @@ app.post('/api/mensagens', async (req, res) => {
                     });
                 }
 
-                return res.status(200).json({ 
-                    status: "sucesso", 
+                return res.status(200).json({
+                    status: "sucesso",
                     mensagem: mensagemResposta,
                     dados_reposicao: reposicao  // Dados estruturados caso queira usar
                 });
-                
+
             } catch (dbError) {
                 console.error('Erro no banco de dados:', dbError);
-                return res.status(500).json({ 
-                    status: "erro", 
-                    mensagem: 'Erro ao consultar situação do estoque' 
+                return res.status(500).json({
+                    status: "erro",
+                    mensagem: 'Erro ao consultar situação do estoque'
                 });
             }
         }
-        
+
         // REGRA 4: Qualquer outra palavra
         else {
-            return res.status(200).json({ 
-                status: "sucesso", 
-                mensagem: "mensagem não entendida" 
+            return res.status(200).json({
+                status: "sucesso",
+                mensagem: "mensagem não entendida"
             });
         }
-        
+
     } catch (error) {
         console.error('Erro ao processar mensagem:', error);
         res.status(500).json({ status: "erro", mensagem: 'Erro interno da Servidorina' });
