@@ -85,7 +85,7 @@ app.get('/pessoa/nome/:nome', async (req, res) => {
         const { nome } = req.params;
         
         const query = 'SELECT cpf_pessoa, nome_pessoa, data_nascimento_pessoa FROM public.pessoa WHERE nome_pessoa ILIKE $1';
-        const result = await pool.query(query, [`%${nome}%`]);
+        const result = await pool.query(query, [`%${nome}%`]); // Usa ILIKE para busca case-insensitive e % para busca de substring. O % é um curinga que permite encontrar qualquer pessoa cujo nome contenha a string fornecida, independentemente de onde ela apareça no nome. O uso de ILIKE torna a busca insensível a maiúsculas e minúsculas, permitindo encontrar "Maria", "maria", "MARIA", etc.
         
         if (result.rows.length === 0) {
             return res.status(404).json({ 

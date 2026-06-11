@@ -4,7 +4,7 @@ function funcaoCalcular() {
     let c = parseFloat(document.getElementById("inputC").value);
 
     let delta = b ** 2 - 4 * a * c;
-
+    debugger;
     let footer = document.getElementById("footer");
     let mensagem = document.getElementById("mensagem");
 
