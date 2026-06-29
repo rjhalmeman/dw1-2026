@@ -1,3 +1,6 @@
+// Servidor Node.js para calcular a hipotenusa usando o Teorema de Pitágoras
+// pitagorasClienteServer/server.js
+
 const express = require('express');
 const os = require('os');
 

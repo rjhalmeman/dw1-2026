@@ -1,3 +1,5 @@
+<!-- Cliente para enviar mensagens ao servidor -->
+ <!-- 2026-05-12-cliente-servidor/cliente.html -->
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +28,7 @@
             const enderecoServidor = document.getElementById('enderecoServidorInput').value;
             const porta = document.getElementById('inputPorta').value;
             try {
-                const response = await fetch(`http://${enderecoServidor}:${porta}/enviar-mensagem`, {
+                const response = await fetch(`http://${enderecoServidor}:${porta}/aMensagem`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

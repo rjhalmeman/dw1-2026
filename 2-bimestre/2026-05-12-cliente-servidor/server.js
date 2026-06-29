@@ -14,8 +14,8 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-//se vier uma requisição POST para a rota /enviar-mensagem, o servidor irá processar a mensagem recebida, convertê-la para maiúsculas e enviar uma resposta de volta ao cliente.
-app.post('/enviar-mensagem', (req, res) => {
+//se vier uma requisição POST para a rota /aMensagem, o servidor irá processar a mensagem recebida, convertê-la para maiúsculas e enviar uma resposta de volta ao cliente.
+app.post('/aMensagem', (req, res) => {
     let mensagem = req.body.mensagem;
     console.log(`A mensagem recebida foi: ${mensagem}`);
     mensagem = mensagem.toUpperCase();
