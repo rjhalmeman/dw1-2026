@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+}
+
+h1 {
+    text-align: center;
+    color: #6a1b9a;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #7b1fa2;
+    box-shadow: 0 0 6px rgba(123, 31, 162, .3);
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 25px;
+}
+
+button {
+    background: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #6a1b9a;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+.resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f3e5f5;
+    border-left: 6px solid #7b1fa2;
+    border-radius: 8px;
+}
+
+.resultado h2 {
+    margin-top: 0;
+    color: #4a148c;
+}
+
+.resultado-item {
+    margin: 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #d1c4e9;
+}
+
+.resultado-item:last-child {
+    border-bottom: none;
+}
+
+.resultado-label {
+    font-weight: bold;
+    color: #4a148c;
+}
+
+.resultado-valor {
+    color: #222;
+    font-size: 17px;
+}
+
+.signo {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #6a1b9a;
+    margin-top: 20px;
+}
+
+.erro {
+    margin-top: 25px;
+    background: #ffebee;
+    border-left: 6px solid #e53935;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.erro h3 {
+    margin-top: 0;
+    color: #b71c1c;
+}
+
+.dicas {
+    margin-top: 30px;
+    background: #ede7f6;
+    padding: 18px;
+    border-radius: 8px;
+    color: #555;
+    font-size: 15px;
+}
+
+.dicas strong {
+    color: #6a1b9a;
+}
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+}
