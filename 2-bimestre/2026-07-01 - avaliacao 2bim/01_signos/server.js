@@ -28,8 +28,26 @@ const signos = [
 const diasMudanca = [20, 19, 21, 20, 21, 21, 23, 23, 23, 23, 22, 22];
 //Os números armazenados nesse vetor representam o último dia em que o primeiro signo daquele mês ainda é válido.
 
+function descobrirSignoComProblema(dia, mes) {
+    if (dia > diasMudanca[mes - 1]) {
+        return signos[(mes + 10) % 12];
+    } else {
+        return signos[(mes + 11) % 12];
+    }
+}
 
-function descobrirSigno(dia, mes) {
+function testarDescobrirSigno() {
+    for (let mes = 1; mes <= 12; mes++) {
+        for (let dia = 1; dia <= 31; dia++) {
+            const signo = descobrirSigno(dia, mes);
+            console.log(`Dia: ${dia}, Mês: ${mes} => Signo: ${signo}`);
+        }
+    }
+}
+
+
+
+function descobrirSigno6(dia, mes) {
     let m = mes % 12;
     if (dia <= diasMudanca[m]) {
         return signos[m];
@@ -85,8 +103,12 @@ function descobrirSigno4(dia, mes) {
     return signos[i + 1];
 }
 
+
+
 //versão minimalista e funcional, mas não tão legível quanto as anteriores
-const descobrirSigno5 = (dia, mes) => (mes < 1 || mes > 12) ? "Data inválida" : dia <= diasMudanca[mes - 1] ? signos[mes - 1] : signos[mes % 12];
+const descobrirSigno = (dia, mes) => (mes < 1 || mes > 12) ? "Data inválida" : dia <= diasMudanca[mes - 1] ? signos[mes - 1] : signos[mes % 12];
+
+testarDescobrirSigno();
 
 app.post("/signo", (req, res) => {
     const nome = req.body.nome;
