@@ -36,10 +36,26 @@ function descobrirSignoComProblema(dia, mes) {
     }
 }
 
+function descobrirSignoE(dia, mes) {
+    if (dia >= diasMudanca[mes - 1]) {
+        return signos[mes - 1];
+    } else {
+        if (mes === 1) {
+            return signos[11];
+        } else {
+            return signos[mes - 2];
+        }
+    }
+
+    //qual é o problema com essa?
+}
+
+
+
 function testarDescobrirSigno() {
     for (let mes = 1; mes <= 12; mes++) {
         for (let dia = 1; dia <= 31; dia++) {
-            const signo = descobrirSigno(dia, mes);
+            const signo = descobrirSignoE(dia, mes);
             console.log(`Dia: ${dia}, Mês: ${mes} => Signo: ${signo}`);
         }
     }
