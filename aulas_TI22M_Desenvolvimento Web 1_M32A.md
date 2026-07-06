@@ -14,26 +14,26 @@
 - [x] [23/04/2026 - Exercícios com seletores de elementos.](#23042026)
 - [x] [28/04/2026 - seletores de classe](#28042026)
 - [x] [30/04/2026 - Seletores combinadores](#30042026)
-- [ ] [05/05/2026 - Avaliação do 1º bimestre](#05052026)
-- [ ] [05/05/2026 - 1º Bimestre - Avaliação](#05052026)
-- [ ] [07/05/2026 - Avaliação de projetos](#07052026)
-- [ ] [12/05/2026 - Recuperação de conteúdos](#12052026)
-- [ ] [14/05/2026 - Recuperação de conteúdos](#14052026)
-- [ ] [19/05/2026 - Recuperação paralela 1º bimestre](#19052026)
-- [ ] [21/05/2026 - Cliente e Servidor. ](#21052026)
-- [ ] [26/05/2026 - Exercícios com uso de cliente/servidor.](#26052026)
-- [ ] [28/05/2026 - Linguagem de Marcação HTML. DOM](#28052026)
-- [ ] [02/06/2026 - Exercícios com manipulação da DOM](#02062026)
-- [ ] [09/06/2026 - Tag: listas](#09062026)
-- [ ] [11/06/2026 - Exercícios com listas](#11062026)
-- [ ] [16/06/2026 - Tag: Tabelas](#16062026)
-- [ ] [18/06/2026 - Exercícios com listas e tabelas](#18062026)
-- [ ] [23/06/2026 - Exercícios com listas e tabelas](#23062026)
-- [ ] [25/06/2026 - Exercícios com listas e tabelas](#25062026)
-- [ ] [30/06/2026 - Avaliação 2º Bimestre](#30062026)
-- [ ] [30/06/2026 - 2º Bimestre - Avaliação](#30062026)
-- [ ] [02/07/2026 - Avaliação de projetos](#02072026)
-- [ ] [07/07/2026 - Revisão da avaliação](#07072026)
+- [x] [05/05/2026 - Avaliação do 1º bimestre](#05052026)
+- [x] [05/05/2026 - 1º Bimestre - Avaliação](#05052026)
+- [x] [07/05/2026 - Avaliação de projetos](#07052026)
+- [x] [12/05/2026 - Recuperação de conteúdos](#12052026)
+- [x] [14/05/2026 - Recuperação de conteúdos](#14052026)
+- [x] [19/05/2026 - Recuperação paralela 1º bimestre](#19052026)
+- [x] [21/05/2026 - Cliente e Servidor. ](#21052026)
+- [x] [26/05/2026 - Exercícios com uso de cliente/servidor.](#26052026)
+- [x] [28/05/2026 - Linguagem de Marcação HTML. DOM](#28052026)
+- [x] [02/06/2026 - Exercícios com manipulação da DOM](#02062026)
+- [x] [09/06/2026 - Tag: listas](#09062026)
+- [x] [11/06/2026 - Exercícios com listas](#11062026)
+- [x] [16/06/2026 - Tag: Tabelas](#16062026)
+- [x] [18/06/2026 - Exercícios com listas e tabelas](#18062026)
+- [x] [23/06/2026 - Exercícios com listas e tabelas](#23062026)
+- [x] [25/06/2026 - Exercícios com listas e tabelas](#25062026)
+- [x] [30/06/2026 - Avaliação 2º Bimestre](#30062026)
+- [x] [30/06/2026 - 2º Bimestre - Avaliação](#30062026)
+- [x] [02/07/2026 - Avaliação de projetos](#02072026)
+- [ ] [07/07/2026 - Avaliação de projetos](#07072026)
 - [ ] [09/07/2026 - Recuperação de conteúdos](#09072026)
 - [ ] [14/07/2026 - Recuperação paralela 2º bimestre](#14072026)
 - [ ] [16/07/2026 - Exercícios](#16072026)
@@ -376,7 +376,7 @@ Conforme explicado nas últimas aulas, o conteúdo abrange **HTML, CSS básico e
 ## 07/07/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
-- Revisão da avaliação
+- Avaliação de projetos
 
 ---
 ## 09/07/2026
@@ -385,10 +385,12 @@ Conforme explicado nas últimas aulas, o conteúdo abrange **HTML, CSS básico e
 - Recuperação de conteúdos
 
 ---
+[Aulas do dia 14](#14072026)
 ## 14/07/2026
 [↑ Voltar para o Índice](#índice--checklist)
 
 - Recuperação paralela 2º bimestre
+prova teórica
 
 ---
 ## 16/07/2026
