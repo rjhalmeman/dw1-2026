@@ -1,6 +1,8 @@
 # dw1-2026
 ## Desenvolvimento Web 1
 
+--- 
+
 ### Ementa
 Funcionamento da Internet. Linguagem de marcação. Linguagem de estilo. Linguagem de programação JavaScript. Manipulação da DOM.
 
