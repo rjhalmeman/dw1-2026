@@ -51,7 +51,6 @@ function descobrirSignoE(dia, mes) {
 }
 
 
-
 function testarDescobrirSigno() {
     for (let mes = 1; mes <= 12; mes++) {
         for (let dia = 1; dia <= 31; dia++) {
