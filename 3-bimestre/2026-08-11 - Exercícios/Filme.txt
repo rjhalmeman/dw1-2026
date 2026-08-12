@@ -1,0 +1,6 @@
+Filme
+    id_filme int (pk)
+    nome_filme varchar(50)
+    diretor_filme varchar(30)
+    data_lancamento date
+    duracao_minutos int

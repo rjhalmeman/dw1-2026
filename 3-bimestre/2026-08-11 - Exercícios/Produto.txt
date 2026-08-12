@@ -1,0 +1,5 @@
+produto
+    id_produto int (pk)
+    nome_produto varchar(50)
+    quantidade_estoque int
+    preco_unitario double

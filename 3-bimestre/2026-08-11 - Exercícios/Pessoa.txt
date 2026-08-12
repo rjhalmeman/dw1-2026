@@ -1,0 +1,6 @@
+pessoa
+    cpf varchar(14) 
+    nome varchar(50)
+    data_nascimento date
+    nome_mae varchar(50)
+    altura float
