@@ -1,5 +1,7 @@
 Criar a tabela no Banco de Dados
 Popular
+(script no arquivo README.md)
+
 
 Ajustar o .env
 Ajustar Carro.html

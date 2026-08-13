@@ -1,12 +1,9 @@
-CREATE TABLE IF NOT EXISTS public.produto (
-    id_produto SERIAL PRIMARY KEY,
-    nome_produto VARCHAR(60) NOT NULL,
-    quantidade_produto INT NOT NULL,
-    quantidade_minima_produto INT NOT NULL,
-    quantidade_maxima_produto INT NOT NULL
+CREATE TABLE public.carro (
+    id_carro INTEGER PRIMARY KEY,
+    nome_carro VARCHAR(30) NOT NULL,
+    modelo_carro VARCHAR(30) NOT NULL,
+    ano INTEGER NOT NULL
 );
-
-
 
 INSERT INTO public.carro (id_carro, nome_carro, modelo_carro, ano) VALUES
 (1, 'Fusca', '1300 L', 1978),
