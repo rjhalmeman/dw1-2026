@@ -8,9 +8,12 @@ Ajustar Filme.html (de acordo com os atributos da tabela)
 Ajustar FilmeControle.js (métodos (funções) do CRUD)
 Ajustar Filme.css
 
-Remover o Filme.js
+
 
 Antes de executar, instalar as dependências (npm install)
+
+Para trabalhar com imagens, precisa instalar o multer
+npm install multer
 
 Subir o servidor (node server.js)
 

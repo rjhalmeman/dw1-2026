@@ -1,12 +1,29 @@
 const express = require('express');
 const os = require('os');
 const { Pool } = require('pg');
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+const sharp = require('sharp');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Configuração do pool de conexão com PostgreSQL
+// MIDDLEWARE DE CORS
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+    next();
+});
+
+app.use(express.json());
+
 const pool = new Pool({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -15,112 +32,93 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
 });
 
-// Middleware para parsear JSON
-app.use(express.json());
+// Garante que a pasta imagens existe
+const dirImagens = path.join(__dirname, 'imagens');
+if (!fs.existsSync(dirImagens)) {
+    fs.mkdirSync(dirImagens);
+}
 
-// Middleware CORS habilitando os métodos GET, POST, PUT e DELETE
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+// Servir imagens estaticamente
+app.use('/imagens', express.static(dirImagens));
 
-    // Responde com sucesso direto para as chamadas de verificação (preflight)
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(200);
-    }
-    next();
-});
+// Configuração do Multer na MEMÓRIA 
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 // --- ROTAS DO CRUD DE FILMES ---
 
-// 1. Listar todos os filmes
 app.get('/filmes', async (req, res) => {
     try {
-        const query = 'SELECT id_filme, nome_filme, diretor_filme, data_lancamento, duracao FROM public.filme ORDER BY id_filme';
-        const result = await pool.query(query);
+        const result = await pool.query('SELECT * FROM public.filme ORDER BY id_filme');
         res.json({ sucesso: true, filmes: result.rows });
     } catch (error) {
-        console.error('Erro ao listar filmes:', error);
-        res.status(500).json({ sucesso: false, mensagem: 'Erro interno do servidor' });
+        res.status(500).json({ sucesso: false });
     }
 });
 
-// 2. Buscar filme por ID (PK)
 app.get('/filme/:id', async (req, res) => {
     try {
-        const { id } = req.params;
-        const query = 'SELECT id_filme, nome_filme, diretor_filme, data_lancamento, duracao FROM public.filme WHERE id_filme = $1';
-        const result = await pool.query(query, [id]);
-
-        if (result.rows.length === 0) {
-            return res.status(404).json({ sucesso: false, mensagem: 'Filme não encontrado com este ID' });
-        }
+        const result = await pool.query('SELECT * FROM public.filme WHERE id_filme = $1', [req.params.id]);
+        if (result.rows.length === 0) return res.status(404).json({ sucesso: false });
         res.json({ sucesso: true, filme: result.rows[0] });
     } catch (error) {
-        console.error('Erro ao buscar filme:', error);
-        res.status(500).json({ sucesso: false, mensagem: 'Erro interno do servidor' });
+        res.status(500).json({ sucesso: false });
     }
 });
 
-// 3. Inserir filme
 app.post('/filme', async (req, res) => {
     try {
         const { id_filme, nome_filme, diretor_filme, data_lancamento, duracao } = req.body;
         const query = 'INSERT INTO public.filme (id_filme, nome_filme, diretor_filme, data_lancamento, duracao) VALUES ($1, $2, $3, $4, $5)';
         await pool.query(query, [id_filme, nome_filme, diretor_filme, data_lancamento, duracao]);
-        res.json({ sucesso: true, mensagem: 'Filme inserido com sucesso!' });
+        res.json({ sucesso: true, mensagem: 'Filme inserido!' });
     } catch (error) {
-        console.error('Erro ao inserir filme:', error);
-        res.status(500).json({ sucesso: false, mensagem: 'Erro ao inserir filme' });
+        res.status(500).json({ sucesso: false });
     }
 });
 
-// 4. Alterar filme
 app.put('/filme/:id', async (req, res) => {
     try {
-        const { id } = req.params;
         const { nome_filme, diretor_filme, data_lancamento, duracao } = req.body;
         const query = 'UPDATE public.filme SET nome_filme = $1, diretor_filme = $2, data_lancamento = $3, duracao = $4 WHERE id_filme = $5';
-        await pool.query(query, [nome_filme, diretor_filme, data_lancamento, duracao, id]);
-        res.json({ sucesso: true, mensagem: 'Filme atualizado com sucesso!' });
+        await pool.query(query, [nome_filme, diretor_filme, data_lancamento, duracao, req.params.id]);
+        res.json({ sucesso: true });
     } catch (error) {
-        console.error('Erro ao atualizar filme:', error);
-        res.status(500).json({ sucesso: false, mensagem: 'Erro ao atualizar filme' });
+        res.status(500).json({ sucesso: false });
     }
 });
 
-// 5. Excluir filme
 app.delete('/filme/:id', async (req, res) => {
     try {
-        const { id } = req.params;
-        const query = 'DELETE FROM public.filme WHERE id_filme = $1';
-        await pool.query(query, [id]);
-        res.json({ sucesso: true, mensagem: 'Filme excluído com sucesso!' });
+        await pool.query('DELETE FROM public.filme WHERE id_filme = $1', [req.params.id]);
+
+        const imgPath = path.join(__dirname, 'imagens', `${req.params.id}.png`);
+        if (fs.existsSync(imgPath)) fs.unlinkSync(imgPath);
+
+        res.json({ sucesso: true });
     } catch (error) {
-        console.error('Erro ao excluir filme:', error);
-        res.status(500).json({ sucesso: false, mensagem: 'Erro ao excluir filme' });
+        res.status(500).json({ sucesso: false });
     }
 });
 
-// Obter endereço IP da rede local
-const obterIP = () => {
-    const interfaces = os.networkInterfaces();
-    for (let nomeInterface in interfaces) {
-        for (let info of interfaces[nomeInterface]) {
-            if (info.family === 'IPv4' && !info.internal) return info.address;
+// --- ROTA DE UPLOAD E CONVERSÃO COM SHARP ---
+app.post('/upload/:id', upload.single('cartaz'), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ sucesso: false, mensagem: 'Nenhuma imagem recebida.' });
         }
+
+        const imgPath = path.join(dirImagens, `${req.params.id}.png`);
+
+        await sharp(req.file.buffer)
+            .png()
+            .toFile(imgPath);
+
+        res.json({ sucesso: true, mensagem: 'Imagem convertida e salva com sucesso!' });
+    } catch (error) {
+        console.error("Erro ao converter imagem:", error);
+        res.status(500).json({ sucesso: false, mensagem: 'Erro ao processar imagem.' });
     }
-    return 'localhost';
-};
-
-const ip = obterIP();
-
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor rodando em http://${ip}:${port}`);
-    console.log(`Rotas disponíveis:`);
-    console.log(`  GET    http://${ip}:${port}/filmes - Listar todos os filmes`);
-    console.log(`  GET    http://${ip}:${port}/filme/:id - Buscar filme por ID`);
-    console.log(`  POST   http://${ip}:${port}/filme - Inserir novo filme`);
-    console.log(`  PUT    http://${ip}:${port}/filme/:id - Alterar filme`);
-    console.log(`  DELETE http://${ip}:${port}/filme/:id - Excluir filme`);
 });
+
+app.listen(port, '0.0.0.0', () => console.log(`Servidor rodando na porta ${port}`));
