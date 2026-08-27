@@ -1,0 +1,9 @@
+Criar CRUD completo com imagem para cada produto.
+
+
+CREATE TABLE produto (
+    id INT PRIMARY KEY,
+    nome VARCHAR(50),
+    tamanho CHAR(1),
+    peso FLOAT
+);
