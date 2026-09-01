@@ -1,58 +1,3 @@
---
--- PostgreSQL database dump
---
-
-\restrict vKrwXC6Gm5Qb57HNKR0hriNg1QOncrdgSw5Y6Rq6NEzcFa5smHwhob4moEn3DGR
-
--- Dumped from database version 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)
--- Dumped by pg_dump version 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)
-
--- Started on 2026-09-01 05:12:48 -03
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 3450 (class 1262 OID 41495)
--- Name: candyshop; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE candyshop WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'pt_BR.UTF-8';
-
-
-ALTER DATABASE candyshop OWNER TO postgres;
-
-\unrestrict vKrwXC6Gm5Qb57HNKR0hriNg1QOncrdgSw5Y6Rq6NEzcFa5smHwhob4moEn3DGR
-\connect candyshop
-\restrict vKrwXC6Gm5Qb57HNKR0hriNg1QOncrdgSw5Y6Rq6NEzcFa5smHwhob4moEn3DGR
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
-
---
--- TOC entry 211 (class 1259 OID 41502)
--- Name: cargo; Type: TABLE; Schema: public; Owner: radames
---
 
 CREATE TABLE public.cargo (
     id_cargo integer NOT NULL,
@@ -942,12 +887,4 @@ ALTER TABLE ONLY public.pedido_has_produto
 ALTER TABLE ONLY public.produto
     ADD CONSTRAINT produto_unidade_medida_fk FOREIGN KEY (id_unidade_medida) REFERENCES public.unidade_medida(id_unidade_medida);
 
-
--- Completed on 2026-09-01 05:12:49 -03
-
---
--- PostgreSQL database dump complete
---
-
-\unrestrict vKrwXC6Gm5Qb57HNKR0hriNg1QOncrdgSw5Y6Rq6NEzcFa5smHwhob4moEn3DGR
 
