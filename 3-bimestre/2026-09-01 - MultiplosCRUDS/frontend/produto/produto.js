@@ -61,7 +61,7 @@ async function uploadImagemParaServidor(id) {
     formData.append('imagem', inputFiles[0]);
 
     try {
-        await fetch(`${URL_API}/upload/${id}`, {
+        await fetch(`${URL_API}/produto/upload/${id}`, {
             method: 'POST',
             body: formData
         });

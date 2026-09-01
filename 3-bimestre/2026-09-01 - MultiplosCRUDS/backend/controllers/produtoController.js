@@ -1,6 +1,7 @@
 const { query } = require('../database');
 const fs = require('fs');
 const path = require('path');
+const sharp = require('sharp');
 
 // Listar todos os produtos
 exports.listarProdutos = async (req, res) => {
@@ -104,6 +105,34 @@ exports.atualizarProduto = async (req, res) => {
             return res.status(400).json({ sucesso: false, mensagem: 'A unidade de medida informada não existe no cadastro.' });
         }
         res.status(500).json({ sucesso: false, mensagem: 'Erro ao atualizar produto.' });
+    }
+};
+
+// Upload e salvamento de imagem com Sharp
+exports.uploadImagem = async (req, res) => {
+    try {
+        const id = req.params.id;
+        if (!req.file) {
+            return res.status(400).json({ sucesso: false, mensagem: 'Nenhum arquivo enviado.' });
+        }
+
+        const pastaImagens = path.join(__dirname, '../../imagens');
+        if (!fs.existsSync(pastaImagens)) {
+            fs.mkdirSync(pastaImagens, { recursive: true });
+        }
+
+        const caminhoDestino = path.join(pastaImagens, `${id}.png`);
+
+        // Processa e converte para PNG no tamanho ideal
+        await sharp(req.file.buffer)
+            .resize(300, 300, { fit: 'cover' })
+            .toFormat('png')
+            .toFile(caminhoDestino);
+
+        res.json({ sucesso: true, mensagem: 'Imagem salva com sucesso!' });
+    } catch (error) {
+        console.error('Erro ao salvar imagem:', error);
+        res.status(500).json({ sucesso: false, mensagem: 'Erro ao processar imagem.' });
     }
 };
 
