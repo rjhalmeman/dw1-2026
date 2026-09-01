@@ -1,0 +1,23 @@
+.
+├── estrutura_atual.txt
+├── FilmeControle.js
+├── Filme.css
+├── Filme.html
+├── imagens
+│   ├── 1.png
+│   ├── 2.png
+│   ├── 3.png
+│   ├── 44.png
+│   └── silhueta.png
+├── instruções
+│   ├── 1-criarBD.md
+│   ├── 2-fazerDumpDoBD.md
+│   ├── 3-github.md
+│   └── dump-dw1-db-2026.sql
+├── package.json
+├── package-lock.json
+├── README.md
+├── roteiro.md
+└── server.js
+
+2 directories, 18 files
