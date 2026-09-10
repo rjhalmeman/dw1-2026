@@ -46,7 +46,7 @@ CREATE TABLE public.produto (
     nome_produto character varying(45),
     quantidade_estoque_produto integer,
     preco_unitario_produto double precision,
-    id_unidade_medida character varying(2)  -- Removido NOT NULL para aceitar NULL
+    id_unidade_medida character varying(2)
 );
 
 -- Tabelas com múltiplas dependências
@@ -127,10 +127,46 @@ ALTER TABLE ONLY public.pedido ALTER COLUMN id_pedido SET DEFAULT nextval('publi
 ALTER TABLE ONLY public.produto ALTER COLUMN id_produto SET DEFAULT nextval('public.produto_id_produto_seq'::regclass);
 
 -- ============================================
--- 4. INSERTS (ORDEM CORRETA DE DEPENDÊNCIA)
+-- 4. CONSTRAINTS (CHAVES PRIMÁRIAS E ESTRANGEIRAS)
 -- ============================================
 
--- 4.1 Inserir em PESSOA primeiro (base para cliente e funcionario)
+-- Chaves Primárias
+ALTER TABLE ONLY public.pessoa ADD CONSTRAINT pessoa_pkey PRIMARY KEY (cpf_pessoa);
+ALTER TABLE ONLY public.cargo ADD CONSTRAINT cargo_pkey PRIMARY KEY (id_cargo);
+ALTER TABLE ONLY public.unidade_medida ADD CONSTRAINT unidade_medida_pkey PRIMARY KEY (id_unidade_medida);
+ALTER TABLE ONLY public.forma_pagamento ADD CONSTRAINT forma_pagamento_pkey PRIMARY KEY (id_forma_pagamento);
+ALTER TABLE ONLY public.cliente ADD CONSTRAINT cliente_pkey PRIMARY KEY (pessoa_cpf_pessoa);
+ALTER TABLE ONLY public.funcionario ADD CONSTRAINT funcionario_pkey PRIMARY KEY (pessoa_cpf_pessoa);
+ALTER TABLE ONLY public.produto ADD CONSTRAINT produto_pkey PRIMARY KEY (id_produto);
+ALTER TABLE ONLY public.pedido ADD CONSTRAINT pedido_pkey PRIMARY KEY (id_pedido);
+ALTER TABLE ONLY public.pagamento ADD CONSTRAINT pagamento_pkey PRIMARY KEY (pedido_id_pedido);
+ALTER TABLE ONLY public.pedido_has_produto ADD CONSTRAINT pedido_has_produto_pkey PRIMARY KEY (produto_id_produto, pedido_id_pedido);
+ALTER TABLE ONLY public.pagamento_has_forma_pagamento ADD CONSTRAINT pagamento_has_forma_pagamento_pkey PRIMARY KEY (pagamento_id_pedido, forma_pagamento_id_forma_pagamento);
+
+-- Chaves Estrangeiras
+ALTER TABLE ONLY public.cliente ADD CONSTRAINT fk_cliente_pessoa FOREIGN KEY (pessoa_cpf_pessoa) REFERENCES public.pessoa (cpf_pessoa);
+
+ALTER TABLE ONLY public.funcionario ADD CONSTRAINT fk_funcionario_pessoa FOREIGN KEY (pessoa_cpf_pessoa) REFERENCES public.pessoa (cpf_pessoa);
+ALTER TABLE ONLY public.funcionario ADD CONSTRAINT fk_funcionario_cargo FOREIGN KEY (cargo_id_cargo) REFERENCES public.cargo (id_cargo);
+
+ALTER TABLE ONLY public.produto ADD CONSTRAINT fk_produto_unidade_medida FOREIGN KEY (id_unidade_medida) REFERENCES public.unidade_medida (id_unidade_medida);
+
+ALTER TABLE ONLY public.pedido ADD CONSTRAINT fk_pedido_cliente FOREIGN KEY (cliente_pessoa_cpf_pessoa) REFERENCES public.cliente (pessoa_cpf_pessoa);
+ALTER TABLE ONLY public.pedido ADD CONSTRAINT fk_pedido_funcionario FOREIGN KEY (funcionario_pessoa_cpf_pessoa) REFERENCES public.funcionario (pessoa_cpf_pessoa);
+
+ALTER TABLE ONLY public.pagamento ADD CONSTRAINT fk_pagamento_pedido FOREIGN KEY (pedido_id_pedido) REFERENCES public.pedido (id_pedido);
+
+ALTER TABLE ONLY public.pedido_has_produto ADD CONSTRAINT fk_pedido_has_produto_produto FOREIGN KEY (produto_id_produto) REFERENCES public.produto (id_produto);
+ALTER TABLE ONLY public.pedido_has_produto ADD CONSTRAINT fk_pedido_has_produto_pedido FOREIGN KEY (pedido_id_pedido) REFERENCES public.pedido (id_pedido);
+
+ALTER TABLE ONLY public.pagamento_has_forma_pagamento ADD CONSTRAINT fk_pagamento_has_forma_pagamento_pagamento FOREIGN KEY (pagamento_id_pedido) REFERENCES public.pagamento (pedido_id_pedido);
+ALTER TABLE ONLY public.pagamento_has_forma_pagamento ADD CONSTRAINT fk_pagamento_has_forma_pagamento_forma_pagamento FOREIGN KEY (forma_pagamento_id_forma_pagamento) REFERENCES public.forma_pagamento (id_forma_pagamento);
+
+-- ============================================
+-- 5. INSERTS (ORDEM CORRETA DE DEPENDÊNCIA)
+-- ============================================
+
+-- 5.1 PESSOA
 INSERT INTO public.pessoa VALUES ('10101010101', 'Juliana Dias ssss', '1989-10-25', 'lins, 352 ssss', '1111', 'juliana@email.comm');
 INSERT INTO public.pessoa VALUES ('44444444444', 'Ana Lima', '1995-04-25', 'Alameda do medo, 4534 apto 13', '.123456', 'ana@email.com');
 INSERT INTO public.pessoa VALUES ('55555555555', 'Lucas Mendes', '1988-05-30', 'Rua sexta_feira, 13 _ apto 666', '.123456', 'lucas@email.com');
@@ -145,7 +181,7 @@ INSERT INTO public.pessoa VALUES ('33333333333', 'Carlos Pereira', '1992-03-20',
 INSERT INTO public.pessoa VALUES ('11111111111', 'João Silva', '2025-01-01', 'algum lugar', '123456x', 'joao@email.com');
 INSERT INTO public.pessoa VALUES ('2', 'dois', '2025-10-07', 'Rua das Magnólias', '123456x', 'dois@email.com');
 
--- 4.2 Inserir em CARGO (usado por funcionario)
+-- 5.2 CARGO
 INSERT INTO public.cargo VALUES (3, 'Caixa');
 INSERT INTO public.cargo VALUES (4, 'Supervisor');
 INSERT INTO public.cargo VALUES (5, 'Atendente');
@@ -159,7 +195,7 @@ INSERT INTO public.cargo VALUES (1, 'Vendedor');
 INSERT INTO public.cargo VALUES (111, 'cento e onze dddd');
 INSERT INTO public.cargo VALUES (2, 'Gerente');
 
--- 4.3 Inserir em UNIDADE_MEDIDA (usado por produto)
+-- 5.3 UNIDADE_MEDIDA
 INSERT INTO public.unidade_medida VALUES ('UN', 'Unidade');
 INSERT INTO public.unidade_medida VALUES ('KG', 'Quilograma');
 INSERT INTO public.unidade_medida VALUES ('G', 'Grama');
@@ -168,7 +204,7 @@ INSERT INTO public.unidade_medida VALUES ('ML', 'Mililitro');
 INSERT INTO public.unidade_medida VALUES ('CX', 'Caixa');
 INSERT INTO public.unidade_medida VALUES ('PC', 'Pacote');
 
--- 4.4 Inserir em FORMA_PAGAMENTO (usado por pagamento_has_forma_pagamento)
+-- 5.4 FORMA_PAGAMENTO
 INSERT INTO public.forma_pagamento VALUES (1, 'Dinheiro');
 INSERT INTO public.forma_pagamento VALUES (2, 'Cartão de Crédito');
 INSERT INTO public.forma_pagamento VALUES (3, 'Cartão de Débito');
@@ -180,7 +216,7 @@ INSERT INTO public.forma_pagamento VALUES (8, 'Cheque');
 INSERT INTO public.forma_pagamento VALUES (9, 'Crédito Loja');
 INSERT INTO public.forma_pagamento VALUES (10, 'Gift Card');
 
--- 4.5 Inserir em CLIENTE (depende de pessoa)
+-- 5.5 CLIENTE
 INSERT INTO public.cliente VALUES ('22222222222', 3200, '2024-01-02');
 INSERT INTO public.cliente VALUES ('33333333333', 1800, '2024-01-03');
 INSERT INTO public.cliente VALUES ('44444444444', 4000, '2024-01-04');
@@ -194,7 +230,7 @@ INSERT INTO public.cliente VALUES ('10101010101', 4500, '2024-01-10');
 INSERT INTO public.cliente VALUES ('1', 1111, '2025-10-11');
 INSERT INTO public.cliente VALUES ('2', 22222, '2025-10-15');
 
--- 4.6 Inserir em FUNCIONARIO (depende de pessoa e cargo)
+-- 5.6 FUNCIONARIO
 INSERT INTO public.funcionario VALUES ('22222222222', 3000, 2, 10);
 INSERT INTO public.funcionario VALUES ('33333333333', 1500, 3, 3);
 INSERT INTO public.funcionario VALUES ('44444444444', 2500, 4, 6);
@@ -207,7 +243,7 @@ INSERT INTO public.funcionario VALUES ('10101010101', 5000, 2, 15);
 INSERT INTO public.funcionario VALUES ('00000000000', 0, 0, 0);
 INSERT INTO public.funcionario VALUES ('1', 1111, 2, 1);
 
--- 4.7 Inserir em PRODUTO (agora com id_unidade_medida válido)
+-- 5.7 PRODUTO
 INSERT INTO public.produto VALUES (8, 'Pão de Mel', 40, 60, 'UN');
 INSERT INTO public.produto VALUES (9, 'Doce de Leite', 30, 85, 'UN');
 INSERT INTO public.produto VALUES (4, 'Biscoito', 80, 32, 'PC');
@@ -220,7 +256,7 @@ INSERT INTO public.produto VALUES (2, 'Bala', 200, 43, 'PC');
 INSERT INTO public.produto VALUES (6, 'Suco', 60, 45, 'L');
 INSERT INTO public.produto VALUES (50, 'cinquenta', 50, 50, 'UN');
 
--- 4.8 Inserir em PEDIDO (depende de cliente e funcionario)
+-- 5.8 PEDIDO
 INSERT INTO public.pedido VALUES (3, '2024-02-03', '55555555555', '66666666666');
 INSERT INTO public.pedido VALUES (7, '2024-02-07', '44444444444', '33333333333');
 INSERT INTO public.pedido VALUES (8, '2024-02-08', '66666666666', '55555555555');
@@ -293,7 +329,7 @@ INSERT INTO public.pedido VALUES (70, '2025-12-13', '1', '00000000000');
 INSERT INTO public.pedido VALUES (71, '2025-12-13', '1', '00000000000');
 INSERT INTO public.pedido VALUES (72, '2025-12-13', '1', '00000000000');
 
--- 4.9 Inserir em PAGAMENTO (depende de pedido)
+-- 5.9 PAGAMENTO
 INSERT INTO public.pagamento VALUES (1, '2024-02-01 10:00:00', 50);
 INSERT INTO public.pagamento VALUES (2, '2024-02-02 11:00:00', 30);
 INSERT INTO public.pagamento VALUES (3, '2024-02-03 12:00:00', 20);
@@ -309,7 +345,7 @@ INSERT INTO public.pagamento VALUES (66, '2025-12-13 09:00:47.612', 13);
 INSERT INTO public.pagamento VALUES (71, '2025-12-13 09:12:45.255', 13.35);
 INSERT INTO public.pagamento VALUES (72, '2025-12-13 09:15:50.149', 13.35);
 
--- 4.10 Inserir em PEDIDO_HAS_PRODUTO (depende de pedido e produto)
+-- 5.10 PEDIDO_HAS_PRODUTO
 INSERT INTO public.pedido_has_produto VALUES (1, 1, 2, 5.5);
 INSERT INTO public.pedido_has_produto VALUES (2, 2, 10, 0.5);
 INSERT INTO public.pedido_has_produto VALUES (3, 2, 5, 1);
@@ -391,31 +427,6 @@ INSERT INTO public.pedido_has_produto VALUES (2, 65, 100, 43);
 INSERT INTO public.pedido_has_produto VALUES (4, 65, 100, 32);
 INSERT INTO public.pedido_has_produto VALUES (1, 66, 100, 55);
 INSERT INTO public.pedido_has_produto VALUES (2, 66, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 66, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (1, 67, 100, 55);
-INSERT INTO public.pedido_has_produto VALUES (2, 67, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 67, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (5, 67, 5, 70);
-INSERT INTO public.pedido_has_produto VALUES (1, 68, 100, 55);
-INSERT INTO public.pedido_has_produto VALUES (2, 68, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 68, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (5, 68, 5, 70);
-INSERT INTO public.pedido_has_produto VALUES (1, 69, 100, 55);
-INSERT INTO public.pedido_has_produto VALUES (2, 69, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 69, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (5, 69, 5, 70);
-INSERT INTO public.pedido_has_produto VALUES (1, 70, 100, 55);
-INSERT INTO public.pedido_has_produto VALUES (2, 70, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 70, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (5, 70, 5, 70);
-INSERT INTO public.pedido_has_produto VALUES (1, 71, 100, 55);
-INSERT INTO public.pedido_has_produto VALUES (2, 71, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 71, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (5, 71, 5, 70);
-INSERT INTO public.pedido_has_produto VALUES (1, 72, 100, 55);
-INSERT INTO public.pedido_has_produto VALUES (2, 72, 100, 43);
-INSERT INTO public.pedido_has_produto VALUES (4, 72, 100, 32);
-INSERT INTO public.pedido_has_produto VALUES (5, 72, 5, 70);
 
--- 4.11 Inserir em PAGAMENTO_HAS_FORMA_PAGAMENTO (depende de pagamento e forma_pagamento)
+-- 5.11 PAGAMENTO_HAS_FORMA_PAGAMENTO
 INSERT INTO public.pagamento_has_forma_pagamento VALUES (1, 1, 20);
