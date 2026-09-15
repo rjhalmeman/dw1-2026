@@ -7,7 +7,7 @@ Desenvolvimento de uma **aplicação web funcional** baseada na **arquitetura Cl
 * **Data Limite:** **01/10/2026** até 23h59.
 * **Entrega:** Link do repositório no **GitHub** via [Formulário Oficial](https://forms.gle/TYXB1qsmaCk3e2nq5).
 
-# O projeto **candshop** deve ser usado como parâmetro de organização da arquitetura
+# O projeto **candyshop** deve ser usado como modelo de organização da arquitetura
 
 ## 2. Requisitos de Front-End (Cliente)
 * **Estrutura Semântica:** Uso obrigatório de **tags HTML5** (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, `<aside>`).
