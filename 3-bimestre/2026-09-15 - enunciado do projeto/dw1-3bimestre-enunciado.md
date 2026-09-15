@@ -17,10 +17,10 @@ Desenvolvimento de uma **aplicação web funcional** baseada na **arquitetura Cl
 ## 3. Requisitos de Back-End e Banco de Dados (Servidor)
 * **Ambiente de Execução:** **Node.js** com separação em **Router** (mapeamento de endpoints) e **Controllers** (lógica de negócios).
 * **Banco de Dados Relacional:** Conexão com **PostgreSQL** via variáveis de ambiente no arquivo **`.env`** (`DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`).
-* **Modelagem de Dados:** Exigência de 3 tabelas — **1 tabela independente**, **1 tabela com relacionamento 1:N** e **1 tabela com relacionamento 1:1**.
+* **Modelagem de Dados:** Mínimo com **1 tabela independente**, **1 tabela com relacionamento 1:N** e **1 tabela com relacionamento 1:1**.
 * **Arquivo DDL e Carga Inicial:** Arquivo `.sql` com comandos `CREATE TABLE` (chaves primárias/estrangeiras) e `INSERT INTO` (mínimo de **10 registros por tabela**).
 ## 4. Versionamento e Repositório (Git/GitHub)
-* **Nomenclatura Padrão:** `NomeDoAluno_2bim_NomeProjeto`.
+* **Nomenclatura Padrão:** `NomeDoAluno_3bim_NomeProjeto`.
 * **Colaboração:** Adicionar o usuário `rjhalmeman@gmail.com` como **colaborador**.
 * **Arquivos Obrigatórios:** **`.gitignore`** (ignorando `node_modules/` e `.env`) e **`README.md`** (documentação, diagrama do banco e guia de execução).
 ## 5. Critérios de Avaliação e Sabatina Técnica
