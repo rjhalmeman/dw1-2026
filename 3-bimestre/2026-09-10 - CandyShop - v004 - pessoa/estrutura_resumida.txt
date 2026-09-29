@@ -1,0 +1,18 @@
+candyshop
+    ├── backend
+    │   ├── controllers   
+    │   ├── database.js
+    │   ├── routes  
+    │   └── server.js
+    ├── documentacao   
+    ├── frontend
+    ├── imagens
+    │    └── silhueta.png
+    ├── index.html
+    ├── package.json
+    ├── package-lock.json
+    └── README.md
+
+
+
+
