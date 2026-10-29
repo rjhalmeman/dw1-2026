@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Login com Cookie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- TELA DE LOGIN -->
+    <div id="tela-login" class="box">
+      <h2>Entrar no Sistema</h2>
+      <form id="form-login">
+        <div class="campo">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" placeholder="admin@email.com" required>
+        </div>
+        
+        <div class="campo">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" placeholder="123456" required>
+        </div>
+
+        <p id="mensagem-erro" class="erro"></p>
+
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <!-- TELA DASHBOARD (PROTEGIDA POR COOKIE) -->
+    <div id="tela-dashboard" class="box esconde">
+      <h2>Área Restrita</h2>
+      <p>Bem-vindo, <strong id="usuario-email"></strong>!</p>
+      <p>Sua sessão está ativa via Cookie.</p>
+      <button id="btn-logout" class="btn-sair">Sair (Logout)</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
