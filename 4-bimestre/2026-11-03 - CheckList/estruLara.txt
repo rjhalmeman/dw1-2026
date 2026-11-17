@@ -1,0 +1,40 @@
+.
+├── criarEstrutura.sh
+├── estruLara.txt
+├── loja-camisetas
+│   ├── backend
+│   │   ├── controllers
+│   │   │   └── loginController.js
+│   │   ├── database.js
+│   │   ├── middlewares
+│   │   │   └── authMiddleware.js
+│   │   ├── routes
+│   │   │   └── loginRoutes.js
+│   │   └── server.js
+│   └── frontend
+│       ├── assets
+│       │   └── img
+│       └── login
+│           ├── login.css
+│           ├── login.html
+│           └── login.js
+├── loja-camisetasXXXX
+│   ├── backend
+│   │   ├── controllers
+│   │   │   └── loginController.js
+│   │   ├── database.js
+│   │   ├── middlewares
+│   │   │   └── authMiddleware.js
+│   │   ├── routes
+│   │   │   └── loginRoutes.js
+│   │   └── server.js
+│   ├── documentacao
+│   │   └── sql_criar_bd.sql
+│   └── frontend
+│       └── login
+│           ├── login.css
+│           ├── login.html
+│           └── login.js
+└── roteiro.md
+
+18 directories, 20 files
